@@ -248,7 +248,131 @@
     </div>
   </section>
 
-  
+  <section class="section" id="context">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">how much it can see</span><h2>Context window, by flagship model</h2><p>Usage limits govern how <em>often</em> you can prompt a tool. This is a different axis — how much of your codebase fits in <em>one</em> request, for the model each tool defaults to. Tools that let you switch models may unlock a larger window; see notes.</p></div>
+      </div>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Flagship model</th>
+              <th class="num">Context window</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">GM</span>
+                  <span>
+                    <a href="./tools/gemini-cli.html" class="tool-name" style="text-decoration:none;color:inherit">Gemini CLI / Code Assist</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">Gemini 3.1 Pro</td>
+              <td class="num tabular-nums mono" data-label="Context window">~1M tokens</td>
+              <td data-label="Notes"><span class="limit-desc">Effectively every Gemini model the CLI ships with — Pro, Flash, and Flash-Lite alike — shares this same window.</span></td>
+            </tr>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">CC</span>
+                  <span>
+                    <a href="./tools/claude-code.html" class="tool-name" style="text-decoration:none;color:inherit">Claude Code</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">Claude Sonnet 5</td>
+              <td class="num tabular-nums mono" data-label="Context window">1M tokens</td>
+              <td data-label="Notes"><span class="limit-desc">Native on Sonnet 5 across every plan. Opus 5 also reaches 1M on Max/Team/Enterprise seats (needs usage credits on Pro); older models cap at 200K.</span></td>
+            </tr>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">JB</span>
+                  <span>
+                    <a href="./tools/jetbrains-ai.html" class="tool-name" style="text-decoration:none;color:inherit">JetBrains AI Assistant</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">Claude Sonnet 5 (one of several current-gen options)</td>
+              <td class="num tabular-nums mono" data-label="Context window">1M tokens</td>
+              <td data-label="Notes"><span class="limit-desc">Applies to any current-gen frontier model you pick (Opus 5, GPT-5.6, Gemini 3.x); drops to 200K–400K on older/smaller model choices.</span></td>
+            </tr>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">GH</span>
+                  <span>
+                    <a href="./tools/github-copilot.html" class="tool-name" style="text-decoration:none;color:inherit">GitHub Copilot</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">GPT-5.3-Codex (Copilot&#39;s default &#39;base model&#39;)</td>
+              <td class="num tabular-nums mono" data-label="Context window">400K tokens</td>
+              <td data-label="Notes"><span class="limit-desc">Most current models (including Claude Sonnet 5) can opt into a 1M extended window in VS Code/Copilot CLI specifically, at higher AI-credit cost.</span></td>
+            </tr>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">OA</span>
+                  <span>
+                    <a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">GPT-5.6 Sol</td>
+              <td class="num tabular-nums mono" data-label="Context window">272K tokens</td>
+              <td data-label="Notes"><span class="limit-desc">Capped well below GPT-5.6&#39;s 1.05M native API window. An opt-in config override can raise it to 1M, but prompts past 272K trigger a pricing multiplier either way.</span></td>
+            </tr>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">CU</span>
+                  <span>
+                    <a href="./tools/cursor.html" class="tool-name" style="text-decoration:none;color:inherit">Cursor</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">Composer 2.5</td>
+              <td class="num tabular-nums mono" data-label="Context window">200K tokens</td>
+              <td data-label="Notes"><span class="limit-desc">Cursor caps most models below their vendor-native max — even Gemini&#39;s ~1M window shows as 200K by default; a separate 1M &#39;Max context&#39; tier exists for several models at extra cost.</span></td>
+            </tr>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">AQ</span>
+                  <span>
+                    <a href="./tools/amazon-q-developer.html" class="tool-name" style="text-decoration:none;color:inherit">Amazon Q Developer</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">Claude Sonnet 4</td>
+              <td class="num tabular-nums mono" data-label="Context window">200K tokens</td>
+              <td data-label="Notes"><span class="limit-desc">AWS caps this explicitly in its own docs. Anthropic&#39;s since-retired 1M beta for Sonnet 4 no longer applies, so there&#39;s no gap between Q Developer&#39;s cap and the model&#39;s own current limit.</span></td>
+            </tr>
+            <tr>
+              <td data-label="Tool">
+                <div class="tool-cell">
+                  <span class="tool-mark">WS</span>
+                  <span>
+                    <a href="./tools/windsurf.html" class="tool-name" style="text-decoration:none;color:inherit">Windsurf</a>
+                  </span>
+                </div>
+              </td>
+              <td data-label="Flagship model">SWE-1.7</td>
+              <td class="num tabular-nums mono" data-label="Context window">Not published</td>
+              <td data-label="Notes"><span class="limit-desc">Cognition has never stated an exact figure for its in-house model; third-party estimates guess ~256K. External frontier models (Claude, GPT, Gemini) are selectable, but docs don’t say whether their native windows pass through uncapped.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="wrap">
