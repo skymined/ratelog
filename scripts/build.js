@@ -85,6 +85,8 @@ function head({ title, description, canonicalPath, jsonLd, ogImage }) {
   <link rel="stylesheet" href="/style.css" />
   <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <!-- Google Search Console: paste the verification content from search.google.com/search-console (Add property → HTML tag), then uncomment. -->
+  <!-- <meta name="google-site-verification" content="REPLACE_ME" /> -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="${esc(SITE.name)}" />
   <meta property="og:title" content="${esc(title)}" />
@@ -149,6 +151,7 @@ function footer() {
             <ul>
               <li><a href="/changelog.html">Changelog</a></li>
               <li><a href="/about.html">About &amp; methodology</a></li>
+              <li><a href="/privacy.html">Privacy policy</a></li>
               <li><a href="/sitemap.xml">Sitemap</a></li>
             </ul>
           </div>
@@ -173,6 +176,19 @@ ${head({ title, description, canonicalPath, jsonLd, ogImage })}
 ${header(active)}
 ${body}
 ${footer()}
+<!--
+  Google Analytics 4 — create a property at analytics.google.com, then
+  replace G-XXXXXXXXXX below with the real measurement ID and uncomment.
+-->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
 </body>
 </html>
 `;
@@ -587,6 +603,32 @@ function aboutPage() {
   });
 }
 
+function privacyPage() {
+  const body = `<section class="hero" style="border-bottom:none;padding-bottom:8px">
+    <div class="wrap">
+      <span class="eyebrow">privacy</span>
+      <h1 style="font-size:clamp(1.9rem,3.4vw,2.8rem)">Privacy policy.</h1>
+    </div>
+  </section>
+  <section class="section" style="border-top:1px solid var(--line)">
+    <div class="wrap" style="max-width:72ch">
+      <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7">RateLog doesn’t have user accounts, doesn’t ask you for any personal information, and doesn’t sell data — there isn’t any to sell. This page explains the little that touches your browser when you visit.</p>
+      <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7"><strong style="color:var(--ink)">Analytics.</strong> This site uses Google Analytics to see aggregate traffic (which pages get read, roughly where visitors come from) — never anything that identifies you personally. Google Analytics sets cookies to do this; you can block them with your browser’s cookie settings or an extension like uBlock Origin without losing any site functionality.</p>
+      <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7"><strong style="color:var(--ink)">Advertising.</strong> This site may show ads served by Google AdSense. Google and its partners use cookies to serve ads based on your visits here and elsewhere on the web. You can opt out of personalized advertising at <a href="https://adssettings.google.com" class="text-link">adssettings.google.com</a>, or opt out of third-party vendor cookies generally via <a href="https://www.aboutads.info/choices" class="text-link">aboutads.info/choices</a>.</p>
+      <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7"><strong style="color:var(--ink)">Server logs.</strong> Like any web host, GitHub Pages (where this site is hosted) logs standard request data (IP address, browser type, page requested) for security and operational purposes. RateLog itself never sees or stores this.</p>
+      <p style="color:var(--ink-soft);font-size:1.05rem;line-height:1.7">Questions about this policy: <a href="mailto:hello@ratelog.dev" class="text-link">hello@ratelog.dev</a>. Last updated ${SITE.lastVerified}.</p>
+    </div>
+  </section>`;
+
+  return page({
+    title: `Privacy policy — ${SITE.name}`,
+    description: 'What RateLog collects (almost nothing) and how Google Analytics / AdSense cookies work if enabled.',
+    canonicalPath: '/privacy.html',
+    active: '/privacy.html',
+    body,
+  });
+}
+
 // ---------------------------------------------------------------------------
 // write
 // ---------------------------------------------------------------------------
@@ -615,7 +657,7 @@ function write(relPath, content) {
 }
 
 function buildSitemap() {
-  const urls = ['/', '/changelog.html', '/about.html', ...tools.map((t) => `/tools/${t.slug}.html`), ...comparisons.map(([a, b]) => `/compare/${[a, b].sort().join('-vs-')}.html`)];
+  const urls = ['/', '/changelog.html', '/about.html', '/privacy.html', ...tools.map((t) => `/tools/${t.slug}.html`), ...comparisons.map(([a, b]) => `/compare/${[a, b].sort().join('-vs-')}.html`)];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE.url}${u}</loc></url>`).join('\n')}\n</urlset>\n`;
   write('sitemap.xml', body);
 }
@@ -628,6 +670,7 @@ function run() {
   write('index.html', homepage());
   write('changelog.html', changelogPage());
   write('about.html', aboutPage());
+  write('privacy.html', privacyPage());
   for (const t of tools) write(`tools/${t.slug}.html`, toolPage(t));
   for (const [a, b] of comparisons) {
     const [x, y] = [a, b].sort();
