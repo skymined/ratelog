@@ -1,0 +1,275 @@
+// Canonical data source for RateLog. Node-side only (required by scripts/build.js).
+// Every number here traces to an official source in each tool's `sources` array.
+// Populated from a research pass (WebSearch + WebFetch, independently verified in
+// a second pass) completed 2026-08-20. See README.md "Updating data" before editing.
+
+const SITE = {
+  name: 'RateLog',
+  tagline: 'AI coding tool pricing & limits, tracked like a changelog.',
+  url: 'https://skymined.github.io/ratelog',
+  lastVerified: '2026-08-20',
+};
+
+const tools = [
+  {
+    slug: 'claude-code',
+    name: 'Claude Code',
+    vendor: 'Anthropic',
+    mark: 'CC',
+    category: 'Terminal agent',
+    officialUrl: 'https://code.claude.com/docs/en/costs',
+    pricingUrl: 'https://claude.com/pricing',
+    summary: "Anthropic's agentic coding CLI. Not available on the free claude.ai plan — the cheapest way in is a Pro subscription, or pay-as-you-go through the API (Claude Sonnet 5 at $2/$10 per million input/output tokens).",
+    headlinePlanIndex: 0,
+    hasFreeTier: false,
+    freeTier: null,
+    plans: [
+      { name: 'Pro', priceMonthly: 20, priceYearly: 17, limit: "Shared pool across Claude Code and claude.ai chat, gated by a 5-hour rolling window plus a 7-day window. Anthropic doubled the 5-hour cap in May 2026 and hasn't republished exact message/hour numbers since — treat any specific count you see as approximate, not current.", target: 'Individual devs, light-to-moderate use', notes: '$20/mo, or $17/mo billed annually.' },
+      { name: 'Max 5x', priceMonthly: 100, priceYearly: null, limit: "5× the Pro pool, same 5-hour + weekly structure. Anthropic's last published figures (Aug 2025) were ~140–280 Sonnet-hours/week plus ~15–35 Opus-hours/week — since increased by the May 2026 doubling but not re-published exactly.", target: 'Daily heavy use', notes: 'Monthly billing only, no annual discount advertised.' },
+      { name: 'Max 20x', priceMonthly: 200, priceYearly: null, limit: "20× the Pro pool, same window structure. Last published figures: ~240–480 Sonnet-hours/week plus ~24–40 Opus-hours/week — since increased but not re-published exactly.", target: 'Power users, very heavy use', notes: 'Monthly billing only.' },
+      { name: 'Team Standard', priceMonthly: 25, priceYearly: 20, limit: 'Per-seat allowance roughly comparable to Pro, same 5-hour + weekly structure, shared with claude.ai chat for that seat.', target: 'Small-to-mid teams', notes: '$25/seat/mo, or $20/seat/mo billed annually.' },
+      { name: 'Team Premium', priceMonthly: 125, priceYearly: 100, limit: 'Per-seat allowance comparable to Max, same window structure.', target: 'Teams needing Max-level capacity', notes: '$125/seat/mo, or $100/seat/mo billed annually.' },
+      { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: "Seat-based allowance by default (Standard or Premium tier); admins can enable pay-as-you-go 'usage credits' beyond the seat allowance at API rates. Custom limits available on request.", target: 'Large orgs needing compliance controls', notes: 'Contact sales. Adds SSO, SCIM, audit logs, spend controls.' },
+    ],
+    changes: [
+      { date: '2026-08-10', type: 'up', title: 'Sonnet 5 API pricing made permanent', description: "Anthropic made Claude Sonnet 5's introductory API price ($2/$10 per million input/output tokens) permanent, canceling a scheduled increase to $3/$15 that was set for 2026-09-01.", sourceUrl: 'https://platform.claude.com/docs/en/about-claude/pricing' },
+      { date: '2026-05-13', type: 'up', title: 'Weekly limits raised 50%', description: 'One week after the 5-hour doubling, Anthropic raised weekly Claude Code usage limits by 50% for Pro, Max, and Team plans. Framed as promotional, it has been extended repeatedly and is confirmed live through August 31, 2026.', sourceUrl: 'https://aicatchup.com/news/claude-code-weekly-limits-50-percent-promo' },
+      { date: '2026-05-06', type: 'up', title: '5-hour limits doubled', description: "Anthropic doubled Claude Code's 5-hour rate limits for Pro, Max, and Team plans (permanent) and removed a peak-hour usage reduction, enabled by new compute capacity from a deal giving Anthropic access to SpaceX's Colossus 1 data center.", sourceUrl: 'https://www.anthropic.com/news/higher-limits-spacex' },
+      { date: '2025-08-28', type: 'down', title: 'Weekly limits introduced for the first time', description: 'Anthropic stacked a new 7-day usage cap on top of the existing 5-hour window, citing 24/7 automated usage and account sharing/reselling by under 5% of subscribers. This was the structural change that created the current two-window system.', sourceUrl: 'https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/' },
+    ],
+    sources: [
+      { title: 'Claude Pricing', url: 'https://claude.com/pricing' },
+      { title: 'Claude Code: Manage costs effectively', url: 'https://code.claude.com/docs/en/costs' },
+      { title: 'What is the Max plan?', url: 'https://support.claude.com/en/articles/11049741-what-is-the-max-plan' },
+      { title: 'Anthropic API Pricing', url: 'https://platform.claude.com/docs/en/about-claude/pricing' },
+    ],
+  },
+
+  {
+    slug: 'github-copilot',
+    name: 'GitHub Copilot',
+    vendor: 'Microsoft / GitHub',
+    mark: 'GH',
+    category: 'IDE plugin',
+    officialUrl: 'https://github.com/features/copilot',
+    pricingUrl: 'https://github.com/features/copilot/plans',
+    summary: "Microsoft's IDE-embedded assistant, billed through a token-based 'AI Credits' system since June 2026 instead of flat monthly request quotas.",
+    headlinePlanIndex: 0,
+    hasFreeTier: true,
+    freeTier: 'Copilot Free — 2,000 code completions and 50 chat requests per month, limited agent mode, restricted model set (Claude Haiku 4.5, GPT-5 mini). Resets monthly.',
+    plans: [
+      { name: 'Copilot Pro', priceMonthly: 10, priceYearly: null, limit: 'Unlimited code completions. $15 in total monthly AI Credits (1,000 base + 500 bonus) for chat, agent mode, CLI, and code review — token-metered, no rollover. Extra usage beyond that is $0.01/credit.', target: 'Individual devs stepping up from Free', notes: 'Legacy annual subscribers from before June 2026 stay on the old flat 300 requests/month model until renewal.' },
+      { name: 'Copilot Pro+', priceMonthly: 39, priceYearly: null, limit: '$70 in total monthly AI Credits (3,900 base + 3,100 bonus) — about 4.7× Pro’s allowance. Broader model access, including Claude Opus.', target: 'Power users with heavy chat/agent use', notes: '' },
+      { name: 'Copilot Max', priceMonthly: 100, priceYearly: null, limit: '$200 in total monthly AI Credits (10,000 base + 10,000 bonus) — about 2.9× Pro+’s allowance. Priority access to new models.', target: 'Heavy, sustained agentic workflows', notes: 'Newest individual tier, introduced with the June 2026 billing overhaul.' },
+      { name: 'Copilot Business', priceMonthly: 19, priceYearly: null, limit: '1,900 AI Credits per user/month, pooled at the org level so unused credits can be used by teammates. No rollover.', target: 'Small/medium organizations', notes: 'Per user/month, billed to the org. Promotional bump to 3,000 credits/user/month for existing customers through Sept 1, 2026.' },
+      { name: 'Copilot Enterprise', priceMonthly: 39, priceYearly: null, limit: '3,900 AI Credits per user/month, pooled at the enterprise level, same reset rules as Business.', target: 'Large enterprises needing deep GitHub.com integration', notes: 'Includes everything in Business plus GitHub.com-specific integrations.' },
+    ],
+    changes: [
+      { date: '2026-06-01', type: 'neutral', title: 'Flat premium-request quotas replaced with AI Credits', description: 'GitHub replaced its flat monthly Premium Request quotas (e.g. 300/month for Pro) with a token-consumption-based "AI Credits" system (1 credit = $0.01) across all plans, and introduced a new top individual tier, Copilot Max, at $100/month. Total credit allowances ended up higher than sticker price once bonus credits are included, but billing is now metered rather than a flat predictable count.', sourceUrl: 'https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/' },
+    ],
+    sources: [
+      { title: 'GitHub Copilot · Plans & pricing', url: 'https://github.com/features/copilot/plans' },
+      { title: 'Usage-based billing for individuals', url: 'https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals' },
+      { title: 'Usage-based billing for organizations and enterprises', url: 'https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises' },
+    ],
+  },
+
+  {
+    slug: 'cursor',
+    name: 'Cursor',
+    vendor: 'Anysphere',
+    mark: 'CU',
+    category: 'Editor (fork)',
+    officialUrl: 'https://cursor.com',
+    pricingUrl: 'https://cursor.com/pricing',
+    summary: 'A VS Code fork with deep AI integration, billed through a monthly plan plus a metered pool of "other model" usage at API rates.',
+    headlinePlanIndex: 0,
+    hasFreeTier: true,
+    freeTier: "Hobby — full editor access with “limited” Agent requests and Tab completions. Cursor no longer publishes an exact number; check your own account dashboard for remaining quota.",
+    plans: [
+      { name: 'Pro', priceMonthly: 20, priceYearly: 16, limit: "Two monthly pools: a generous first-party model pool (Cursor's own models) plus at least $20 of “other model” (Claude/GPT/Gemini) usage at API rates. Unlimited Tab completions. No rollover.", target: 'Individual developers', notes: 'Replaced the old fixed "500 fast requests/month" model in June 2025.' },
+      { name: 'Pro+', priceMonthly: 60, priceYearly: 48, limit: 'Same two-pool structure with a $70 other-models pool — about 3× Pro’s agent limits.', target: 'Devs who regularly exhaust Pro', notes: '' },
+      { name: 'Ultra', priceMonthly: 200, priceYearly: 160, limit: 'Same structure with a $400 other-models pool — about 20× Pro’s agent limits, plus priority access to new features.', target: 'Power users running many parallel agents', notes: '' },
+      { name: 'Teams Standard', priceMonthly: 40, priceYearly: 32, limit: 'Per-seat first-party + other-model pools on a shared team billing cycle.', target: 'Small-to-mid teams', notes: 'Includes SSO, usage analytics, privacy mode. Same price as before June 2026 but with materially more included usage.' },
+      { name: 'Teams Premium', priceMonthly: 120, priceYearly: 96, limit: "5× a Teams Standard seat's usage at 3× the price.", target: 'Teams with heavy, all-day usage', notes: 'New seat tier introduced June 2026; teams can mix Standard and Premium seats.' },
+      { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'Custom, pooled usage across the org.', target: 'Large orgs needing procurement/compliance controls', notes: 'Adds SCIM, invoice billing, audit logs, RBAC.' },
+    ],
+    changes: [
+      { date: '2026-06-01', type: 'up', title: 'Teams split into two seat tiers', description: 'Standard keeps its $40/seat price but gains materially more included usage, split into first-party and third-party model pools. A new $120/seat Premium tier (5× Standard’s usage) was added for heavy daily users.', sourceUrl: 'https://cursor.com/blog/teams-pricing-june-2026' },
+      { date: '2025-08-12', type: 'neutral', title: 'Teams moved to usage-based billing', description: 'Teams moved from a fixed per-request cost (250 included requests/month/seat, $0.08 per extra request) to variable, API-rate usage billing.', sourceUrl: 'https://cursor.com/blog/aug-2025-pricing-teams' },
+      { date: '2025-06-16', type: 'neutral', title: 'Pro moved off flat "500 fast requests"', description: "Cursor dropped the old flat ‘500 fast requests/month’ Pro model for usage-based pricing: Pro now includes at least $20/month of inference at API prices and unlimited use of the 'Auto' model. Also launched the $200/month Ultra tier.", sourceUrl: 'https://cursor.com/blog/new-tier' },
+    ],
+    sources: [
+      { title: 'Cursor · Pricing', url: 'https://cursor.com/pricing' },
+      { title: 'Models & Pricing | Cursor Docs', url: 'https://cursor.com/docs/models-and-pricing' },
+      { title: 'Usage and limits | Cursor Docs', url: 'https://cursor.com/help/models-and-usage/usage-limits' },
+    ],
+  },
+
+  {
+    slug: 'windsurf',
+    name: 'Windsurf',
+    vendor: 'Cognition',
+    mark: 'WS',
+    category: 'Editor (fork)',
+    officialUrl: 'https://windsurf.com',
+    pricingUrl: 'https://windsurf.com/pricing',
+    summary: "Cognition's AI-native IDE — formerly independent, acquired by Cognition in 2025 and rebranded “Devin Desktop” in June 2026, unifying it with Cognition's cloud agent Devin. windsurf.com now redirects to devin.ai.",
+    headlinePlanIndex: 0,
+    hasFreeTier: true,
+    freeTier: "A “light” agent quota that refreshes daily and weekly (Cognition doesn't publish an exact number), limited model access, unlimited Tab completions.",
+    plans: [
+      { name: 'Pro', priceMonthly: 20, priceYearly: null, limit: "Token-based quota refreshing daily and weekly. Cognition's own free SWE-series models don't count against it; frontier model access (Claude/GPT/Gemini) is included.", target: 'Individual devs using agents daily', notes: 'Was $15/mo before March 2026; pre-existing subscribers reported grandfathered at that price.' },
+      { name: 'Max', priceMonthly: 200, priceYearly: null, limit: "Same daily+weekly mechanism as Pro but substantially higher — Cognition's own published ranges put it roughly 5–6× Pro's message allowance per period.", target: 'Power users with heavy daily/weekly usage', notes: 'Introduced March 2026 alongside the credits→quota switch.' },
+      { name: 'Teams', priceMonthly: null, priceYearly: null, limit: 'Each full seat gets its own Pro-equivalent daily+weekly quota (not pooled across the team).', target: 'Small-to-mid engineering teams', notes: "Reports on the exact price conflict as of this check — Cognition's March 2026 announcement stated a flat $40/seat/mo, but several secondary sources instead describe an $80/mo base fee plus $40/seat. devin.ai blocked direct re-verification (HTTP 429) on our last check; treat this figure as approximate until confirmed." },
+      { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'Custom, contact sales. Some sources describe billing in "Agent Compute Units" for newer contracts.', target: 'Large orgs needing SSO / compliance', notes: 'Pricing is contested across sources (see openQuestions in our research notes) — treat any specific figure you see elsewhere as unconfirmed.' },
+    ],
+    changes: [
+      { date: '2026-06-02', type: 'neutral', title: 'Rebranded to "Devin Desktop"', description: "Cognition rebranded the Windsurf IDE as “Devin Desktop,” unifying it with the cloud agent Devin under one product and opening it to third-party agents via the open Agent Client Protocol.", sourceUrl: 'https://devin.ai/blog/windsurf-is-now-devin-desktop' },
+      { date: '2026-03-19', type: 'down', title: 'Flat credits replaced with daily/weekly quotas; Pro price up', description: 'Cognition replaced flat monthly credit-pool billing with a token-based system giving daily + weekly usage allowances, raised Pro from $15→$20/mo and Teams from $30→$40/seat/mo (both reportedly grandfathered for existing subscribers), and launched a new $200/mo Max tier.', sourceUrl: 'https://docs.devin.ai/desktop/accounts/quota' },
+    ],
+    sources: [
+      { title: 'Quota-Based Usage — Devin/Windsurf docs', url: 'https://docs.devin.ai/desktop/accounts/quota' },
+      { title: 'Plans and Usage — Devin/Windsurf docs', url: 'https://docs.devin.ai/desktop/accounts/usage' },
+      { title: 'windsurf.com/pricing', url: 'https://windsurf.com/pricing' },
+    ],
+  },
+
+  {
+    slug: 'openai-codex',
+    name: 'ChatGPT / Codex',
+    vendor: 'OpenAI',
+    mark: 'OA',
+    category: 'Terminal agent',
+    officialUrl: 'https://openai.com/codex/',
+    pricingUrl: 'https://openai.com/chatgpt/pricing/',
+    summary: "OpenAI's coding agent, accessed through Codex CLI, an IDE extension, or ChatGPT web. Usage is tied to your ChatGPT plan and billed via token-based credits at API rates since April 2026.",
+    headlinePlanIndex: 1,
+    hasFreeTier: true,
+    freeTier: 'Free — unlimited text chat with the lightweight GPT-5.6 Luna model (as of Aug 2026). Codex is included but limited to "quick coding tasks" with no published numeric cap.',
+    plans: [
+      { name: 'Go', priceMonthly: 8, priceYearly: null, limit: 'More messages/uploads than Free (no exact numbers published); Codex usable for lightweight coding tasks.', target: 'Casual users wanting more than Free', notes: 'Ad-supported in rollout markets (US, UK, Australia, New Zealand, Canada).' },
+      { name: 'Plus', priceMonthly: 20, priceYearly: null, limit: 'Codex CLI/IDE/cloud tasks share a rolling 5-hour window plus a separate weekly cap, billed via token-based credits at API rates. Roughly 10–2,000 messages per 5-hour window depending on model chosen.', target: 'Individual power users', notes: 'The 5-hour window was briefly suspended July 12–30, 2026 during a demand spike, then restored.' },
+      { name: 'Pro (5x)', priceMonthly: 100, priceYearly: null, limit: '5× the Plus rate-limit pool, same window structure. ~1–2.5 hours of Voice per period; "maximum" Codex tasks.', target: 'Heavy individual users doing research and coding', notes: '' },
+      { name: 'Pro (20x)', priceMonthly: 200, priceYearly: null, limit: '20× the Plus pool, same window structure. Unlimited Voice and faster image generation; "maximum" Codex tasks and deep research.', target: 'Top-tier individual usage', notes: '' },
+      { name: 'Business Standard', priceMonthly: 25, priceYearly: 20, limit: 'Per-seat limits comparable to Plus (5-hour + weekly window, token-based credits). Admins can buy pooled extra usage.', target: 'Small/medium teams', notes: '2-seat minimum. Cut from $30/$25 to $25/$20 in April 2026.' },
+      { name: 'Business Premium', priceMonthly: 125, priceYearly: 100, limit: "5× a Standard seat's usage with no 5-hour window.", target: 'Teams wanting heavier per-seat usage', notes: 'Rolling out as of mid-2026, may not be universally available yet.' },
+      { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'No public numeric limit — negotiated per contract.', target: 'Large organizations', notes: 'Third-party procurement reports suggest roughly $45–75/seat/month; unconfirmed by OpenAI.' },
+    ],
+    changes: [
+      { date: '2026-08-06', type: 'up', title: 'Free-tier chat cap removed', description: 'GPT-5.6 Luna became the default Free-tier model, and OpenAI began removing the numeric cap on Free-tier text chats entirely, moving toward "unlimited" (subject to abuse guardrails).', sourceUrl: 'https://openai.com/chatgpt/pricing/' },
+      { date: '2026-04-02', type: 'up', title: 'Business seat price cut', description: 'Cut ChatGPT Business per-seat price about $5: from $30/mo ($25 annual) down to $25/mo ($20 annual).', sourceUrl: 'https://help.openai.com/en/articles/8792828-what-is-chatgpt-business' },
+      { date: '2026-04-02', type: 'neutral', title: 'Codex switched to token-based credits', description: 'Switched Codex from flat per-message billing to token-based credits at API rates for Plus, Pro, and Business — cost now scales with tokens used instead of one flat unit per task.', sourceUrl: 'https://help.openai.com/en/articles/20001106-codex-rate-card' },
+    ],
+    sources: [
+      { title: 'ChatGPT Pricing', url: 'https://openai.com/chatgpt/pricing/' },
+      { title: 'Using Codex with your ChatGPT plan', url: 'https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan' },
+      { title: 'Codex rate card', url: 'https://help.openai.com/en/articles/20001106-codex-rate-card' },
+    ],
+  },
+
+  {
+    slug: 'gemini-cli',
+    name: 'Gemini CLI / Code Assist',
+    vendor: 'Google',
+    mark: 'GM',
+    category: 'Terminal agent',
+    officialUrl: 'https://codeassist.google/',
+    pricingUrl: 'https://codeassist.google/products/business',
+    summary: "Google's coding assistant for Cloud/Workspace teams. Individual free access to Gemini CLI ended on June 18, 2026 — it's now priced per-seat for teams, or pay-per-token via your own Gemini API key.",
+    headlinePlanIndex: 0,
+    hasFreeTier: false,
+    freeTier: "Discontinued for individuals on June 18, 2026 — Gemini CLI and the Code Assist IDE extensions stopped serving free, Pro, and Ultra-subscriber requests. The successor for individuals is Google's separate “Antigravity CLI”; the only way to keep running Gemini CLI itself is to supply your own paid Gemini API key.",
+    plans: [
+      { name: 'Code Assist Standard (annual)', priceMonthly: 19, priceYearly: 228, limit: '1,500 requests/user/day (agent + CLI combined), 6,000 completion requests/day, 960 chat requests/day, 2 req/sec. Resets daily.', target: 'Teams/businesses, paid upfront annually', notes: '30-day free trial for up to 50 licenses.' },
+      { name: 'Code Assist Standard (monthly)', priceMonthly: 22.8, priceYearly: null, limit: 'Same as annual Standard: 1,500 req/day combined.', target: 'Teams wanting pay-as-you-go billing', notes: '' },
+      { name: 'Code Assist Enterprise (annual)', priceMonthly: 45, priceYearly: 540, limit: '2,000 requests/user/day, 6,000 completion req/day, 2 req/sec, code customization across up to 20,000 repos, 1M-token local codebase context.', target: 'Larger enterprises needing private-repo code customization', notes: '' },
+      { name: 'Code Assist Enterprise (monthly)', priceMonthly: 54, priceYearly: null, limit: 'Same as annual Enterprise: 2,000 req/day.', target: 'Enterprises wanting pay-as-you-go billing', notes: '' },
+      { name: 'Individual (pay-per-token API key)', priceMonthly: null, priceYearly: null, limit: "Free API tier has no published flat rate limit (shown only in your AI Studio dashboard). Paid Tier 1 unlocks at any billing link ($10/10-min spend cap, $250 total); Tier 2 needs $100+ spent ($200/10-min, $2,000 cap); Tier 3 needs $1,000+ spent ($200/10-min, $20k–100k+ cap).", target: 'Individuals since the June 2026 free-tier shutdown', notes: 'Not a subscription — usage-based, billed through Google AI Studio/Cloud.' },
+    ],
+    changes: [
+      { date: '2026-06-18', type: 'down', title: 'Free individual access ended entirely', description: 'Gemini CLI and the Code Assist IDE extensions stopped serving requests for the free individual tier and for Google AI Pro/Ultra subscribers — ending free access entirely for individuals, who must now use the successor "Antigravity CLI" or their own paid API key.', sourceUrl: 'https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/' },
+      { date: '2026-05-19', type: 'neutral', title: 'Google AI Ultra price cut (no longer grants CLI quota)', description: 'Google cut the Google AI Ultra subscription price from $249.99/mo to $99.99/mo (5× Pro usage), adding a $199.99/mo tier (20× Pro usage) — though after June 18 this subscription no longer grants any Gemini CLI quota at all.', sourceUrl: 'https://codeassist.google/products/business' },
+    ],
+    sources: [
+      { title: 'Gemini Code Assist for teams and businesses', url: 'https://codeassist.google/products/business' },
+      { title: 'Gemini Code Assist quotas', url: 'https://docs.cloud.google.com/gemini/docs/quotas' },
+      { title: 'Transitioning Gemini CLI to Antigravity CLI', url: 'https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/' },
+    ],
+  },
+
+  {
+    slug: 'amazon-q-developer',
+    name: 'Amazon Q Developer',
+    vendor: 'Amazon Web Services',
+    mark: 'AQ',
+    category: 'IDE plugin',
+    officialUrl: 'https://aws.amazon.com/q/developer/',
+    pricingUrl: 'https://aws.amazon.com/q/developer/pricing/',
+    summary: "AWS's IDE/CLI coding assistant. AWS announced in April 2026 that it's sunsetting Q Developer's IDE plugins and paid tier in favor of a new agentic IDE, Kiro.",
+    headlinePlanIndex: 0,
+    hasFreeTier: true,
+    freeTier: 'Free Tier (AWS Builder ID or IAM) — 50 agentic requests/month (chat + agentic coding, IDE+CLI combined), 1,000 lines/month for Java code transformation, unlimited inline completions. New signups blocked since May 15, 2026; existing accounts keep working.',
+    plans: [
+      { name: 'Pro Tier', priceMonthly: 19, priceYearly: null, limit: "10,000 inference calls/month (~1,000 requests) per user, 4,000 lines/month for Java transformation (overage $0.003/line), separate 1M lines/month .NET transformation quota. Agentic-request overage isn't purchasable — you wait for the next month.", target: 'Teams needing admin controls, IP indemnity', notes: 'New Pro signups also blocked since May 15, 2026; existing subscribers keep this pricing until end of support (April 30, 2027).' },
+    ],
+    changes: [
+      { date: '2026-04-30', type: 'down', title: 'Product sunset announced', description: 'AWS announced Amazon Q Developer’s IDE plugins and paid Pro subscription are being sunset in favor of a new agentic IDE, "Kiro" — new Free Tier and Pro signups blocked from May 15, 2026, full end of support April 30, 2027.', sourceUrl: 'https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/' },
+    ],
+    sources: [
+      { title: 'Amazon Q Developer Pricing', url: 'https://aws.amazon.com/q/developer/pricing/' },
+      { title: 'Amazon Q Developer FAQs', url: 'https://aws.amazon.com/q/developer/faqs/' },
+      { title: 'End-of-support announcement', url: 'https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/' },
+    ],
+  },
+
+  {
+    slug: 'jetbrains-ai',
+    name: 'JetBrains AI Assistant',
+    vendor: 'JetBrains',
+    mark: 'JB',
+    category: 'IDE plugin',
+    officialUrl: 'https://www.jetbrains.com/ai-ides/',
+    pricingUrl: 'https://www.jetbrains.com/ai-ides/buy/',
+    summary: "JetBrains' AI layer across its IDEs (and the Junie coding agent), billed through a credit system where 1 AI Credit ≈ $1 of underlying model usage.",
+    headlinePlanIndex: 0,
+    hasFreeTier: true,
+    freeTier: 'AI Free — 3 AI Credits per 30 days (no top-ups). Local/on-device completions are unlimited and don’t use credits. Unavailable on free Community-edition IDEs.',
+    plans: [
+      { name: 'AI Pro (Individual)', priceMonthly: 10, priceYearly: 100, limit: '10 AI Credits per 30 days (1 credit ≈ 10 AI Chat requests, 40 in-editor completions, or 25 explanation requests). Resets 30 days from activation, not your billing date.', target: 'Individual professional developers', notes: 'Top-ups available, valid 12 months.' },
+      { name: 'AI Ultimate (Individual)', priceMonthly: 30, priceYearly: 300, limit: '35 AI Credits per 30 days ($30 plan + $5 bonus), or 420 credits/year on the annual plan. Junie’s agent burns credits much faster than chat — each turn is a long multi-step request.', target: 'Individual power users / heavy Junie agent use', notes: '' },
+      { name: 'AI Pro (Org seat)', priceMonthly: 20, priceYearly: null, limit: '20 AI Credits per 30 days per seat, same $1=1 credit mechanics.', target: 'Teams licensing seats centrally', notes: '' },
+      { name: 'AI Ultimate (Org seat)', priceMonthly: 60, priceYearly: null, limit: '70 AI Credits per 30 days per seat.', target: 'Teams needing Ultimate-level capacity', notes: '' },
+      { name: 'AI Enterprise', priceMonthly: 60, priceYearly: null, limit: "Quota described only as “on par with AI Ultimate or higher” — exact number not yet published; JetBrains says the enterprise quota model is still being finalized.", target: 'Large organizations (org-only)', notes: 'Top-ups not yet available on this tier.' },
+    ],
+    changes: [
+      { date: '2026-07-07', type: 'up', title: 'Org credits extended to 12-month validity', description: 'Announced transitioning org/business AI licensing from fixed seat quotas toward on-demand credits with validity extended from 30 days to 12 months, rolling out through July–August 2026.', sourceUrl: 'https://blog.jetbrains.com/blog/2026/07/07/jetbrains-ai-for-teams-and-organizations-from-fragmented-ai-usage-to-coordinated-software-development/' },
+      { date: '2025-08-25', type: 'down', title: 'Quotas tied to plan price, shrinking for heavy users', description: "Replaced its opaque per-plan quota with a rule that each plan's AI-Credit allowance equals its USD price (plus a small bonus on Ultimate). JetBrains acknowledged quotas were shrinking for a meaningful share of users, especially heavy Junie agent users, since old quotas had been set unsustainably high as a promotional measure.", sourceUrl: 'https://blog.jetbrains.com/ai/2025/08/a-simpler-more-transparent-model-for-ai-quotas/' },
+    ],
+    sources: [
+      { title: 'JetBrains AI plans and usage', url: 'https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html' },
+      { title: 'A Simpler, More Transparent Model for AI Quotas', url: 'https://blog.jetbrains.com/ai/2025/08/a-simpler-more-transparent-model-for-ai-quotas/' },
+    ],
+  },
+];
+
+// Every tool must appear in at least one pair here — toolPage() only links to
+// comparisons listed in this array, so an omitted tool gets zero (not 404)
+// compare links instead of dead ones.
+const comparisons = [
+  ['claude-code', 'cursor'],
+  ['claude-code', 'github-copilot'],
+  ['cursor', 'github-copilot'],
+  ['claude-code', 'windsurf'],
+  ['github-copilot', 'windsurf'],
+  ['claude-code', 'openai-codex'],
+  ['github-copilot', 'openai-codex'],
+  ['github-copilot', 'jetbrains-ai'],
+  ['github-copilot', 'amazon-q-developer'],
+  ['claude-code', 'jetbrains-ai'],
+  ['claude-code', 'amazon-q-developer'],
+  ['claude-code', 'gemini-cli'],
+  ['github-copilot', 'gemini-cli'],
+];
+
+module.exports = { SITE, tools, comparisons };

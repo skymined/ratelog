@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Code vs Windsurf: pricing &amp; usage limits compared — RateLog</title>
+  <meta name="description" content="Claude Code vs Windsurf head-to-head: current plan prices and exact usage limits, sourced from official docs and updated as either tool changes." />
+  <link rel="canonical" href="https://skymined.github.io/ratelog/compare/claude-code-vs-windsurf.html" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../style.css" />
+  <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RateLog" />
+  <meta property="og:title" content="Claude Code vs Windsurf: pricing &amp; usage limits compared — RateLog" />
+  <meta property="og:description" content="Claude Code vs Windsurf head-to-head: current plan prices and exact usage limits, sourced from official docs and updated as either tool changes." />
+  <meta property="og:url" content="https://skymined.github.io/ratelog/compare/claude-code-vs-windsurf.html" />
+  <meta property="og:image" content="https://skymined.github.io/ratelog/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Claude Code vs Windsurf: pricing &amp; usage limits compared — RateLog" />
+  <meta name="twitter:description" content="Claude Code vs Windsurf head-to-head: current plan prices and exact usage limits, sourced from official docs and updated as either tool changes." />
+  <script>
+    (function () {
+      var saved = localStorage.getItem('ratelog-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  
+</head>
+<body>
+<header class="site-header">
+    <div class="wrap">
+      <a href="../" class="logo">ratelog<span class="dot">.</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../" aria-current="page">Compare</a>
+        <a href="../changelog.html">Changelog</a>
+        <a href="../about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" type="button"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+<section class="vs-header">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:center;gap:20px">
+      <span class="vs-name">Claude Code</span>
+      <span class="vs-x">vs</span>
+      <span class="vs-name">Windsurf</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">side by side</span><h2>Headline plans compared</h2></div></div>
+      <div class="plan-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="plan-card">
+          <div class="tool-cell" style="margin-bottom:14px"><span class="tool-mark">CC</span><span><span class="tool-name">Claude Code</span><span class="tool-vendor" style="display:block">Anthropic</span></span></div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">$20<span>/mo</span></div>
+          <div class="plan-limit">Shared pool across Claude Code and claude.ai chat, gated by a 5-hour rolling window plus a 7-day window. Anthropic doubled the 5-hour cap in May 2026 and hasn&#39;t republished exact message/hour numbers since — treat any specific count you see as approximate, not current.</div>
+          <div class="plan-target">Individual devs, light-to-moderate use</div>
+          <div style="margin-top:14px"><a href="../tools/claude-code.html" class="text-link" style="font-size:13px">Full breakdown →</a></div>
+        </div>
+        <div class="plan-card">
+          <div class="tool-cell" style="margin-bottom:14px"><span class="tool-mark">WS</span><span><span class="tool-name">Windsurf</span><span class="tool-vendor" style="display:block">Cognition</span></span></div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">$20<span>/mo</span></div>
+          <div class="plan-limit">Token-based quota refreshing daily and weekly. Cognition&#39;s own free SWE-series models don&#39;t count against it; frontier model access (Claude/GPT/Gemini) is included.</div>
+          <div class="plan-target">Individual devs using agents daily</div>
+          <div style="margin-top:14px"><a href="../tools/windsurf.html" class="text-link" style="font-size:13px">Full breakdown →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">recent moves</span><h2>Who changed what, most recently</h2></div></div>
+      <div class="card-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="info-card"><h3>Claude Code</h3><p><span class="badge-diff up">↑ 10 days ago</span> &nbsp;Sonnet 5 API pricing made permanent</p></div>
+        <div class="info-card"><h3>Windsurf</h3><p><span class="badge-diff neutral">• 3 months ago</span> &nbsp;Rebranded to &quot;Devin Desktop&quot;</p></div>
+      </div>
+    </div>
+  </section>
+<footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="../" class="logo">ratelog<span class="dot">.</span></a>
+          <p class="footer-note">Independent tracker of AI coding assistant pricing and usage limits. Not affiliated with Anthropic, GitHub, Cursor, Cognition, OpenAI, Google, AWS, or JetBrains. Figures verified against official sources — see each tool page for citations and the date last checked.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h5>Tools</h5>
+            <ul>
+              <li><a href="../tools/claude-code.html">Claude Code</a></li>
+              <li><a href="../tools/github-copilot.html">GitHub Copilot</a></li>
+              <li><a href="../tools/cursor.html">Cursor</a></li>
+              <li><a href="../tools/windsurf.html">Windsurf</a></li>
+              <li><a href="../tools/openai-codex.html">ChatGPT / Codex</a></li>
+              <li><a href="../tools/gemini-cli.html">Gemini CLI / Code Assist</a></li>
+              <li><a href="../tools/amazon-q-developer.html">Amazon Q Developer</a></li>
+              <li><a href="../tools/jetbrains-ai.html">JetBrains AI Assistant</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Site</h5>
+            <ul>
+              <li><a href="../changelog.html">Changelog</a></li>
+              <li><a href="../about.html">About &amp; methodology</a></li>
+              <li><a href="../sitemap.xml">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Data last verified 2026-08-20</span>
+        <span>&copy; 2026 RateLog</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://skymined.github.io/ratelog/</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/changelog.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/about.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/claude-code.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/github-copilot.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/cursor.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/windsurf.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/openai-codex.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/gemini-cli.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/amazon-q-developer.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/jetbrains-ai.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-cursor.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-github-copilot.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/cursor-vs-github-copilot.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-windsurf.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/github-copilot-vs-windsurf.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-openai-codex.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/github-copilot-vs-openai-codex.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/github-copilot-vs-jetbrains-ai.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/amazon-q-developer-vs-github-copilot.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-jetbrains-ai.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/amazon-q-developer-vs-claude-code.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-gemini-cli.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/gemini-cli-vs-github-copilot.html</loc></url>
+</urlset>
