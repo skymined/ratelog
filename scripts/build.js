@@ -5,7 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { SITE, tools, comparisons } = require('../src/data/tools-data.js');
+const { SITE, tools, comparisons, arenaSource, models, popularitySources } = require('../src/data/tools-data.js');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -112,6 +112,7 @@ function themeToggleSvg() {
 function header(active) {
   const nav = [
     ['/', 'Compare'],
+    ['/leaderboard.html', 'Leaderboard'],
     ['/changelog.html', 'Changelog'],
     ['/about.html', 'About'],
   ];
@@ -149,6 +150,7 @@ function footer() {
           <div>
             <h5>Site</h5>
             <ul>
+              <li><a href="/leaderboard.html">Leaderboard</a></li>
               <li><a href="/changelog.html">Changelog</a></li>
               <li><a href="/about.html">About &amp; methodology</a></li>
               <li><a href="/privacy.html">Privacy policy</a></li>
@@ -578,6 +580,117 @@ function changelogPage() {
   });
 }
 
+function usedByBadges(modelName) {
+  const users = tools.filter((t) => t.contextWindow && t.contextWindow.model.includes(modelName));
+  if (!users.length) return '<span style="color:var(--ink-faint);font-size:12.5px">not a default model for any tracked tool</span>';
+  return users.map((t) => `<a href="/tools/${t.slug}.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">${esc(t.mark)}</a>`).join(' ');
+}
+
+function leaderboardPage() {
+  const byArena = [...models].sort((a, b) => a.arenaRank - b.arenaRank);
+
+  const benchmarkRows = byArena.map((m) => `<tr data-elo="${m.arenaElo}">
+          <td class="num mono" data-label="Rank">#${m.arenaRank}</td>
+          <td data-label="Model"><span class="plan-name">${esc(m.name)}</span><span class="tool-vendor" style="display:block">${esc(m.vendor)}</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">${m.arenaElo.toFixed(1)}</td>
+          <td data-label="Used by">${usedByBadges(m.name)}</td>
+          <td data-label="Vendor-claimed SWE-bench">${m.vendorClaimedSWEBench ? `<span style="color:var(--ink-soft);font-size:13px">${esc(m.vendorClaimedSWEBench)}</span>` : '<span style="color:var(--ink-faint)">—</span>'}</td>
+        </tr>`).join('\n        ');
+
+  const pricingRows = models.filter((m) => m.openRouter).sort((a, b) => a.openRouter.inputPerM - b.openRouter.inputPerM).map((m) => `<tr>
+          <td data-label="Model"><span class="plan-name">${esc(m.name)}</span></td>
+          <td class="num mono" data-label="Input $/M">$${m.openRouter.inputPerM.toFixed(2)}</td>
+          <td class="num mono" data-label="Output $/M">$${m.openRouter.outputPerM.toFixed(2)}</td>
+          <td class="num mono" data-label="Context">${formatTokens(m.contextWindowTokens)}</td>
+        </tr>`).join('\n        ');
+
+  const popularityCards = popularitySources.map((src) => `<div class="info-card" style="text-align:left">
+        <h3 style="margin-bottom:2px">${esc(src.name)}</h3>
+        <p class="mono" style="font-size:12px;color:var(--ink-faint);margin-bottom:2px">${esc(src.asOf)}</p>
+        <p style="font-size:12.5px;color:var(--ink-soft);margin-bottom:12px">${esc(src.metric)}</p>
+        <table style="width:100%;font-size:13.5px;margin-bottom:10px">
+          ${src.rows.map(([name, val]) => `<tr><td style="padding:3px 0;color:var(--ink)">${esc(name)}</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">${esc(val)}</td></tr>`).join('\n          ')}
+        </table>
+        <p style="font-size:12px;color:var(--ink-faint);line-height:1.5">${esc(src.note)}</p>
+        <a href="${esc(src.url)}" class="text-link" style="font-size:12.5px">source →</a>
+      </div>`).join('\n      ');
+
+  const body = `<section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">model leaderboard</span>
+      <h1>Which model is actually winning <em>— and how do we know?</em></h1>
+      <p class="lede">The tools above wrap <strong>models</strong>. This page ranks the models themselves — benchmark standing, real usage, and raw API cost — and is explicit about which numbers are independently verified versus what a vendor simply claims.</p>
+    </div>
+  </section>
+
+  <section class="section" id="benchmarks">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">${esc(arenaSource.name)} · ${esc(arenaSource.asOf)}</span><h2>Benchmark standing</h2><p>${esc(arenaSource.votes)} human-preference votes, independently fetched live — the only source in our research that's both current and covers every model below. SWE-bench Verified, the benchmark most press coverage cites, currently has <strong>zero independently-verified submissions</strong> for any of these 2026-generation models — what vendors headline as "SWE-bench Verified" scores are self-reported, shown here for reference but not as a ranked column.</p></div>
+      </div>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th class="num">Rank</th>
+              <th>Model</th>
+              <th class="num">Arena Elo</th>
+              <th>Used by</th>
+              <th>Vendor-claimed SWE-bench</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${benchmarkRows}
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;font-size:13px;color:var(--ink-faint)">${esc(arenaSource.note)} <a href="${esc(arenaSource.url)}" class="text-link">source →</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="popularity">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">real usage</span><h2>How popular is each tool, really?</h2><p>We didn't blend these into one fake ranking — the sources measure different things and disagree on order. Read them side by side: notice that the most-<em>used</em> tools (Copilot, ChatGPT) aren't always the most-<em>loved</em> ones.</p></div>
+      </div>
+      <div class="card-grid" style="grid-template-columns:repeat(3,1fr)">
+        ${popularityCards}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">openrouter · live · ${SITE.lastVerified}</span><h2>Raw model cost, if you bought it directly</h2><p>What each model costs per million tokens via <a href="https://openrouter.ai" class="text-link">OpenRouter</a> — a unified API reseller whose prices track the vendors' own direct API rates closely (not a markup channel). This is the number to compare against a wrapped tool's subscription price to see how much of what you're paying is the model versus the product built around it. Only the models we could confirm pricing for are listed.</p></div>
+      </div>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th class="num">Input $/M tokens</th>
+              <th class="num">Output $/M tokens</th>
+              <th class="num">Context</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${pricingRows}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>`;
+
+  return page({
+    title: `Model leaderboard — benchmark, usage & raw cost — ${SITE.name}`,
+    description: 'Which AI model actually wins on coding benchmarks, real developer usage, and raw per-token API cost — with independently-verified figures kept clearly separate from vendor-claimed ones.',
+    canonicalPath: '/leaderboard.html',
+    active: '/leaderboard.html',
+    body,
+  });
+}
+
 function aboutPage() {
   const body = `<section class="hero" style="border-bottom:none;padding-bottom:8px">
     <div class="wrap">
@@ -658,7 +771,7 @@ function write(relPath, content) {
 }
 
 function buildSitemap() {
-  const urls = ['/', '/changelog.html', '/about.html', '/privacy.html', ...tools.map((t) => `/tools/${t.slug}.html`), ...comparisons.map(([a, b]) => `/compare/${[a, b].sort().join('-vs-')}.html`)];
+  const urls = ['/', '/leaderboard.html', '/changelog.html', '/about.html', '/privacy.html', ...tools.map((t) => `/tools/${t.slug}.html`), ...comparisons.map(([a, b]) => `/compare/${[a, b].sort().join('-vs-')}.html`)];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE.url}${u}</loc></url>`).join('\n')}\n</urlset>\n`;
   write('sitemap.xml', body);
 }
@@ -672,6 +785,7 @@ function run() {
   write('changelog.html', changelogPage());
   write('about.html', aboutPage());
   write('privacy.html', privacyPage());
+  write('leaderboard.html', leaderboardPage());
   for (const t of tools) write(`tools/${t.slug}.html`, toolPage(t));
   for (const [a, b] of comparisons) {
     const [x, y] = [a, b].sort();

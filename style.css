@@ -457,12 +457,12 @@ table.ledger { min-width: 780px; }
    source order decides — this has to win). */
 @media (max-width: 860px) {
   .ledger-wrap { overflow-x: visible; }
-  table.ledger, table.ledger thead, table.ledger tbody, table.ledger tr, table.ledger td {
+  table.ledger, table.ledger tbody, table.ledger tr, table.ledger td {
     display: block;
     width: 100%;
     min-width: 0;
   }
-  .ledger thead { display: none; }
+  table.ledger thead { display: none; }
   .ledger tbody tr { padding: 18px 20px; }
   .ledger tbody tr:hover { background: transparent; }
   .ledger td { padding: 6px 0; font-size: 14px; }

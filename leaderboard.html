@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Model leaderboard — benchmark, usage &amp; raw cost — RateLog</title>
+  <meta name="description" content="Which AI model actually wins on coding benchmarks, real developer usage, and raw per-token API cost — with independently-verified figures kept clearly separate from vendor-claimed ones." />
+  <link rel="canonical" href="https://skymined.github.io/ratelog/leaderboard.html" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="stylesheet" href="./style.css" />
+  <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <!-- Google Search Console: paste the verification content from search.google.com/search-console (Add property → HTML tag), then uncomment. -->
+  <!-- <meta name="google-site-verification" content="REPLACE_ME" /> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RateLog" />
+  <meta property="og:title" content="Model leaderboard — benchmark, usage &amp; raw cost — RateLog" />
+  <meta property="og:description" content="Which AI model actually wins on coding benchmarks, real developer usage, and raw per-token API cost — with independently-verified figures kept clearly separate from vendor-claimed ones." />
+  <meta property="og:url" content="https://skymined.github.io/ratelog/leaderboard.html" />
+  <meta property="og:image" content="https://skymined.github.io/ratelog/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Model leaderboard — benchmark, usage &amp; raw cost — RateLog" />
+  <meta name="twitter:description" content="Which AI model actually wins on coding benchmarks, real developer usage, and raw per-token API cost — with independently-verified figures kept clearly separate from vendor-claimed ones." />
+  <script>
+    (function () {
+      var saved = localStorage.getItem('ratelog-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  
+</head>
+<body>
+<header class="site-header">
+    <div class="wrap">
+      <a href="./" class="logo">ratelog<span class="dot">.</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="./">Compare</a>
+        <a href="./leaderboard.html" aria-current="page">Leaderboard</a>
+        <a href="./changelog.html">Changelog</a>
+        <a href="./about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" type="button"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+<section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">model leaderboard</span>
+      <h1>Which model is actually winning <em>— and how do we know?</em></h1>
+      <p class="lede">The tools above wrap <strong>models</strong>. This page ranks the models themselves — benchmark standing, real usage, and raw API cost — and is explicit about which numbers are independently verified versus what a vendor simply claims.</p>
+    </div>
+  </section>
+
+  <section class="section" id="benchmarks">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Arena.ai Code/WebDev · 2026-08-19</span><h2>Benchmark standing</h2><p>596,892 human-preference votes, independently fetched live — the only source in our research that's both current and covers every model below. SWE-bench Verified, the benchmark most press coverage cites, currently has <strong>zero independently-verified submissions</strong> for any of these 2026-generation models — what vendors headline as "SWE-bench Verified" scores are self-reported, shown here for reference but not as a ranked column.</p></div>
+      </div>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th class="num">Rank</th>
+              <th>Model</th>
+              <th class="num">Arena Elo</th>
+              <th>Used by</th>
+              <th>Vendor-claimed SWE-bench</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-elo="1690.9">
+          <td class="num mono" data-label="Rank">#1</td>
+          <td data-label="Model"><span class="plan-name">Claude Opus 5</span><span class="tool-vendor" style="display:block">Anthropic</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1690.9</td>
+          <td data-label="Used by"><a href="./tools/kiro.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">KR</a></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-soft);font-size:13px">~96–97% (Anthropic’s own figure, not independently verified)</span></td>
+        </tr>
+        <tr data-elo="1674">
+          <td class="num mono" data-label="Rank">#2</td>
+          <td data-label="Model"><span class="plan-name">Kimi K3</span><span class="tool-vendor" style="display:block">Moonshot AI</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1674.0</td>
+          <td data-label="Used by"><span style="color:var(--ink-faint);font-size:12.5px">not a default model for any tracked tool</span></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-soft);font-size:13px">Disputed — sources range 76.8%–93.4%, no figure we’d call reliable</span></td>
+        </tr>
+        <tr data-elo="1625.9">
+          <td class="num mono" data-label="Rank">#6</td>
+          <td data-label="Model"><span class="plan-name">Claude Fable 5</span><span class="tool-vendor" style="display:block">Anthropic</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1625.9</td>
+          <td data-label="Used by"><a href="./tools/zed.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">ZD</a></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-faint)">—</span></td>
+        </tr>
+        <tr data-elo="1619.1">
+          <td class="num mono" data-label="Rank">#7</td>
+          <td data-label="Model"><span class="plan-name">GPT-5.6 Sol</span><span class="tool-vendor" style="display:block">OpenAI</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1619.1</td>
+          <td data-label="Used by"><a href="./tools/openai-codex.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">OA</a></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-soft);font-size:13px">~96.2% (secondary source, low confidence)</span></td>
+        </tr>
+        <tr data-elo="1539.6">
+          <td class="num mono" data-label="Rank">#18</td>
+          <td data-label="Model"><span class="plan-name">Claude Sonnet 5</span><span class="tool-vendor" style="display:block">Anthropic</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1539.6</td>
+          <td data-label="Used by"><a href="./tools/claude-code.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">CC</a> <a href="./tools/jetbrains-ai.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">JB</a> <a href="./tools/replit-agent.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">RP</a> <a href="./tools/warp.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">WP</a></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-soft);font-size:13px">~82.1% (press-reported, low confidence)</span></td>
+        </tr>
+        <tr data-elo="1519.9">
+          <td class="num mono" data-label="Rank">#26</td>
+          <td data-label="Model"><span class="plan-name">GPT-5.6 Terra</span><span class="tool-vendor" style="display:block">OpenAI</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1519.9</td>
+          <td data-label="Used by"><span style="color:var(--ink-faint);font-size:12.5px">not a default model for any tracked tool</span></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-faint)">—</span></td>
+        </tr>
+        <tr data-elo="1516.6">
+          <td class="num mono" data-label="Rank">#29</td>
+          <td data-label="Model"><span class="plan-name">GPT-5.6 Luna</span><span class="tool-vendor" style="display:block">OpenAI</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1516.6</td>
+          <td data-label="Used by"><span style="color:var(--ink-faint);font-size:12.5px">not a default model for any tracked tool</span></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-faint)">—</span></td>
+        </tr>
+        <tr data-elo="1446.5">
+          <td class="num mono" data-label="Rank">#47</td>
+          <td data-label="Model"><span class="plan-name">Gemini 3.1 Pro</span><span class="tool-vendor" style="display:block">Google</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1446.5</td>
+          <td data-label="Used by"><a href="./tools/gemini-cli.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">GM</a></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-faint)">—</span></td>
+        </tr>
+        <tr data-elo="1408.5">
+          <td class="num mono" data-label="Rank">#60</td>
+          <td data-label="Model"><span class="plan-name">GPT-5.3-Codex</span><span class="tool-vendor" style="display:block">OpenAI</span></td>
+          <td class="num tabular-nums mono" data-label="Arena Elo">1408.5</td>
+          <td data-label="Used by"><a href="./tools/github-copilot.html" class="pill-link" style="padding:3px 10px;font-size:11.5px">GH</a></td>
+          <td data-label="Vendor-claimed SWE-bench"><span style="color:var(--ink-faint)">—</span></td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;font-size:13px;color:var(--ink-faint)">Human-preference votes on generated web apps — not a correctness benchmark. The only source in this pass that is both live and covers every model below. <a href="https://arena.ai/leaderboard/code/webdev" class="text-link">source →</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="popularity">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">real usage</span><h2>How popular is each tool, really?</h2><p>We didn't blend these into one fake ranking — the sources measure different things and disagree on order. Read them side by side: notice that the most-<em>used</em> tools (Copilot, ChatGPT) aren't always the most-<em>loved</em> ones.</p></div>
+      </div>
+      <div class="card-grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="info-card" style="text-align:left">
+        <h3 style="margin-bottom:2px">Stack Overflow 2025 Developer Survey</h3>
+        <p class="mono" style="font-size:12px;color:var(--ink-faint);margin-bottom:2px">2025 · ~49,000 respondents</p>
+        <p style="font-size:12.5px;color:var(--ink-soft);margin-bottom:12px">% of respondents using this as their dev IDE</p>
+        <table style="width:100%;font-size:13.5px;margin-bottom:10px">
+          <tr><td style="padding:3px 0;color:var(--ink)">Cursor</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">17.9%</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Claude Code</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">9.7%</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Zed</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">7.3%</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Devin Desktop (as “Windsurf”)</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">4.9%</td></tr>
+        </table>
+        <p style="font-size:12px;color:var(--ink-faint);line-height:1.5">GitHub Copilot and JetBrains AI Assistant are plugins, not standalone IDEs, so this specific chart doesn’t include them.</p>
+        <a href="https://survey.stackoverflow.co/2025/ai" class="text-link" style="font-size:12.5px">source →</a>
+      </div>
+      <div class="info-card" style="text-align:left">
+        <h3 style="margin-bottom:2px">JetBrains AI Pulse Survey</h3>
+        <p class="mono" style="font-size:12px;color:var(--ink-faint);margin-bottom:2px">Jan 2026 · ~10,000 professional devs</p>
+        <p style="font-size:12.5px;color:var(--ink-soft);margin-bottom:12px">% using this tool at work</p>
+        <table style="width:100%;font-size:13.5px;margin-bottom:10px">
+          <tr><td style="padding:3px 0;color:var(--ink)">GitHub Copilot</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">29%</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Cursor</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">18%</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Claude Code</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">18%</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">JetBrains AI Assistant</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">9%</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">OpenAI Codex</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">3%</td></tr>
+        </table>
+        <p style="font-size:12px;color:var(--ink-faint);line-height:1.5">Claude Code grew 6× in 9 months (3%→18%) with the survey’s best loyalty scores (91% CSAT, NPS 54); Copilot’s growth “plateaued” over the same period.</p>
+        <a href="https://blog.jetbrains.com/research/2026/04/which-ai-coding-tools-do-developers-actually-use-at-work/" class="text-link" style="font-size:12.5px">source →</a>
+      </div>
+      <div class="info-card" style="text-align:left">
+        <h3 style="margin-bottom:2px">VS Code Marketplace installs</h3>
+        <p class="mono" style="font-size:12px;color:var(--ink-faint);margin-bottom:2px">Aug 20, 2026 · live fetch</p>
+        <p style="font-size:12.5px;color:var(--ink-soft);margin-bottom:12px">Cumulative all-time installs (not active users)</p>
+        <table style="width:100%;font-size:13.5px;margin-bottom:10px">
+          <tr><td style="padding:3px 0;color:var(--ink)">GitHub Copilot Chat</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">77.7M</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">GitHub Copilot</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">74.4M</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Claude Code</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">23.6M</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Gemini Code Assist</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">5.1M</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Cline</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">5.0M</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Devin Desktop (legacy “Codeium” listing)</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">4.0M</td></tr>
+          <tr><td style="padding:3px 0;color:var(--ink)">Amazon Q Developer</td><td class="mono tabular-nums" style="padding:3px 0;text-align:right;color:var(--ink-soft)">1.8M</td></tr>
+        </table>
+        <p style="font-size:12px;color:var(--ink-faint);line-height:1.5">Cursor, Devin Desktop’s current app, Zed, Warp, and Kiro aren’t VS Code extensions (they’re standalone apps/forks), so they have no comparable count here.</p>
+        <a href="https://marketplace.visualstudio.com" class="text-link" style="font-size:12.5px">source →</a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">openrouter · live · 2026-08-20</span><h2>Raw model cost, if you bought it directly</h2><p>What each model costs per million tokens via <a href="https://openrouter.ai" class="text-link">OpenRouter</a> — a unified API reseller whose prices track the vendors' own direct API rates closely (not a markup channel). This is the number to compare against a wrapped tool's subscription price to see how much of what you're paying is the model versus the product built around it. Only the models we could confirm pricing for are listed.</p></div>
+      </div>
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th class="num">Input $/M tokens</th>
+              <th class="num">Output $/M tokens</th>
+              <th class="num">Context</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+          <td data-label="Model"><span class="plan-name">GPT-5.6 Luna</span></td>
+          <td class="num mono" data-label="Input $/M">$0.20</td>
+          <td class="num mono" data-label="Output $/M">$1.20</td>
+          <td class="num mono" data-label="Context">1.1M</td>
+        </tr>
+        <tr>
+          <td data-label="Model"><span class="plan-name">Claude Sonnet 5</span></td>
+          <td class="num mono" data-label="Input $/M">$2.00</td>
+          <td class="num mono" data-label="Output $/M">$10.00</td>
+          <td class="num mono" data-label="Context">1M</td>
+        </tr>
+        <tr>
+          <td data-label="Model"><span class="plan-name">GPT-5.6 Terra</span></td>
+          <td class="num mono" data-label="Input $/M">$2.00</td>
+          <td class="num mono" data-label="Output $/M">$12.00</td>
+          <td class="num mono" data-label="Context">1.1M</td>
+        </tr>
+        <tr>
+          <td data-label="Model"><span class="plan-name">Gemini 3.1 Pro</span></td>
+          <td class="num mono" data-label="Input $/M">$2.00</td>
+          <td class="num mono" data-label="Output $/M">$12.00</td>
+          <td class="num mono" data-label="Context">1.0M</td>
+        </tr>
+        <tr>
+          <td data-label="Model"><span class="plan-name">GPT-5.6 Sol</span></td>
+          <td class="num mono" data-label="Input $/M">$2.50</td>
+          <td class="num mono" data-label="Output $/M">$15.00</td>
+          <td class="num mono" data-label="Context">1.1M</td>
+        </tr>
+        <tr>
+          <td data-label="Model"><span class="plan-name">Claude Opus 5</span></td>
+          <td class="num mono" data-label="Input $/M">$5.00</td>
+          <td class="num mono" data-label="Output $/M">$25.00</td>
+          <td class="num mono" data-label="Context">1M</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+<footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="./" class="logo">ratelog<span class="dot">.</span></a>
+          <p class="footer-note">Independent tracker of AI coding assistant pricing and usage limits. Not affiliated with Anthropic, GitHub, Cursor, Cognition, OpenAI, Google, AWS, or JetBrains. Figures verified against official sources — see each tool page for citations and the date last checked.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h5>Tools</h5>
+            <ul>
+              <li><a href="./tools/claude-code.html">Claude Code</a></li>
+              <li><a href="./tools/github-copilot.html">GitHub Copilot</a></li>
+              <li><a href="./tools/cursor.html">Cursor</a></li>
+              <li><a href="./tools/windsurf.html">Devin Desktop (formerly Windsurf)</a></li>
+              <li><a href="./tools/openai-codex.html">ChatGPT / Codex</a></li>
+              <li><a href="./tools/gemini-cli.html">Gemini CLI / Code Assist</a></li>
+              <li><a href="./tools/amazon-q-developer.html">Amazon Q Developer</a></li>
+              <li><a href="./tools/jetbrains-ai.html">JetBrains AI Assistant</a></li>
+              <li><a href="./tools/kiro.html">Kiro</a></li>
+              <li><a href="./tools/replit-agent.html">Replit Agent</a></li>
+              <li><a href="./tools/cline.html">Cline</a></li>
+              <li><a href="./tools/zed.html">Zed</a></li>
+              <li><a href="./tools/warp.html">Warp</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Site</h5>
+            <ul>
+              <li><a href="./leaderboard.html">Leaderboard</a></li>
+              <li><a href="./changelog.html">Changelog</a></li>
+              <li><a href="./about.html">About &amp; methodology</a></li>
+              <li><a href="./privacy.html">Privacy policy</a></li>
+              <li><a href="./sitemap.xml">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Data last verified 2026-08-20</span>
+        <span>&copy; 2026 RateLog</span>
+      </div>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+<!--
+  Google Analytics 4 — create a property at analytics.google.com, then
+  replace G-XXXXXXXXXX below with the real measurement ID and uncomment.
+-->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+</body>
+</html>

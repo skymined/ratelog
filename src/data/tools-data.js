@@ -432,4 +432,62 @@ const comparisons = [
   ['windsurf', 'warp'],
 ];
 
-module.exports = { SITE, tools, comparisons };
+// Model-level leaderboard data — distinct from `tools` above, which are the
+// wrapped products. These are the underlying LLMs. Populated 2026-08-20 from
+// a research pass that deliberately did NOT blend sources into one fake
+// composite rank — see leaderboardPage()'s framing. "usedBy" is computed at
+// build time from each tool's own contextWindow.model field (single source
+// of truth), not hand-maintained here.
+const arenaSource = {
+  name: 'Arena.ai Code/WebDev',
+  url: 'https://arena.ai/leaderboard/code/webdev',
+  asOf: '2026-08-19',
+  votes: '596,892',
+  note: 'Human-preference votes on generated web apps — not a correctness benchmark. The only source in this pass that is both live and covers every model below.',
+};
+
+const models = [
+  { name: 'Claude Opus 5', vendor: 'Anthropic', arenaElo: 1690.9, arenaRank: 1, vendorClaimedSWEBench: '~96–97% (Anthropic’s own figure, not independently verified)', contextWindowTokens: 1000000, openRouter: { inputPerM: 5.0, outputPerM: 25.0 } },
+  { name: 'Kimi K3', vendor: 'Moonshot AI', arenaElo: 1674.0, arenaRank: 2, vendorClaimedSWEBench: 'Disputed — sources range 76.8%–93.4%, no figure we’d call reliable', contextWindowTokens: null, openRouter: null },
+  { name: 'Claude Fable 5', vendor: 'Anthropic', arenaElo: 1625.9, arenaRank: 6, vendorClaimedSWEBench: null, contextWindowTokens: 1000000, openRouter: null },
+  { name: 'GPT-5.6 Sol', vendor: 'OpenAI', arenaElo: 1619.1, arenaRank: 7, vendorClaimedSWEBench: '~96.2% (secondary source, low confidence)', contextWindowTokens: 1050000, openRouter: { inputPerM: 2.5, outputPerM: 15.0 } },
+  { name: 'Claude Sonnet 5', vendor: 'Anthropic', arenaElo: 1539.6, arenaRank: 18, vendorClaimedSWEBench: '~82.1% (press-reported, low confidence)', contextWindowTokens: 1000000, openRouter: { inputPerM: 2.0, outputPerM: 10.0 } },
+  { name: 'GPT-5.6 Terra', vendor: 'OpenAI', arenaElo: 1519.9, arenaRank: 26, vendorClaimedSWEBench: null, contextWindowTokens: 1050000, openRouter: { inputPerM: 2.0, outputPerM: 12.0 } },
+  { name: 'GPT-5.6 Luna', vendor: 'OpenAI', arenaElo: 1516.6, arenaRank: 29, vendorClaimedSWEBench: null, contextWindowTokens: 1050000, openRouter: { inputPerM: 0.2, outputPerM: 1.2 } },
+  { name: 'Gemini 3.1 Pro', vendor: 'Google', arenaElo: 1446.5, arenaRank: 47, vendorClaimedSWEBench: null, contextWindowTokens: 1048576, openRouter: { inputPerM: 2.0, outputPerM: 12.0 } },
+  { name: 'GPT-5.3-Codex', vendor: 'OpenAI', arenaElo: 1408.5, arenaRank: 60, vendorClaimedSWEBench: null, contextWindowTokens: 400000, openRouter: null },
+];
+
+// Real usage/popularity data — reported per-source rather than blended into
+// one composite ranking, because the underlying sources measure different
+// things (dev IDE used vs. work-tool used vs. extension installed) and
+// disagree on order. See leaderboardFeasibility note: forcing a single score
+// here would misrepresent how solid the evidence actually is.
+const popularitySources = [
+  {
+    name: 'Stack Overflow 2025 Developer Survey',
+    url: 'https://survey.stackoverflow.co/2025/ai',
+    asOf: '2025 · ~49,000 respondents',
+    metric: '% of respondents using this as their dev IDE',
+    rows: [['Cursor', '17.9%'], ['Claude Code', '9.7%'], ['Zed', '7.3%'], ['Devin Desktop (as “Windsurf”)', '4.9%']],
+    note: 'GitHub Copilot and JetBrains AI Assistant are plugins, not standalone IDEs, so this specific chart doesn’t include them.',
+  },
+  {
+    name: 'JetBrains AI Pulse Survey',
+    url: 'https://blog.jetbrains.com/research/2026/04/which-ai-coding-tools-do-developers-actually-use-at-work/',
+    asOf: 'Jan 2026 · ~10,000 professional devs',
+    metric: '% using this tool at work',
+    rows: [['GitHub Copilot', '29%'], ['Cursor', '18%'], ['Claude Code', '18%'], ['JetBrains AI Assistant', '9%'], ['OpenAI Codex', '3%']],
+    note: 'Claude Code grew 6× in 9 months (3%→18%) with the survey’s best loyalty scores (91% CSAT, NPS 54); Copilot’s growth “plateaued” over the same period.',
+  },
+  {
+    name: 'VS Code Marketplace installs',
+    url: 'https://marketplace.visualstudio.com',
+    asOf: 'Aug 20, 2026 · live fetch',
+    metric: 'Cumulative all-time installs (not active users)',
+    rows: [['GitHub Copilot Chat', '77.7M'], ['GitHub Copilot', '74.4M'], ['Claude Code', '23.6M'], ['Gemini Code Assist', '5.1M'], ['Cline', '5.0M'], ['Devin Desktop (legacy “Codeium” listing)', '4.0M'], ['Amazon Q Developer', '1.8M']],
+    note: 'Cursor, Devin Desktop’s current app, Zed, Warp, and Kiro aren’t VS Code extensions (they’re standalone apps/forks), so they have no comparable count here.',
+  },
+];
+
+module.exports = { SITE, tools, comparisons, arenaSource, models, popularitySources };
