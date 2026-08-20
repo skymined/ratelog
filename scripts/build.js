@@ -338,7 +338,8 @@ function homepage() {
           <button class="chip" data-filter="all" aria-pressed="true">All</button>
           <button class="chip" data-filter="Terminal agent" aria-pressed="false">Terminal agent</button>
           <button class="chip" data-filter="IDE plugin" aria-pressed="false">IDE plugin</button>
-          <button class="chip" data-filter="Editor (fork)" aria-pressed="false">Editor (fork)</button>
+          <button class="chip" data-filter="Editor" aria-pressed="false">Editor</button>
+          <button class="chip" data-filter="Cloud agent" aria-pressed="false">Cloud agent</button>
           <span class="chip-sep" aria-hidden="true"></span>
           <button class="chip" id="free-tier-toggle" aria-pressed="false">+ Has free tier</button>
         </div>

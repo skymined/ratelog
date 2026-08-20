@@ -12,6 +12,11 @@
   <url><loc>https://skymined.github.io/ratelog/tools/gemini-cli.html</loc></url>
   <url><loc>https://skymined.github.io/ratelog/tools/amazon-q-developer.html</loc></url>
   <url><loc>https://skymined.github.io/ratelog/tools/jetbrains-ai.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/kiro.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/replit-agent.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/cline.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/zed.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/tools/warp.html</loc></url>
   <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-cursor.html</loc></url>
   <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-github-copilot.html</loc></url>
   <url><loc>https://skymined.github.io/ratelog/compare/cursor-vs-github-copilot.html</loc></url>
@@ -25,4 +30,15 @@
   <url><loc>https://skymined.github.io/ratelog/compare/amazon-q-developer-vs-claude-code.html</loc></url>
   <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-gemini-cli.html</loc></url>
   <url><loc>https://skymined.github.io/ratelog/compare/gemini-cli-vs-github-copilot.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-kiro.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/github-copilot-vs-kiro.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/amazon-q-developer-vs-kiro.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-replit-agent.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/github-copilot-vs-replit-agent.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-cline.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/cline-vs-github-copilot.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/cursor-vs-zed.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/github-copilot-vs-zed.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/claude-code-vs-warp.html</loc></url>
+  <url><loc>https://skymined.github.io/ratelog/compare/warp-vs-windsurf.html</loc></url>
 </urlset>

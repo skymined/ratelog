@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warp pricing &amp; usage limits (2026-08-20) — RateLog</title>
+  <meta name="description" content="Warp by Warp Terminal Inc.: current plan prices, exact usage limits, and a dated history of every pricing change, sourced from official docs." />
+  <link rel="canonical" href="https://skymined.github.io/ratelog/tools/warp.html" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../style.css" />
+  <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <!-- Google Search Console: paste the verification content from search.google.com/search-console (Add property → HTML tag), then uncomment. -->
+  <!-- <meta name="google-site-verification" content="REPLACE_ME" /> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RateLog" />
+  <meta property="og:title" content="Warp pricing &amp; usage limits (2026-08-20) — RateLog" />
+  <meta property="og:description" content="Warp by Warp Terminal Inc.: current plan prices, exact usage limits, and a dated history of every pricing change, sourced from official docs." />
+  <meta property="og:url" content="https://skymined.github.io/ratelog/tools/warp.html" />
+  <meta property="og:image" content="https://skymined.github.io/ratelog/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Warp pricing &amp; usage limits (2026-08-20) — RateLog" />
+  <meta name="twitter:description" content="Warp by Warp Terminal Inc.: current plan prices, exact usage limits, and a dated history of every pricing change, sourced from official docs." />
+  <script>
+    (function () {
+      var saved = localStorage.getItem('ratelog-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Warp","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://www.warp.dev","offers":[{"@type":"Offer","name":"Warp Build","price":20,"priceCurrency":"USD","description":"1,500 AI credits/month (~$20 of usage at API rates), refilling every 30 days; unused monthly credits don’t roll over, but purchased “Reload” credits roll over up to 12 months."},{"@type":"Offer","name":"Warp Business","price":50,"priceCurrency":"USD","description":"1,500 AI credits per seat/month, same refill cadence as Build, plus a shared rollover pool of purchased reload credits."},{"@type":"Offer","name":"Warp Max","price":200,"priceCurrency":"USD","description":"18,000 AI credits/month — 12× Build’s allotment, same refill cycle."}]}</script>
+</head>
+<body>
+<header class="site-header">
+    <div class="wrap">
+      <a href="../" class="logo">ratelog<span class="dot">.</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../" aria-current="page">Compare</a>
+        <a href="../changelog.html">Changelog</a>
+        <a href="../about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" type="button"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+<section class="tool-hero">
+    <div class="wrap">
+      <div class="tool-hero-top">
+        <span class="tool-mark" style="width:40px;height:40px;font-size:15px">WP</span>
+        <span class="mono" style="font-size:13px;color:var(--ink-faint)">Terminal agent</span>
+      </div>
+      <h1>Warp</h1>
+      <p class="vendor-line">by Warp Terminal Inc. · <a href="https://www.warp.dev" class="text-link">official site →</a></p>
+      <p class="dek">An AI-native terminal that open-sourced its client (AGPL-3.0 / MIT) in April 2026 while keeping its Oz cloud-agent orchestration platform proprietary, priced on a credit-metered model.</p>
+      <div class="tool-quicklinks">
+        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Last change: <span class="badge-diff up">↑ BYOK extended to Free tier</span> · 3 months ago</span>
+        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Context window: <strong style="color:var(--ink)">1M tokens</strong> (Claude Sonnet 5)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">plans</span><h2>Every tier</h2><p>Free tier: Free — no bundled ongoing AI credits, but new users get 150 AI credits/month for the first two months, then 75/month after (rolling ~30-day cycle). BYOK available since May 2026.</p></div></div>
+      <div class="plan-grid">
+        <div class="plan-card">
+          <div class="plan-name">Build</div>
+          <div class="plan-price">$20<span>/mo</span></div>
+          <div class="plan-limit">1,500 AI credits/month (~$20 of usage at API rates), refilling every 30 days; unused monthly credits don’t roll over, but purchased “Reload” credits roll over up to 12 months.</div>
+          <div class="plan-target">Individual professional developers</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Business</div>
+          <div class="plan-price">$50<span>/mo</span></div>
+          <div class="plan-limit">1,500 AI credits per seat/month, same refill cadence as Build, plus a shared rollover pool of purchased reload credits.</div>
+          <div class="plan-target">Teams up to 25 seats</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Max</div>
+          <div class="plan-price">$200<span>/mo</span></div>
+          <div class="plan-limit">18,000 AI credits/month — 12× Build’s allotment, same refill cycle.</div>
+          <div class="plan-target">Power users / heavy individual AI usage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">history</span><h2>What’s changed</h2></div></div>
+      <div class="diff-log">
+        <div class="diff-entry up">
+          <div class="diff-date">2026-05-20<span class="badge-diff up">↑ improved</span></div>
+          <h4>BYOK extended to Free tier</h4>
+          <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">Bring-your-own-API-key support was extended to all plans including Free, letting Free users route requests through their own keys instead of being limited to the onboarding credit grant.</p>
+          <a href="https://www.warp.dev/blog/bring-your-own-inference-to-warp" class="text-link" style="font-size:13px">source →</a>
+        </div>
+        <div class="diff-entry down">
+          <div class="diff-date">2025-10-30<span class="badge-diff down">↓ reduced</span></div>
+          <h4>Legacy tiers collapsed into one $20/mo plan</h4>
+          <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">Collapsed three legacy paid tiers (Pro, Turbo, Lightspeed) into a single $20/mo Build plan; independent analysis characterized this as a net price increase for many existing $10–15/mo subscribers, even though per-unit overage pricing improved and BYOK access was added.</p>
+          <a href="https://blog.kilo.ai/p/warps-new-pricing-still-doesnt-add" class="text-link" style="font-size:13px">source →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">sources</span><h2>Where this comes from</h2></div></div>
+      <div class="callout">
+        Verified against <a href="https://www.warp.dev/pricing">Warp Pricing</a>, <a href="https://www.warp.dev/blog/warp-new-pricing-flexibility-byok">Changes to Warp&#39;s pricing</a>. Last checked 2026-08-20. See something stale? <a href="../about.html">Here’s how we keep this current.</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">compare</span><h2>Warp vs. the field</h2></div></div>
+      <div class="compare-cta">
+        <a class="pill-link" href="../compare/claude-code-vs-warp.html">Warp vs Claude Code</a>
+        <a class="pill-link" href="../compare/warp-vs-windsurf.html">Warp vs Devin Desktop (formerly Windsurf)</a>
+      </div>
+    </div>
+  </section>
+<footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="../" class="logo">ratelog<span class="dot">.</span></a>
+          <p class="footer-note">Independent tracker of AI coding assistant pricing and usage limits. Not affiliated with Anthropic, GitHub, Cursor, Cognition, OpenAI, Google, AWS, or JetBrains. Figures verified against official sources — see each tool page for citations and the date last checked.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h5>Tools</h5>
+            <ul>
+              <li><a href="../tools/claude-code.html">Claude Code</a></li>
+              <li><a href="../tools/github-copilot.html">GitHub Copilot</a></li>
+              <li><a href="../tools/cursor.html">Cursor</a></li>
+              <li><a href="../tools/windsurf.html">Devin Desktop (formerly Windsurf)</a></li>
+              <li><a href="../tools/openai-codex.html">ChatGPT / Codex</a></li>
+              <li><a href="../tools/gemini-cli.html">Gemini CLI / Code Assist</a></li>
+              <li><a href="../tools/amazon-q-developer.html">Amazon Q Developer</a></li>
+              <li><a href="../tools/jetbrains-ai.html">JetBrains AI Assistant</a></li>
+              <li><a href="../tools/kiro.html">Kiro</a></li>
+              <li><a href="../tools/replit-agent.html">Replit Agent</a></li>
+              <li><a href="../tools/cline.html">Cline</a></li>
+              <li><a href="../tools/zed.html">Zed</a></li>
+              <li><a href="../tools/warp.html">Warp</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Site</h5>
+            <ul>
+              <li><a href="../changelog.html">Changelog</a></li>
+              <li><a href="../about.html">About &amp; methodology</a></li>
+              <li><a href="../privacy.html">Privacy policy</a></li>
+              <li><a href="../sitemap.xml">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Data last verified 2026-08-20</span>
+        <span>&copy; 2026 RateLog</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+<!--
+  Google Analytics 4 — create a property at analytics.google.com, then
+  replace G-XXXXXXXXXX below with the real measurement ID and uncomment.
+-->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+</body>
+</html>
