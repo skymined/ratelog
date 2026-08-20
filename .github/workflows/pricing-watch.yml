@@ -1,0 +1,59 @@
+name: Pricing Watch
+
+# Zero-AI change *detector* — no Anthropic account or API key involved.
+# Runs entirely on GitHub's own infrastructure. It fetches each tool's
+# pricing page, hashes the visible text, and compares to the last commit's
+# snapshot. On a mismatch it opens (or comments on) a tracking issue — it
+# does NOT touch src/data/tools-data.js itself. Someone (or Claude, asked in
+# a future session) still has to look at the flagged tool and re-verify the
+# real numbers before updating the published data.
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # 09:00 UTC daily (~18:00 KST)
+  workflow_dispatch: {} # lets you trigger a manual check from the Actions tab
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - id: check
+        run: node scripts/check-changes.js
+
+      - name: Commit updated snapshot
+        run: |
+          git config user.name "ratelog-bot"
+          git config user.email "actions@github.com"
+          git add scripts/pricing-snapshots.json
+          git diff --cached --quiet || git commit -m "chore: update pricing-watch snapshot [skip ci]"
+          git push
+
+      - name: Open or update tracking issue
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          REPORT=$(cat scripts/pricing-watch-report.json)
+          EXISTING=$(gh issue list --state open --search "in:title \"Pricing Watch\"" --json number --jq '.[0].number // empty')
+          BODY="Pricing Watch's text-hash diff changed for one or more tools' pricing pages as of $(date -u +%Y-%m-%dT%H:%MZ).
+
+          \`\`\`json
+          $REPORT
+          \`\`\`
+
+          This is only a *possible-change* signal (a plain HTTP fetch + text hash — no JS rendering, no AI). It can false-positive on unrelated page edits and can miss changes on pricing pages that render client-side. Before trusting it: open the flagged URL(s) and re-verify the actual figures, then update \`src/data/tools-data.js\` and rebuild (\`node scripts/build.js\`)."
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "Pricing Watch — possible changes detected" --body "$BODY"
+          fi

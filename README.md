@@ -21,6 +21,8 @@ scripts/build.js          generates index.html, changelog.html, about.html,
                           tools/<slug>.html, compare/<a>-vs-<b>.html,
                           sitemap.xml and data/tools.json from the data file.
 scripts/serve.js          zero-dependency static file server for local preview.
+scripts/check-changes.js  the Pricing Watch script — see below.
+scripts/pricing-snapshots.json  its persisted state (committed; don't hand-edit).
 style.css                 the whole design system (tokens, layout, components).
 script.js                 theme toggle, mobile nav, table filter/sort —
                           progressive enhancement over server-rendered rows.
@@ -42,6 +44,29 @@ sitemap.xml, data/tools.json
    whole point of the site is this log, so don't skip it.
 3. Update `SITE.lastVerified` if you re-verified the full dataset.
 4. Rebuild: `node scripts/build.js`.
+
+## Pricing Watch (automated change *detection*, not verification)
+
+`.github/workflows/pricing-watch.yml` runs `scripts/check-changes.js` once a
+day on GitHub's own infrastructure — no Anthropic account, no API key, no
+external service. It fetches each tool's `pricingUrl`, strips HTML down to
+visible text, and hashes it. If the hash differs from the last run's
+snapshot (`scripts/pricing-snapshots.json`, committed to the repo), it opens
+or comments on a GitHub issue titled "Pricing Watch — possible changes
+detected".
+
+**What it is:** a free, zero-maintenance tripwire so nobody has to remember
+to go re-check 8 pricing pages by hand.
+
+**What it isn't:** it doesn't know what changed, whether the change actually
+affects a published figure, or verify anything — it's a dumb text diff. It
+can also miss changes on pricing pages that render client-side (several of
+these already do, per the `openQuestions` notes baked into the original
+research — see e.g. Cursor's and JetBrains' entries). Treat a flagged issue
+as "go look," then re-verify and edit `tools-data.js` normally per the
+section above — same as any other update.
+
+Trigger a check manually anytime from the repo's Actions tab (`workflow_dispatch`).
 
 ## Local preview
 
