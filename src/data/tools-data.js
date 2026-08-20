@@ -111,13 +111,13 @@ const tools = [
 
   {
     slug: 'windsurf',
-    name: 'Windsurf',
+    name: 'Devin Desktop (formerly Windsurf)',
     vendor: 'Cognition',
-    mark: 'WS',
+    mark: 'DD',
     category: 'Editor (fork)',
-    officialUrl: 'https://windsurf.com',
-    pricingUrl: 'https://windsurf.com/pricing',
-    summary: "Cognition's AI-native IDE — formerly independent, acquired by Cognition in 2025 and rebranded “Devin Desktop” in June 2026, unifying it with Cognition's cloud agent Devin. windsurf.com now redirects to devin.ai.",
+    officialUrl: 'https://devin.ai',
+    pricingUrl: 'https://devin.ai/pricing',
+    summary: "Cognition's AI-native IDE — formerly independent Windsurf, acquired by Cognition in 2025 and rebranded “Devin Desktop” in June 2026, unifying it with Cognition's cloud agent Devin under one billing surface. windsurf.com now permanently redirects to devin.ai.",
     contextWindow: { model: 'SWE-1.7', tokens: null, display: 'Not published', note: 'Cognition has never stated an exact figure for its in-house model; third-party estimates guess ~256K. External frontier models (Claude, GPT, Gemini) are selectable, but docs don’t say whether their native windows pass through uncapped.' },
     headlinePlanIndex: 0,
     hasFreeTier: true,
@@ -125,7 +125,7 @@ const tools = [
     plans: [
       { name: 'Pro', priceMonthly: 20, priceYearly: null, limit: "Token-based quota refreshing daily and weekly. Cognition's own free SWE-series models don't count against it; frontier model access (Claude/GPT/Gemini) is included.", target: 'Individual devs using agents daily', notes: 'Was $15/mo before March 2026; pre-existing subscribers reported grandfathered at that price.' },
       { name: 'Max', priceMonthly: 200, priceYearly: null, limit: "Same daily+weekly mechanism as Pro but substantially higher — Cognition's own published ranges put it roughly 5–6× Pro's message allowance per period.", target: 'Power users with heavy daily/weekly usage', notes: 'Introduced March 2026 alongside the credits→quota switch.' },
-      { name: 'Teams', priceMonthly: null, priceYearly: null, limit: 'Each full seat gets its own Pro-equivalent daily+weekly quota (not pooled across the team).', target: 'Small-to-mid engineering teams', notes: "Reports on the exact price conflict as of this check — Cognition's March 2026 announcement stated a flat $40/seat/mo, but several secondary sources instead describe an $80/mo base fee plus $40/seat. devin.ai blocked direct re-verification (HTTP 429) on our last check; treat this figure as approximate until confirmed." },
+      { name: 'Teams', priceMonthly: 80, priceYearly: null, limit: 'Each full seat gets its own Pro-equivalent daily+weekly quota (not pooled across the team).', target: 'Small-to-mid engineering teams', notes: "$80/mo confirmed on devin.ai/pricing as of a later check — earlier passes saw conflicting reports (a flat $40/seat vs. an $80 base + $40/seat) while the page was intermittently unreachable. The page doesn't spell out whether $80 is itself per-seat or a team base fee; check live before quoting a per-seat total." },
       { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'Custom, contact sales. Some sources describe billing in "Agent Compute Units" for newer contracts.', target: 'Large orgs needing SSO / compliance', notes: 'Pricing is contested across sources (see openQuestions in our research notes) — treat any specific figure you see elsewhere as unconfirmed.' },
     ],
     changes: [
@@ -135,7 +135,7 @@ const tools = [
     sources: [
       { title: 'Quota-Based Usage — Devin/Windsurf docs', url: 'https://docs.devin.ai/desktop/accounts/quota' },
       { title: 'Plans and Usage — Devin/Windsurf docs', url: 'https://docs.devin.ai/desktop/accounts/usage' },
-      { title: 'windsurf.com/pricing', url: 'https://windsurf.com/pricing' },
+      { title: 'devin.ai/pricing', url: 'https://devin.ai/pricing' },
     ],
   },
 
