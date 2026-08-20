@@ -30,6 +30,22 @@ function hash(text) {
   return crypto.createHash('sha256').update(text).digest('hex');
 }
 
+// Bot-challenge interstitials (Vercel/Cloudflare/etc.) embed a fresh random
+// token on every request, so their "text" changes every run even though the
+// real page behind them never loaded. Treat those as a failed fetch, not a
+// content change — otherwise the flagged tool would false-positive forever.
+const CHALLENGE_MARKERS = [
+  'Vercel Security Checkpoint',
+  'Enable JavaScript to continue',
+  'Just a moment',
+  'Checking your browser',
+  'Attention Required! | Cloudflare',
+  'cf-browser-verification',
+];
+function isBotChallenge(text) {
+  return CHALLENGE_MARKERS.some((m) => text.includes(m));
+}
+
 async function fetchText(url, ms = 15000) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), ms);
@@ -55,6 +71,9 @@ async function main() {
     try {
       const html = await fetchText(url);
       const text = normalize(html);
+      if (isBotChallenge(text)) {
+        throw new Error('bot-challenge interstitial returned instead of real content (not a content change)');
+      }
       const h = hash(text);
       next[tool.slug] = { url, hash: h, textLength: text.length, checkedAt: new Date().toISOString() };
       const prevEntry = prev[tool.slug];
