@@ -488,7 +488,7 @@ function toolPage(tool) {
   </section>`;
 
   return page({
-    title: `${tool.name} pricing & usage limits (${SITE.lastVerified}) — ${SITE.name}`,
+    title: `${tool.shortName || tool.name} pricing & usage limits (${SITE.lastVerified}) — ${SITE.name}`,
     description: `${tool.name} by ${tool.vendor}: current plan prices, exact usage limits, and a dated history of every pricing change, sourced from official docs.`,
     canonicalPath: `/tools/${tool.slug}.html`,
     active: '/',
@@ -541,7 +541,7 @@ function comparePage(slugA, slugB) {
   </section>`;
 
   return page({
-    title: `${a.name} vs ${b.name}: pricing & usage limits compared — ${SITE.name}`,
+    title: `${a.shortName || a.name} vs ${b.shortName || b.name}: pricing & usage limits compared — ${SITE.name}`,
     description: `${a.name} vs ${b.name} head-to-head: current plan prices and exact usage limits, sourced from official docs and updated as either tool changes.`,
     canonicalPath: `/compare/${a.slug}-vs-${b.slug}.html`,
     active: '/',

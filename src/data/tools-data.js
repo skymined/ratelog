@@ -112,6 +112,7 @@ const tools = [
   {
     slug: 'windsurf',
     name: 'Devin Desktop (formerly Windsurf)',
+    shortName: 'Devin Desktop', // full name is too long for <title> tags (truncates in search results)
     vendor: 'Cognition',
     mark: 'DD',
     category: 'Editor',
