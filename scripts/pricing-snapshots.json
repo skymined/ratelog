@@ -3,19 +3,19 @@
     "url": "https://claude.com/pricing",
     "hash": "0247007f8dd0bd2e7b118bcb465abc5ffbf5a9056e4861aed4ef692d637bdfa7",
     "textLength": 31600,
-    "checkedAt": "2026-08-21T09:33:59.708Z"
+    "checkedAt": "2026-08-22T09:24:43.442Z"
   },
   "github-copilot": {
     "url": "https://github.com/features/copilot/plans",
     "hash": "6fef3af44776ae7d2990a464603dfe65cafd89cba7a2a13a10b46062144916e6",
     "textLength": 71932,
-    "checkedAt": "2026-08-21T09:33:59.922Z"
+    "checkedAt": "2026-08-22T09:24:43.707Z"
   },
   "cursor": {
     "url": "https://cursor.com/pricing",
-    "hash": "b0eb01c8356afd1ec2bf3447a3683e21faf04fc41ab85a3d7443e22d5827db6b",
-    "textLength": 9196,
-    "checkedAt": "2026-08-21T09:34:00.041Z"
+    "hash": "7bc674e3ee8bfe5302207f764bd104e2a6575052e52fdac56aad6363762a90d0",
+    "textLength": 9280,
+    "checkedAt": "2026-08-22T09:24:43.829Z"
   },
   "windsurf": {
     "url": "https://windsurf.com/pricing",
@@ -27,54 +27,54 @@
     "url": "https://openai.com/chatgpt/pricing/",
     "hash": "9fea79acb501af6f155bbcbdf68d8793cf904139a6b297609bdece09d5308124",
     "textLength": 41,
-    "checkedAt": "2026-08-21T09:34:00.132Z"
+    "checkedAt": "2026-08-22T09:24:43.928Z"
   },
   "gemini-cli": {
     "url": "https://codeassist.google/products/business",
-    "hash": "c8d14710d2b73e8dbee304d0374c788a6d201a67298a7b8b6d88295bb69b97f1",
-    "textLength": 17161,
-    "checkedAt": "2026-08-21T09:34:00.462Z"
+    "hash": "fc1a62aa8107fa53a5ddfaf3627daccb1999473df487c0224b89b18873543c16",
+    "textLength": 16969,
+    "checkedAt": "2026-08-22T09:24:44.119Z"
   },
   "amazon-q-developer": {
     "url": "https://aws.amazon.com/q/developer/pricing/",
     "hash": "ab534f4791d14b28be1b3ad17571c6d5dd51ca645ad9d89e635304eb356b5192",
     "textLength": 19369,
-    "checkedAt": "2026-08-21T09:34:00.568Z"
+    "checkedAt": "2026-08-22T09:24:44.288Z"
   },
   "jetbrains-ai": {
     "url": "https://www.jetbrains.com/ai-ides/buy/",
     "hash": "b092acb25ef02a492bfbb0765464e874ecbd15fd15517aeac73fcea39c56f704",
     "textLength": 39,
-    "checkedAt": "2026-08-21T09:34:00.627Z"
+    "checkedAt": "2026-08-22T09:24:44.313Z"
   },
   "kiro": {
     "url": "https://kiro.dev/pricing/",
     "hash": "a7453eb838c9653849a96a34c657491b278b1b74dbb14c17f2f3e3f8ed812cf2",
     "textLength": 11596,
-    "checkedAt": "2026-08-21T09:34:00.820Z"
+    "checkedAt": "2026-08-22T09:24:44.489Z"
   },
   "replit-agent": {
     "url": "https://replit.com/pricing",
     "hash": "505a0ff921ce1c004096913fdc1bd014b3b417f5a7ac8ae3a243a85253d2ef53",
     "textLength": 3137,
-    "checkedAt": "2026-08-21T09:34:01.072Z"
+    "checkedAt": "2026-08-22T09:24:44.718Z"
   },
   "cline": {
     "url": "https://cline.bot/pricing",
     "hash": "b7048050013d44f9c206bcb7b844e09f29d167154397dc25adfd13b14d4a04ad",
     "textLength": 2846,
-    "checkedAt": "2026-08-21T09:34:01.183Z"
+    "checkedAt": "2026-08-22T09:24:44.848Z"
   },
   "zed": {
     "url": "https://zed.dev/pricing",
     "hash": "b94e9b311bca09e742ee6084172b0f55870e32b89361e1244e93c18d7e34eee0",
     "textLength": 5441,
-    "checkedAt": "2026-08-21T09:34:01.406Z"
+    "checkedAt": "2026-08-22T09:24:45.798Z"
   },
   "warp": {
     "url": "https://www.warp.dev/pricing",
     "hash": "9ab5f1767e6e4262ac7e1b1d79a68233d2f5446427aed8ba5668a737be7df0ef",
     "textLength": 11599,
-    "checkedAt": "2026-08-21T09:34:01.757Z"
+    "checkedAt": "2026-08-22T09:24:46.142Z"
   }
 }
