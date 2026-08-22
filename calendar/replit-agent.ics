@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Replit Agent
+X-WR-CALDESC:Pricing & usage-limit changes for Replit Agent\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-replit-agent-2025-06-18-switched-to-effort-based-billing@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250618
+DTEND;VALUE=DATE:20250619
+SUMMARY:• Replit Agent: Switched to effort-based billing
+DESCRIPTION:Replaced flat $0.25-per-checkpoint billing with effort-based pricing\, where each checkpoint's cost scales with the actual compute the Agent used.
+URL:https://skymined.github.io/ratelog/tools/replit-agent.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-replit-agent-2026-02-24-new-pro-plan-replaces-teams@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260224
+DTEND;VALUE=DATE:20260225
+SUMMARY:↑ Replit Agent: New Pro plan replaces Teams
+DESCRIPTION:Discontinued the separate Teams plan for a new $100/mo Pro plan with 1-month credit rollover and up to 15 collaborators\; Core's annual price dropped to $20/mo with 5 collaborators built in.
+URL:https://skymined.github.io/ratelog/tools/replit-agent.html
+END:VEVENT
+END:VCALENDAR

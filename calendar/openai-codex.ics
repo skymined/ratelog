@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — ChatGPT / Codex
+X-WR-CALDESC:Pricing & usage-limit changes for ChatGPT / Codex\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-openai-codex-2026-04-02-business-seat-price-cut@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260402
+DTEND;VALUE=DATE:20260403
+SUMMARY:↑ ChatGPT / Codex: Business seat price cut
+DESCRIPTION:Cut ChatGPT Business per-seat price about $5: from $30/mo ($25 annual) down to $25/mo ($20 annual).
+URL:https://skymined.github.io/ratelog/tools/openai-codex.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-openai-codex-2026-04-02-codex-switched-to-token-based-credits@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260402
+DTEND;VALUE=DATE:20260403
+SUMMARY:• ChatGPT / Codex: Codex switched to token-based credits
+DESCRIPTION:Switched Codex from flat per-message billing to token-based credits at API rates for Plus\, Pro\, and Business — cost now scales with tokens used instead of one flat unit per task.
+URL:https://skymined.github.io/ratelog/tools/openai-codex.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-openai-codex-2026-08-06-free-tier-chat-cap-removed@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260806
+DTEND;VALUE=DATE:20260807
+SUMMARY:↑ ChatGPT / Codex: Free-tier chat cap removed
+DESCRIPTION:GPT-5.6 Luna became the default Free-tier model\, and OpenAI began removing the numeric cap on Free-tier text chats entirely\, moving toward "unlimited" (subject to abuse guardrails).
+URL:https://skymined.github.io/ratelog/tools/openai-codex.html
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Finder — filter by budget &amp; context window — RateLog</title>
+  <meta name="description" content="Filter every plan across 13 AI coding tools by monthly budget, minimum context window, category, and free-tier availability." />
+  <link rel="canonical" href="https://skymined.github.io/ratelog/finder.html" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="alternate" type="application/rss+xml" title="RateLog changelog" href="./rss.xml" />
+  <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <!-- Google Search Console: paste the verification content from search.google.com/search-console (Add property → HTML tag), then uncomment. -->
+  <!-- <meta name="google-site-verification" content="REPLACE_ME" /> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RateLog" />
+  <meta property="og:title" content="Plan Finder — filter by budget &amp; context window — RateLog" />
+  <meta property="og:description" content="Filter every plan across 13 AI coding tools by monthly budget, minimum context window, category, and free-tier availability." />
+  <meta property="og:url" content="https://skymined.github.io/ratelog/finder.html" />
+  <meta property="og:image" content="https://skymined.github.io/ratelog/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plan Finder — filter by budget &amp; context window — RateLog" />
+  <meta name="twitter:description" content="Filter every plan across 13 AI coding tools by monthly budget, minimum context window, category, and free-tier availability." />
+  <script>
+    (function () {
+      var saved = localStorage.getItem('ratelog-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  
+</head>
+<body>
+<header class="site-header">
+    <div class="wrap">
+      <a href="./" class="logo">ratelog<span class="dot">.</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="./">Compare</a>
+        <a href="./finder.html" aria-current="page">Plan Finder</a>
+        <a href="./leaderboard.html">Leaderboard</a>
+        <a href="./changelog.html">Changelog</a>
+        <a href="./about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" type="button"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+<section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">plan finder</span>
+      <h1>Every plan, filtered to what you'd actually pay <em>and get.</em></h1>
+      <p class="lede">Set a budget and a minimum context window — we filter across 54 plans from all 13 tools by the numbers we're actually sure of. No fake "your exact monthly cost" estimate — we don't have reliable enough usage-to-request data to back that, so we won't pretend to.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="calc finder-calc" style="margin-bottom:28px">
+        <div class="field">
+          <label>Max budget/mo <span class="val" id="budget-val">$250+</span></label>
+          <input type="range" id="budget-slider" min="0" max="250" value="50" step="5" aria-label="Max monthly budget">
+          <div class="marks"><span>$0</span><span>$50</span><span>$150</span><span>$250+</span></div>
+        </div>
+        <div class="field">
+          <label>Min context window <span class="val" id="ctx-val">Any</span></label>
+          <input type="range" id="ctx-slider" min="0" max="3" value="0" step="1" aria-label="Minimum context window">
+          <div class="marks"><span>Any</span><span>200K</span><span>400K</span><span>1M</span></div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="chip-row" id="finder-chips">
+          <button class="chip" data-filter="all" aria-pressed="true">All categories</button>
+          <button class="chip" data-filter="Terminal agent" aria-pressed="false">Terminal agent</button>
+          <button class="chip" data-filter="IDE plugin" aria-pressed="false">IDE plugin</button>
+          <button class="chip" data-filter="Editor" aria-pressed="false">Editor</button>
+          <button class="chip" data-filter="Cloud agent" aria-pressed="false">Cloud agent</button>
+          <span class="chip-sep" aria-hidden="true"></span>
+          <button class="chip" id="finder-free-toggle" aria-pressed="false">+ Has free tier</button>
+        </div>
+      </div>
+      <p id="finder-count" class="mono" style="font-size:13px;color:var(--ink-soft);margin-bottom:10px"></p>
+      <div class="ledger-wrap">
+        <table class="ledger" id="finder-table">
+          <thead><tr><th>Tool</th><th>Plan</th><th class="num">Price</th><th>Fits</th><th class="num">Context window</th></tr></thead>
+          <tbody id="finder-body">
+            <tr data-price="20" data-category="Terminal agent" data-free="0" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CC</span>
+              <span><a href="./tools/claude-code.html" class="tool-name" style="text-decoration:none;color:inherit">Claude Code</a><span class="tool-vendor">Anthropic</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual devs, light-to-moderate use</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="100" data-category="Terminal agent" data-free="0" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CC</span>
+              <span><a href="./tools/claude-code.html" class="tool-name" style="text-decoration:none;color:inherit">Claude Code</a><span class="tool-vendor">Anthropic</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Max 5x</span></td>
+          <td class="num" data-label="Price">$100<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Daily heavy use</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="200" data-category="Terminal agent" data-free="0" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CC</span>
+              <span><a href="./tools/claude-code.html" class="tool-name" style="text-decoration:none;color:inherit">Claude Code</a><span class="tool-vendor">Anthropic</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Max 20x</span></td>
+          <td class="num" data-label="Price">$200<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Power users, very heavy use</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="25" data-category="Terminal agent" data-free="0" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CC</span>
+              <span><a href="./tools/claude-code.html" class="tool-name" style="text-decoration:none;color:inherit">Claude Code</a><span class="tool-vendor">Anthropic</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Team Standard</span></td>
+          <td class="num" data-label="Price">$25<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Small-to-mid teams</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="125" data-category="Terminal agent" data-free="0" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CC</span>
+              <span><a href="./tools/claude-code.html" class="tool-name" style="text-decoration:none;color:inherit">Claude Code</a><span class="tool-vendor">Anthropic</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Team Premium</span></td>
+          <td class="num" data-label="Price">$125<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams needing Max-level capacity</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="999999" data-category="Terminal agent" data-free="0" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CC</span>
+              <span><a href="./tools/claude-code.html" class="tool-name" style="text-decoration:none;color:inherit">Claude Code</a><span class="tool-vendor">Anthropic</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Enterprise</span></td>
+          <td class="num" data-label="Price">Custom</td>
+          <td data-label="Fits">Large orgs needing compliance controls</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="10" data-category="IDE plugin" data-free="1" data-ctx="400000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GH</span>
+              <span><a href="./tools/github-copilot.html" class="tool-name" style="text-decoration:none;color:inherit">GitHub Copilot</a><span class="tool-vendor">Microsoft / GitHub</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Copilot Pro</span></td>
+          <td class="num" data-label="Price">$10<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual devs stepping up from Free</td>
+          <td class="num mono" data-label="Context window">400K tokens</td>
+        </tr>
+          <tr data-price="39" data-category="IDE plugin" data-free="1" data-ctx="400000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GH</span>
+              <span><a href="./tools/github-copilot.html" class="tool-name" style="text-decoration:none;color:inherit">GitHub Copilot</a><span class="tool-vendor">Microsoft / GitHub</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Copilot Pro+</span></td>
+          <td class="num" data-label="Price">$39<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Power users with heavy chat/agent use</td>
+          <td class="num mono" data-label="Context window">400K tokens</td>
+        </tr>
+          <tr data-price="100" data-category="IDE plugin" data-free="1" data-ctx="400000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GH</span>
+              <span><a href="./tools/github-copilot.html" class="tool-name" style="text-decoration:none;color:inherit">GitHub Copilot</a><span class="tool-vendor">Microsoft / GitHub</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Copilot Max</span></td>
+          <td class="num" data-label="Price">$100<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Heavy, sustained agentic workflows</td>
+          <td class="num mono" data-label="Context window">400K tokens</td>
+        </tr>
+          <tr data-price="19" data-category="IDE plugin" data-free="1" data-ctx="400000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GH</span>
+              <span><a href="./tools/github-copilot.html" class="tool-name" style="text-decoration:none;color:inherit">GitHub Copilot</a><span class="tool-vendor">Microsoft / GitHub</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Copilot Business</span></td>
+          <td class="num" data-label="Price">$19<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Small/medium organizations</td>
+          <td class="num mono" data-label="Context window">400K tokens</td>
+        </tr>
+          <tr data-price="39" data-category="IDE plugin" data-free="1" data-ctx="400000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GH</span>
+              <span><a href="./tools/github-copilot.html" class="tool-name" style="text-decoration:none;color:inherit">GitHub Copilot</a><span class="tool-vendor">Microsoft / GitHub</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Copilot Enterprise</span></td>
+          <td class="num" data-label="Price">$39<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Large enterprises needing deep GitHub.com integration</td>
+          <td class="num mono" data-label="Context window">400K tokens</td>
+        </tr>
+          <tr data-price="20" data-category="Editor" data-free="1" data-ctx="200000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CU</span>
+              <span><a href="./tools/cursor.html" class="tool-name" style="text-decoration:none;color:inherit">Cursor</a><span class="tool-vendor">Anysphere</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual developers</td>
+          <td class="num mono" data-label="Context window">200K tokens</td>
+        </tr>
+          <tr data-price="60" data-category="Editor" data-free="1" data-ctx="200000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CU</span>
+              <span><a href="./tools/cursor.html" class="tool-name" style="text-decoration:none;color:inherit">Cursor</a><span class="tool-vendor">Anysphere</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro+</span></td>
+          <td class="num" data-label="Price">$60<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Devs who regularly exhaust Pro</td>
+          <td class="num mono" data-label="Context window">200K tokens</td>
+        </tr>
+          <tr data-price="200" data-category="Editor" data-free="1" data-ctx="200000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CU</span>
+              <span><a href="./tools/cursor.html" class="tool-name" style="text-decoration:none;color:inherit">Cursor</a><span class="tool-vendor">Anysphere</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Ultra</span></td>
+          <td class="num" data-label="Price">$200<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Power users running many parallel agents</td>
+          <td class="num mono" data-label="Context window">200K tokens</td>
+        </tr>
+          <tr data-price="40" data-category="Editor" data-free="1" data-ctx="200000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CU</span>
+              <span><a href="./tools/cursor.html" class="tool-name" style="text-decoration:none;color:inherit">Cursor</a><span class="tool-vendor">Anysphere</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Teams Standard</span></td>
+          <td class="num" data-label="Price">$40<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Small-to-mid teams</td>
+          <td class="num mono" data-label="Context window">200K tokens</td>
+        </tr>
+          <tr data-price="120" data-category="Editor" data-free="1" data-ctx="200000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CU</span>
+              <span><a href="./tools/cursor.html" class="tool-name" style="text-decoration:none;color:inherit">Cursor</a><span class="tool-vendor">Anysphere</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Teams Premium</span></td>
+          <td class="num" data-label="Price">$120<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams with heavy, all-day usage</td>
+          <td class="num mono" data-label="Context window">200K tokens</td>
+        </tr>
+          <tr data-price="999999" data-category="Editor" data-free="1" data-ctx="200000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CU</span>
+              <span><a href="./tools/cursor.html" class="tool-name" style="text-decoration:none;color:inherit">Cursor</a><span class="tool-vendor">Anysphere</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Enterprise</span></td>
+          <td class="num" data-label="Price">Custom</td>
+          <td data-label="Fits">Large orgs needing procurement/compliance controls</td>
+          <td class="num mono" data-label="Context window">200K tokens</td>
+        </tr>
+          <tr data-price="20" data-category="Editor" data-free="1" data-ctx="0">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">DD</span>
+              <span><a href="./tools/windsurf.html" class="tool-name" style="text-decoration:none;color:inherit">Devin Desktop (formerly Windsurf)</a><span class="tool-vendor">Cognition</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual devs using agents daily</td>
+          <td class="num mono" data-label="Context window">Not published</td>
+        </tr>
+          <tr data-price="200" data-category="Editor" data-free="1" data-ctx="0">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">DD</span>
+              <span><a href="./tools/windsurf.html" class="tool-name" style="text-decoration:none;color:inherit">Devin Desktop (formerly Windsurf)</a><span class="tool-vendor">Cognition</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Max</span></td>
+          <td class="num" data-label="Price">$200<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Power users with heavy daily/weekly usage</td>
+          <td class="num mono" data-label="Context window">Not published</td>
+        </tr>
+          <tr data-price="80" data-category="Editor" data-free="1" data-ctx="0">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">DD</span>
+              <span><a href="./tools/windsurf.html" class="tool-name" style="text-decoration:none;color:inherit">Devin Desktop (formerly Windsurf)</a><span class="tool-vendor">Cognition</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Teams</span></td>
+          <td class="num" data-label="Price">$80<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Small-to-mid engineering teams</td>
+          <td class="num mono" data-label="Context window">Not published</td>
+        </tr>
+          <tr data-price="999999" data-category="Editor" data-free="1" data-ctx="0">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">DD</span>
+              <span><a href="./tools/windsurf.html" class="tool-name" style="text-decoration:none;color:inherit">Devin Desktop (formerly Windsurf)</a><span class="tool-vendor">Cognition</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Enterprise</span></td>
+          <td class="num" data-label="Price">Custom</td>
+          <td data-label="Fits">Large orgs needing SSO / compliance</td>
+          <td class="num mono" data-label="Context window">Not published</td>
+        </tr>
+          <tr data-price="8" data-category="Terminal agent" data-free="1" data-ctx="272000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">OA</span>
+              <span><a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a><span class="tool-vendor">OpenAI</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Go</span></td>
+          <td class="num" data-label="Price">$8<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Casual users wanting more than Free</td>
+          <td class="num mono" data-label="Context window">272K tokens</td>
+        </tr>
+          <tr data-price="20" data-category="Terminal agent" data-free="1" data-ctx="272000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">OA</span>
+              <span><a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a><span class="tool-vendor">OpenAI</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Plus</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual power users</td>
+          <td class="num mono" data-label="Context window">272K tokens</td>
+        </tr>
+          <tr data-price="100" data-category="Terminal agent" data-free="1" data-ctx="272000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">OA</span>
+              <span><a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a><span class="tool-vendor">OpenAI</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro (5x)</span></td>
+          <td class="num" data-label="Price">$100<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Heavy individual users doing research and coding</td>
+          <td class="num mono" data-label="Context window">272K tokens</td>
+        </tr>
+          <tr data-price="200" data-category="Terminal agent" data-free="1" data-ctx="272000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">OA</span>
+              <span><a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a><span class="tool-vendor">OpenAI</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro (20x)</span></td>
+          <td class="num" data-label="Price">$200<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Top-tier individual usage</td>
+          <td class="num mono" data-label="Context window">272K tokens</td>
+        </tr>
+          <tr data-price="25" data-category="Terminal agent" data-free="1" data-ctx="272000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">OA</span>
+              <span><a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a><span class="tool-vendor">OpenAI</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Business Standard</span></td>
+          <td class="num" data-label="Price">$25<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Small/medium teams</td>
+          <td class="num mono" data-label="Context window">272K tokens</td>
+        </tr>
+          <tr data-price="125" data-category="Terminal agent" data-free="1" data-ctx="272000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">OA</span>
+              <span><a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a><span class="tool-vendor">OpenAI</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Business Premium</span></td>
+          <td class="num" data-label="Price">$125<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams wanting heavier per-seat usage</td>
+          <td class="num mono" data-label="Context window">272K tokens</td>
+        </tr>
+          <tr data-price="999999" data-category="Terminal agent" data-free="1" data-ctx="272000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">OA</span>
+              <span><a href="./tools/openai-codex.html" class="tool-name" style="text-decoration:none;color:inherit">ChatGPT / Codex</a><span class="tool-vendor">OpenAI</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Enterprise</span></td>
+          <td class="num" data-label="Price">Custom</td>
+          <td data-label="Fits">Large organizations</td>
+          <td class="num mono" data-label="Context window">272K tokens</td>
+        </tr>
+          <tr data-price="19" data-category="Terminal agent" data-free="0" data-ctx="1048576">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GM</span>
+              <span><a href="./tools/gemini-cli.html" class="tool-name" style="text-decoration:none;color:inherit">Gemini CLI / Code Assist</a><span class="tool-vendor">Google</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Code Assist Standard (annual)</span></td>
+          <td class="num" data-label="Price">$19<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams/businesses, paid upfront annually</td>
+          <td class="num mono" data-label="Context window">~1M tokens</td>
+        </tr>
+          <tr data-price="22.8" data-category="Terminal agent" data-free="0" data-ctx="1048576">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GM</span>
+              <span><a href="./tools/gemini-cli.html" class="tool-name" style="text-decoration:none;color:inherit">Gemini CLI / Code Assist</a><span class="tool-vendor">Google</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Code Assist Standard (monthly)</span></td>
+          <td class="num" data-label="Price">$22.80<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams wanting pay-as-you-go billing</td>
+          <td class="num mono" data-label="Context window">~1M tokens</td>
+        </tr>
+          <tr data-price="45" data-category="Terminal agent" data-free="0" data-ctx="1048576">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GM</span>
+              <span><a href="./tools/gemini-cli.html" class="tool-name" style="text-decoration:none;color:inherit">Gemini CLI / Code Assist</a><span class="tool-vendor">Google</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Code Assist Enterprise (annual)</span></td>
+          <td class="num" data-label="Price">$45<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Larger enterprises needing private-repo code customization</td>
+          <td class="num mono" data-label="Context window">~1M tokens</td>
+        </tr>
+          <tr data-price="54" data-category="Terminal agent" data-free="0" data-ctx="1048576">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GM</span>
+              <span><a href="./tools/gemini-cli.html" class="tool-name" style="text-decoration:none;color:inherit">Gemini CLI / Code Assist</a><span class="tool-vendor">Google</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Code Assist Enterprise (monthly)</span></td>
+          <td class="num" data-label="Price">$54<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Enterprises wanting pay-as-you-go billing</td>
+          <td class="num mono" data-label="Context window">~1M tokens</td>
+        </tr>
+          <tr data-price="999999" data-category="Terminal agent" data-free="0" data-ctx="1048576">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">GM</span>
+              <span><a href="./tools/gemini-cli.html" class="tool-name" style="text-decoration:none;color:inherit">Gemini CLI / Code Assist</a><span class="tool-vendor">Google</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Individual (pay-per-token API key)</span></td>
+          <td class="num" data-label="Price">Custom</td>
+          <td data-label="Fits">Individuals since the June 2026 free-tier shutdown</td>
+          <td class="num mono" data-label="Context window">~1M tokens</td>
+        </tr>
+          <tr data-price="19" data-category="IDE plugin" data-free="1" data-ctx="200000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">AQ</span>
+              <span><a href="./tools/amazon-q-developer.html" class="tool-name" style="text-decoration:none;color:inherit">Amazon Q Developer</a><span class="tool-vendor">Amazon Web Services</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro Tier</span></td>
+          <td class="num" data-label="Price">$19<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams needing admin controls, IP indemnity</td>
+          <td class="num mono" data-label="Context window">200K tokens</td>
+        </tr>
+          <tr data-price="10" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">JB</span>
+              <span><a href="./tools/jetbrains-ai.html" class="tool-name" style="text-decoration:none;color:inherit">JetBrains AI Assistant</a><span class="tool-vendor">JetBrains</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">AI Pro (Individual)</span></td>
+          <td class="num" data-label="Price">$10<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual professional developers</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="30" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">JB</span>
+              <span><a href="./tools/jetbrains-ai.html" class="tool-name" style="text-decoration:none;color:inherit">JetBrains AI Assistant</a><span class="tool-vendor">JetBrains</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">AI Ultimate (Individual)</span></td>
+          <td class="num" data-label="Price">$30<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual power users / heavy Junie agent use</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="20" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">JB</span>
+              <span><a href="./tools/jetbrains-ai.html" class="tool-name" style="text-decoration:none;color:inherit">JetBrains AI Assistant</a><span class="tool-vendor">JetBrains</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">AI Pro (Org seat)</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams licensing seats centrally</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="60" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">JB</span>
+              <span><a href="./tools/jetbrains-ai.html" class="tool-name" style="text-decoration:none;color:inherit">JetBrains AI Assistant</a><span class="tool-vendor">JetBrains</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">AI Ultimate (Org seat)</span></td>
+          <td class="num" data-label="Price">$60<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams needing Ultimate-level capacity</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="60" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">JB</span>
+              <span><a href="./tools/jetbrains-ai.html" class="tool-name" style="text-decoration:none;color:inherit">JetBrains AI Assistant</a><span class="tool-vendor">JetBrains</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">AI Enterprise</span></td>
+          <td class="num" data-label="Price">$60<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Large organizations (org-only)</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="20" data-category="Editor" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">KR</span>
+              <span><a href="./tools/kiro.html" class="tool-name" style="text-decoration:none;color:inherit">Kiro</a><span class="tool-vendor">Amazon Web Services</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual devs using Kiro regularly</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="40" data-category="Editor" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">KR</span>
+              <span><a href="./tools/kiro.html" class="tool-name" style="text-decoration:none;color:inherit">Kiro</a><span class="tool-vendor">Amazon Web Services</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro+</span></td>
+          <td class="num" data-label="Price">$40<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Developers with higher, steadier usage</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="100" data-category="Editor" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">KR</span>
+              <span><a href="./tools/kiro.html" class="tool-name" style="text-decoration:none;color:inherit">Kiro</a><span class="tool-vendor">Amazon Web Services</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro Max</span></td>
+          <td class="num" data-label="Price">$100<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Professional devs using Kiro all day</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="200" data-category="Editor" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">KR</span>
+              <span><a href="./tools/kiro.html" class="tool-name" style="text-decoration:none;color:inherit">Kiro</a><span class="tool-vendor">Amazon Web Services</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Power</span></td>
+          <td class="num" data-label="Price">$200<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Heaviest individual users</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="25" data-category="Cloud agent" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">RP</span>
+              <span><a href="./tools/replit-agent.html" class="tool-name" style="text-decoration:none;color:inherit">Replit Agent</a><span class="tool-vendor">Replit</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Core</span></td>
+          <td class="num" data-label="Price">$25<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Solo builders, small teams</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="100" data-category="Cloud agent" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">RP</span>
+              <span><a href="./tools/replit-agent.html" class="tool-name" style="text-decoration:none;color:inherit">Replit Agent</a><span class="tool-vendor">Replit</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro</span></td>
+          <td class="num" data-label="Price">$100<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams and power users</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="999999" data-category="Cloud agent" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">RP</span>
+              <span><a href="./tools/replit-agent.html" class="tool-name" style="text-decoration:none;color:inherit">Replit Agent</a><span class="tool-vendor">Replit</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Enterprise</span></td>
+          <td class="num" data-label="Price">Custom</td>
+          <td data-label="Fits">Large orgs needing governance/SSO</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="9.99" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CL</span>
+              <span><a href="./tools/cline.html" class="tool-name" style="text-decoration:none;color:inherit">Cline</a><span class="tool-vendor">Cline Bot Inc.</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">ClinePass</span></td>
+          <td class="num" data-label="Price">$9.99<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Users wanting cheap curated model access without juggling API keys</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="20" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CL</span>
+              <span><a href="./tools/cline.html" class="tool-name" style="text-decoration:none;color:inherit">Cline</a><span class="tool-vendor">Cline Bot Inc.</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Teams</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Small-to-mid teams wanting centralized billing</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="999999" data-category="IDE plugin" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">CL</span>
+              <span><a href="./tools/cline.html" class="tool-name" style="text-decoration:none;color:inherit">Cline</a><span class="tool-vendor">Cline Bot Inc.</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Enterprise</span></td>
+          <td class="num" data-label="Price">Custom</td>
+          <td data-label="Fits">Orgs needing compliance features</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="10" data-category="Editor" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">ZD</span>
+              <span><a href="./tools/zed.html" class="tool-name" style="text-decoration:none;color:inherit">Zed</a><span class="tool-vendor">Zed Industries</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Pro</span></td>
+          <td class="num" data-label="Price">$10<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual devs wanting Zed-hosted models without managing API keys</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="30" data-category="Editor" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">ZD</span>
+              <span><a href="./tools/zed.html" class="tool-name" style="text-decoration:none;color:inherit">Zed</a><span class="tool-vendor">Zed Industries</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Business</span></td>
+          <td class="num" data-label="Price">$30<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams needing admin controls and governance</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="20" data-category="Terminal agent" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">WP</span>
+              <span><a href="./tools/warp.html" class="tool-name" style="text-decoration:none;color:inherit">Warp</a><span class="tool-vendor">Warp Terminal Inc.</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Build</span></td>
+          <td class="num" data-label="Price">$20<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Individual professional developers</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="50" data-category="Terminal agent" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">WP</span>
+              <span><a href="./tools/warp.html" class="tool-name" style="text-decoration:none;color:inherit">Warp</a><span class="tool-vendor">Warp Terminal Inc.</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Business</span></td>
+          <td class="num" data-label="Price">$50<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Teams up to 25 seats</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          <tr data-price="200" data-category="Terminal agent" data-free="1" data-ctx="1000000">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">WP</span>
+              <span><a href="./tools/warp.html" class="tool-name" style="text-decoration:none;color:inherit">Warp</a><span class="tool-vendor">Warp Terminal Inc.</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">Max</span></td>
+          <td class="num" data-label="Price">$200<span class="mono" style="color:var(--ink-faint)">/mo</span></td>
+          <td data-label="Fits">Power users / heavy individual AI usage</td>
+          <td class="num mono" data-label="Context window">1M tokens</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="finder-empty" style="display:none;color:var(--ink-faint);padding:24px 0;font-size:14px">No plans match — try a higher budget or a lower context-window minimum.</p>
+    </div>
+  </section>
+  <script>
+  (function () {
+    var tbody = document.getElementById('finder-body');
+    var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+    var emptyMsg = document.getElementById('finder-empty');
+    var countEl = document.getElementById('finder-count');
+    var budgetSlider = document.getElementById('budget-slider');
+    var budgetVal = document.getElementById('budget-val');
+    var ctxSlider = document.getElementById('ctx-slider');
+    var ctxVal = document.getElementById('ctx-val');
+    var chips = Array.prototype.slice.call(document.querySelectorAll('#finder-chips .chip[data-filter]'));
+    var freeToggle = document.getElementById('finder-free-toggle');
+    var activeCategory = 'all';
+    var freeOnly = false;
+    var CTX_STEPS = [0, 200000, 400000, 1000000];
+    var CTX_LABELS = ['Any', '200K+', '400K+', '1M+'];
+
+    function apply() {
+      var budget = +budgetSlider.value;
+      budgetVal.textContent = budget >= 250 ? '$250+' : '$' + budget;
+      var ctxMin = CTX_STEPS[+ctxSlider.value];
+      ctxVal.textContent = CTX_LABELS[+ctxSlider.value];
+
+      var visible = rows.filter(function (row) {
+        var price = +row.getAttribute('data-price');
+        if (budget < 250 && price > budget) return false;
+        if (+row.getAttribute('data-ctx') < ctxMin) return false;
+        if (freeOnly && row.getAttribute('data-free') !== '1') return false;
+        if (activeCategory !== 'all' && row.getAttribute('data-category') !== activeCategory) return false;
+        return true;
+      });
+      rows.forEach(function (r) { r.style.display = 'none'; });
+      visible.sort(function (a, b) { return (+a.getAttribute('data-price')) - (+b.getAttribute('data-price')); });
+      visible.forEach(function (r) { tbody.appendChild(r); r.style.display = ''; });
+      emptyMsg.style.display = visible.length ? 'none' : 'block';
+      countEl.textContent = visible.length + ' of ' + rows.length + ' plans match';
+    }
+
+    budgetSlider.addEventListener('input', apply);
+    ctxSlider.addEventListener('input', apply);
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+        chip.setAttribute('aria-pressed', 'true');
+        activeCategory = chip.getAttribute('data-filter');
+        apply();
+      });
+    });
+    freeToggle.addEventListener('click', function () {
+      freeOnly = !freeOnly;
+      freeToggle.setAttribute('aria-pressed', String(freeOnly));
+      apply();
+    });
+    apply();
+  })();
+  </script>
+<footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="./" class="logo">ratelog<span class="dot">.</span></a>
+          <p class="footer-note">Independent tracker of AI coding assistant pricing and usage limits. Not affiliated with Anthropic, GitHub, Cursor, Cognition, OpenAI, Google, AWS, or JetBrains. Figures verified against official sources — see each tool page for citations and the date last checked.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h5>Tools</h5>
+            <ul>
+              <li><a href="./tools/claude-code.html">Claude Code</a></li>
+              <li><a href="./tools/github-copilot.html">GitHub Copilot</a></li>
+              <li><a href="./tools/cursor.html">Cursor</a></li>
+              <li><a href="./tools/windsurf.html">Devin Desktop (formerly Windsurf)</a></li>
+              <li><a href="./tools/openai-codex.html">ChatGPT / Codex</a></li>
+              <li><a href="./tools/gemini-cli.html">Gemini CLI / Code Assist</a></li>
+              <li><a href="./tools/amazon-q-developer.html">Amazon Q Developer</a></li>
+              <li><a href="./tools/jetbrains-ai.html">JetBrains AI Assistant</a></li>
+              <li><a href="./tools/kiro.html">Kiro</a></li>
+              <li><a href="./tools/replit-agent.html">Replit Agent</a></li>
+              <li><a href="./tools/cline.html">Cline</a></li>
+              <li><a href="./tools/zed.html">Zed</a></li>
+              <li><a href="./tools/warp.html">Warp</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Site</h5>
+            <ul>
+              <li><a href="./finder.html">Plan Finder</a></li>
+              <li><a href="./leaderboard.html">Leaderboard</a></li>
+              <li><a href="./changelog.html">Changelog</a></li>
+              <li><a href="./rss.xml">RSS feed</a></li>
+              <li><a href="./badges.html">Badges</a></li>
+              <li><a href="./api.html">API</a></li>
+              <li><a href="./about.html">About &amp; methodology</a></li>
+              <li><a href="./privacy.html">Privacy policy</a></li>
+              <li><a href="./sitemap.xml">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Data last verified 2026-08-20</span>
+        <span>&copy; 2026 RateLog</span>
+      </div>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+<!--
+  Google Analytics 4 — create a property at analytics.google.com, then
+  replace G-XXXXXXXXXX below with the real measurement ID and uncomment.
+-->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+</body>
+</html>

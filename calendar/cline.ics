@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Cline
+X-WR-CALDESC:Pricing & usage-limit changes for Cline\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-cline-2025-10-20-first-paid-organizational-tiers@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20251020
+DTEND;VALUE=DATE:20251021
+SUMMARY:• Cline: First paid organizational tiers
+DESCRIPTION:Introduced Teams and Enterprise tiers after previously having no paid tier of any kind beyond BYOK inference costs.
+URL:https://skymined.github.io/ratelog/tools/cline.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cline-2026-06-29-launched-clinepass@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+SUMMARY:• Cline: Launched ClinePass
+DESCRIPTION:Cline's first-ever direct paid subscription ($9.99/mo) for curated\, discounted open-weight-model access — layered on top of the still-free\, still-BYOK core product.
+URL:https://skymined.github.io/ratelog/tools/cline.html
+END:VEVENT
+END:VCALENDAR

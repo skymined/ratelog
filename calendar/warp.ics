@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Warp
+X-WR-CALDESC:Pricing & usage-limit changes for Warp\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-warp-2025-10-30-legacy-tiers-collapsed-into-one-20-mo-pl@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20251030
+DTEND;VALUE=DATE:20251031
+SUMMARY:↓ Warp: Legacy tiers collapsed into one $20/mo plan
+DESCRIPTION:Collapsed three legacy paid tiers (Pro\, Turbo\, Lightspeed) into a single $20/mo Build plan\; independent analysis characterized this as a net price increase for many existing $10–15/mo subscribers\, even though per-unit overage pricing improved and BYOK access was added.
+URL:https://skymined.github.io/ratelog/tools/warp.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-warp-2026-05-20-byok-extended-to-free-tier@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260520
+DTEND;VALUE=DATE:20260521
+SUMMARY:↑ Warp: BYOK extended to Free tier
+DESCRIPTION:Bring-your-own-API-key support was extended to all plans including Free\, letting Free users route requests through their own keys instead of being limited to the onboarding credit grant.
+URL:https://skymined.github.io/ratelog/tools/warp.html
+END:VEVENT
+END:VCALENDAR

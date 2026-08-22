@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — JetBrains AI Assistant
+X-WR-CALDESC:Pricing & usage-limit changes for JetBrains AI Assistant\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-jetbrains-ai-2025-08-25-quotas-tied-to-plan-price-shrinking-for-@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250825
+DTEND;VALUE=DATE:20250826
+SUMMARY:↓ JetBrains AI Assistant: Quotas tied to plan price\, shrinking for heavy users
+DESCRIPTION:Replaced its opaque per-plan quota with a rule that each plan's AI-Credit allowance equals its USD price (plus a small bonus on Ultimate). JetBrains acknowledged quotas were shrinking for a meaningful share of users\, especially heavy Junie agent users\, since old quotas had been set unsustainably high as a promotional measure.
+URL:https://skymined.github.io/ratelog/tools/jetbrains-ai.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-jetbrains-ai-2026-07-07-org-credits-extended-to-12-month-validit@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+SUMMARY:↑ JetBrains AI Assistant: Org credits extended to 12-month validity
+DESCRIPTION:Announced transitioning org/business AI licensing from fixed seat quotas toward on-demand credits with validity extended from 30 days to 12 months\, rolling out through July–August 2026.
+URL:https://skymined.github.io/ratelog/tools/jetbrains-ai.html
+END:VEVENT
+END:VCALENDAR

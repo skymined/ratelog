@@ -16,6 +16,7 @@ const TYPES = {
   '.png': 'image/png',
   '.xml': 'application/xml; charset=utf-8',
   '.txt': 'text/plain; charset=utf-8',
+  '.ics': 'text/calendar; charset=utf-8',
 };
 
 http.createServer((req, res) => {

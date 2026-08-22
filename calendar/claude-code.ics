@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Claude Code
+X-WR-CALDESC:Pricing & usage-limit changes for Claude Code\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-claude-code-2025-08-28-weekly-limits-introduced-for-the-first-t@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250828
+DTEND;VALUE=DATE:20250829
+SUMMARY:↓ Claude Code: Weekly limits introduced for the first time
+DESCRIPTION:Anthropic stacked a new 7-day usage cap on top of the existing 5-hour window\, citing 24/7 automated usage and account sharing/reselling by under 5% of subscribers. This was the structural change that created the current two-window system.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-claude-code-2026-05-06-5-hour-limits-doubled@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:↑ Claude Code: 5-hour limits doubled
+DESCRIPTION:Anthropic doubled Claude Code's 5-hour rate limits for Pro\, Max\, and Team plans (permanent) and removed a peak-hour usage reduction\, enabled by new compute capacity from a deal giving Anthropic access to SpaceX's Colossus 1 data center.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-claude-code-2026-05-13-weekly-limits-raised-50@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+SUMMARY:↑ Claude Code: Weekly limits raised 50%
+DESCRIPTION:One week after the 5-hour doubling\, Anthropic raised weekly Claude Code usage limits by 50% for Pro\, Max\, and Team plans. Framed as promotional\, it has been extended repeatedly and is confirmed live through August 31\, 2026.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-claude-code-2026-08-10-sonnet-5-api-pricing-made-permanent@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:↑ Claude Code: Sonnet 5 API pricing made permanent
+DESCRIPTION:Anthropic made Claude Sonnet 5's introductory API price ($2/$10 per million input/output tokens) permanent\, canceling a scheduled increase to $3/$15 that was set for 2026-09-01.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+END:VCALENDAR

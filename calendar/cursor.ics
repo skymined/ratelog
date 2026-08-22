@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Cursor
+X-WR-CALDESC:Pricing & usage-limit changes for Cursor\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-cursor-2025-06-16-pro-moved-off-flat-500-fast-requests@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250616
+DTEND;VALUE=DATE:20250617
+SUMMARY:• Cursor: Pro moved off flat "500 fast requests"
+DESCRIPTION:Cursor dropped the old flat ‘500 fast requests/month’ Pro model for usage-based pricing: Pro now includes at least $20/month of inference at API prices and unlimited use of the 'Auto' model. Also launched the $200/month Ultra tier.
+URL:https://skymined.github.io/ratelog/tools/cursor.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cursor-2025-08-12-teams-moved-to-usage-based-billing@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250812
+DTEND;VALUE=DATE:20250813
+SUMMARY:• Cursor: Teams moved to usage-based billing
+DESCRIPTION:Teams moved from a fixed per-request cost (250 included requests/month/seat\, $0.08 per extra request) to variable\, API-rate usage billing.
+URL:https://skymined.github.io/ratelog/tools/cursor.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cursor-2026-06-01-teams-split-into-two-seat-tiers@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:↑ Cursor: Teams split into two seat tiers
+DESCRIPTION:Standard keeps its $40/seat price but gains materially more included usage\, split into first-party and third-party model pools. A new $120/seat Premium tier (5× Standard’s usage) was added for heavy daily users.
+URL:https://skymined.github.io/ratelog/tools/cursor.html
+END:VEVENT
+END:VCALENDAR

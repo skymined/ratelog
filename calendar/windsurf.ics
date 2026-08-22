@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Devin Desktop (formerly Windsurf)
+X-WR-CALDESC:Pricing & usage-limit changes for Devin Desktop (formerly Windsurf)\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-windsurf-2026-03-19-flat-credits-replaced-with-daily-weekly-@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+SUMMARY:↓ Devin Desktop (formerly Windsurf): Flat credits replaced with daily/weekly quotas\; Pro price up
+DESCRIPTION:Cognition replaced flat monthly credit-pool billing with a token-based system giving daily + weekly usage allowances\, raised Pro from $15→$20/mo and Teams from $30→$40/seat/mo (both reportedly grandfathered for existing subscribers)\, and launched a new $200/mo Max tier.
+URL:https://skymined.github.io/ratelog/tools/windsurf.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-windsurf-2026-06-02-rebranded-to-devin-desktop@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260602
+DTEND;VALUE=DATE:20260603
+SUMMARY:• Devin Desktop (formerly Windsurf): Rebranded to "Devin Desktop"
+DESCRIPTION:Cognition rebranded the Windsurf IDE as “Devin Desktop\,” unifying it with the cloud agent Devin under one product and opening it to third-party agents via the open Agent Client Protocol.
+URL:https://skymined.github.io/ratelog/tools/windsurf.html
+END:VEVENT
+END:VCALENDAR

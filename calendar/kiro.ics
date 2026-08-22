@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Kiro
+X-WR-CALDESC:Pricing & usage-limit changes for Kiro\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-kiro-2025-07-21-emergency-usage-caps-and-a-signup-waitli@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250721
+DTEND;VALUE=DATE:20250722
+SUMMARY:↓ Kiro: Emergency usage caps and a signup waitlist
+DESCRIPTION:Days after Kiro's public preview launched\, AWS imposed temporary daily usage caps and a signup waitlist due to overwhelming demand — lifted in October 2025 when the current credit-tier system replaced it.
+URL:https://skymined.github.io/ratelog/tools/kiro.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-kiro-2026-06-10-added-pro-max-tier@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260610
+DTEND;VALUE=DATE:20260611
+SUMMARY:↑ Kiro: Added Pro Max tier
+DESCRIPTION:AWS introduced a $100/mo Pro Max tier (5\,000 credits) to bridge the gap between Pro+ ($40) and Power ($200)\, giving mid-heavy users a predictable flat rate instead of unpredictable overage charges.
+URL:https://skymined.github.io/ratelog/tools/kiro.html
+END:VEVENT
+END:VCALENDAR

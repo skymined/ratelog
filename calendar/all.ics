@@ -1,0 +1,250 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — all tools
+X-WR-CALDESC:Every AI coding tool pricing & usage-limit change RateLog has caught.
+BEGIN:VEVENT
+UID:ratelog-cursor-2025-06-16-pro-moved-off-flat-500-fast-requests@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250616
+DTEND;VALUE=DATE:20250617
+SUMMARY:• Cursor: Pro moved off flat "500 fast requests"
+DESCRIPTION:Cursor dropped the old flat ‘500 fast requests/month’ Pro model for usage-based pricing: Pro now includes at least $20/month of inference at API prices and unlimited use of the 'Auto' model. Also launched the $200/month Ultra tier.
+URL:https://skymined.github.io/ratelog/tools/cursor.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-replit-agent-2025-06-18-switched-to-effort-based-billing@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250618
+DTEND;VALUE=DATE:20250619
+SUMMARY:• Replit Agent: Switched to effort-based billing
+DESCRIPTION:Replaced flat $0.25-per-checkpoint billing with effort-based pricing\, where each checkpoint's cost scales with the actual compute the Agent used.
+URL:https://skymined.github.io/ratelog/tools/replit-agent.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-kiro-2025-07-21-emergency-usage-caps-and-a-signup-waitli@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250721
+DTEND;VALUE=DATE:20250722
+SUMMARY:↓ Kiro: Emergency usage caps and a signup waitlist
+DESCRIPTION:Days after Kiro's public preview launched\, AWS imposed temporary daily usage caps and a signup waitlist due to overwhelming demand — lifted in October 2025 when the current credit-tier system replaced it.
+URL:https://skymined.github.io/ratelog/tools/kiro.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cursor-2025-08-12-teams-moved-to-usage-based-billing@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250812
+DTEND;VALUE=DATE:20250813
+SUMMARY:• Cursor: Teams moved to usage-based billing
+DESCRIPTION:Teams moved from a fixed per-request cost (250 included requests/month/seat\, $0.08 per extra request) to variable\, API-rate usage billing.
+URL:https://skymined.github.io/ratelog/tools/cursor.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-jetbrains-ai-2025-08-25-quotas-tied-to-plan-price-shrinking-for-@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250825
+DTEND;VALUE=DATE:20250826
+SUMMARY:↓ JetBrains AI Assistant: Quotas tied to plan price\, shrinking for heavy users
+DESCRIPTION:Replaced its opaque per-plan quota with a rule that each plan's AI-Credit allowance equals its USD price (plus a small bonus on Ultimate). JetBrains acknowledged quotas were shrinking for a meaningful share of users\, especially heavy Junie agent users\, since old quotas had been set unsustainably high as a promotional measure.
+URL:https://skymined.github.io/ratelog/tools/jetbrains-ai.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-claude-code-2025-08-28-weekly-limits-introduced-for-the-first-t@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250828
+DTEND;VALUE=DATE:20250829
+SUMMARY:↓ Claude Code: Weekly limits introduced for the first time
+DESCRIPTION:Anthropic stacked a new 7-day usage cap on top of the existing 5-hour window\, citing 24/7 automated usage and account sharing/reselling by under 5% of subscribers. This was the structural change that created the current two-window system.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-zed-2025-09-24-moved-from-flat-prompt-limits-to-metered@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250924
+DTEND;VALUE=DATE:20250925
+SUMMARY:• Zed: Moved from flat prompt limits to metered billing
+DESCRIPTION:Overhauled pricing from flat prompt-count limits to token-based billing. Pro dropped from $20/mo (500 prompts/month) to $10/mo\, but the flat allowance was replaced with only $5/mo of included credit plus usage-based overage at API list price + 10%.
+URL:https://skymined.github.io/ratelog/tools/zed.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cline-2025-10-20-first-paid-organizational-tiers@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20251020
+DTEND;VALUE=DATE:20251021
+SUMMARY:• Cline: First paid organizational tiers
+DESCRIPTION:Introduced Teams and Enterprise tiers after previously having no paid tier of any kind beyond BYOK inference costs.
+URL:https://skymined.github.io/ratelog/tools/cline.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-warp-2025-10-30-legacy-tiers-collapsed-into-one-20-mo-pl@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20251030
+DTEND;VALUE=DATE:20251031
+SUMMARY:↓ Warp: Legacy tiers collapsed into one $20/mo plan
+DESCRIPTION:Collapsed three legacy paid tiers (Pro\, Turbo\, Lightspeed) into a single $20/mo Build plan\; independent analysis characterized this as a net price increase for many existing $10–15/mo subscribers\, even though per-unit overage pricing improved and BYOK access was added.
+URL:https://skymined.github.io/ratelog/tools/warp.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-replit-agent-2026-02-24-new-pro-plan-replaces-teams@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260224
+DTEND;VALUE=DATE:20260225
+SUMMARY:↑ Replit Agent: New Pro plan replaces Teams
+DESCRIPTION:Discontinued the separate Teams plan for a new $100/mo Pro plan with 1-month credit rollover and up to 15 collaborators\; Core's annual price dropped to $20/mo with 5 collaborators built in.
+URL:https://skymined.github.io/ratelog/tools/replit-agent.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-windsurf-2026-03-19-flat-credits-replaced-with-daily-weekly-@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+SUMMARY:↓ Devin Desktop (formerly Windsurf): Flat credits replaced with daily/weekly quotas\; Pro price up
+DESCRIPTION:Cognition replaced flat monthly credit-pool billing with a token-based system giving daily + weekly usage allowances\, raised Pro from $15→$20/mo and Teams from $30→$40/seat/mo (both reportedly grandfathered for existing subscribers)\, and launched a new $200/mo Max tier.
+URL:https://skymined.github.io/ratelog/tools/windsurf.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-openai-codex-2026-04-02-codex-switched-to-token-based-credits@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260402
+DTEND;VALUE=DATE:20260403
+SUMMARY:• ChatGPT / Codex: Codex switched to token-based credits
+DESCRIPTION:Switched Codex from flat per-message billing to token-based credits at API rates for Plus\, Pro\, and Business — cost now scales with tokens used instead of one flat unit per task.
+URL:https://skymined.github.io/ratelog/tools/openai-codex.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-openai-codex-2026-04-02-business-seat-price-cut@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260402
+DTEND;VALUE=DATE:20260403
+SUMMARY:↑ ChatGPT / Codex: Business seat price cut
+DESCRIPTION:Cut ChatGPT Business per-seat price about $5: from $30/mo ($25 annual) down to $25/mo ($20 annual).
+URL:https://skymined.github.io/ratelog/tools/openai-codex.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-amazon-q-developer-2026-04-30-product-sunset-announced@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260430
+DTEND;VALUE=DATE:20260501
+SUMMARY:↓ Amazon Q Developer: Product sunset announced
+DESCRIPTION:AWS announced Amazon Q Developer’s IDE plugins and paid Pro subscription are being sunset in favor of a new agentic IDE\, "Kiro" — new Free Tier and Pro signups blocked from May 15\, 2026\, full end of support April 30\, 2027.
+URL:https://skymined.github.io/ratelog/tools/amazon-q-developer.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-claude-code-2026-05-06-5-hour-limits-doubled@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:↑ Claude Code: 5-hour limits doubled
+DESCRIPTION:Anthropic doubled Claude Code's 5-hour rate limits for Pro\, Max\, and Team plans (permanent) and removed a peak-hour usage reduction\, enabled by new compute capacity from a deal giving Anthropic access to SpaceX's Colossus 1 data center.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-claude-code-2026-05-13-weekly-limits-raised-50@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+SUMMARY:↑ Claude Code: Weekly limits raised 50%
+DESCRIPTION:One week after the 5-hour doubling\, Anthropic raised weekly Claude Code usage limits by 50% for Pro\, Max\, and Team plans. Framed as promotional\, it has been extended repeatedly and is confirmed live through August 31\, 2026.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-gemini-cli-2026-05-19-google-ai-ultra-price-cut-no-longer-gran@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:• Gemini CLI / Code Assist: Google AI Ultra price cut (no longer grants CLI quota)
+DESCRIPTION:Google cut the Google AI Ultra subscription price from $249.99/mo to $99.99/mo (5× Pro usage)\, adding a $199.99/mo tier (20× Pro usage) — though after June 18 this subscription no longer grants any Gemini CLI quota at all.
+URL:https://skymined.github.io/ratelog/tools/gemini-cli.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-warp-2026-05-20-byok-extended-to-free-tier@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260520
+DTEND;VALUE=DATE:20260521
+SUMMARY:↑ Warp: BYOK extended to Free tier
+DESCRIPTION:Bring-your-own-API-key support was extended to all plans including Free\, letting Free users route requests through their own keys instead of being limited to the onboarding credit grant.
+URL:https://skymined.github.io/ratelog/tools/warp.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cursor-2026-06-01-teams-split-into-two-seat-tiers@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:↑ Cursor: Teams split into two seat tiers
+DESCRIPTION:Standard keeps its $40/seat price but gains materially more included usage\, split into first-party and third-party model pools. A new $120/seat Premium tier (5× Standard’s usage) was added for heavy daily users.
+URL:https://skymined.github.io/ratelog/tools/cursor.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-github-copilot-2026-06-01-flat-premium-request-quotas-replaced-wit@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:• GitHub Copilot: Flat premium-request quotas replaced with AI Credits
+DESCRIPTION:GitHub replaced its flat monthly Premium Request quotas (e.g. 300/month for Pro) with a token-consumption-based "AI Credits" system (1 credit = $0.01) across all plans\, and introduced a new top individual tier\, Copilot Max\, at $100/month. Total credit allowances ended up higher than sticker price once bonus credits are included\, but billing is now metered rather than a flat predictable count.
+URL:https://skymined.github.io/ratelog/tools/github-copilot.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-windsurf-2026-06-02-rebranded-to-devin-desktop@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260602
+DTEND;VALUE=DATE:20260603
+SUMMARY:• Devin Desktop (formerly Windsurf): Rebranded to "Devin Desktop"
+DESCRIPTION:Cognition rebranded the Windsurf IDE as “Devin Desktop\,” unifying it with the cloud agent Devin under one product and opening it to third-party agents via the open Agent Client Protocol.
+URL:https://skymined.github.io/ratelog/tools/windsurf.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-kiro-2026-06-10-added-pro-max-tier@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260610
+DTEND;VALUE=DATE:20260611
+SUMMARY:↑ Kiro: Added Pro Max tier
+DESCRIPTION:AWS introduced a $100/mo Pro Max tier (5\,000 credits) to bridge the gap between Pro+ ($40) and Power ($200)\, giving mid-heavy users a predictable flat rate instead of unpredictable overage charges.
+URL:https://skymined.github.io/ratelog/tools/kiro.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-gemini-cli-2026-06-18-free-individual-access-ended-entirely@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260618
+DTEND;VALUE=DATE:20260619
+SUMMARY:↓ Gemini CLI / Code Assist: Free individual access ended entirely
+DESCRIPTION:Gemini CLI and the Code Assist IDE extensions stopped serving requests for the free individual tier and for Google AI Pro/Ultra subscribers — ending free access entirely for individuals\, who must now use the successor "Antigravity CLI" or their own paid API key.
+URL:https://skymined.github.io/ratelog/tools/gemini-cli.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cline-2026-06-29-launched-clinepass@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+SUMMARY:• Cline: Launched ClinePass
+DESCRIPTION:Cline's first-ever direct paid subscription ($9.99/mo) for curated\, discounted open-weight-model access — layered on top of the still-free\, still-BYOK core product.
+URL:https://skymined.github.io/ratelog/tools/cline.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-jetbrains-ai-2026-07-07-org-credits-extended-to-12-month-validit@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+SUMMARY:↑ JetBrains AI Assistant: Org credits extended to 12-month validity
+DESCRIPTION:Announced transitioning org/business AI licensing from fixed seat quotas toward on-demand credits with validity extended from 30 days to 12 months\, rolling out through July–August 2026.
+URL:https://skymined.github.io/ratelog/tools/jetbrains-ai.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-openai-codex-2026-08-06-free-tier-chat-cap-removed@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260806
+DTEND;VALUE=DATE:20260807
+SUMMARY:↑ ChatGPT / Codex: Free-tier chat cap removed
+DESCRIPTION:GPT-5.6 Luna became the default Free-tier model\, and OpenAI began removing the numeric cap on Free-tier text chats entirely\, moving toward "unlimited" (subject to abuse guardrails).
+URL:https://skymined.github.io/ratelog/tools/openai-codex.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-claude-code-2026-08-10-sonnet-5-api-pricing-made-permanent@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:↑ Claude Code: Sonnet 5 API pricing made permanent
+DESCRIPTION:Anthropic made Claude Sonnet 5's introductory API price ($2/$10 per million input/output tokens) permanent\, canceling a scheduled increase to $3/$15 that was set for 2026-09-01.
+URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+END:VCALENDAR

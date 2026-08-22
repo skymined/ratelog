@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="99" height="20" role="img" aria-label="Zed: $10/mo">
+  <title>Zed: $10/mo</title>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="r"><rect width="99" height="20" rx="3" fill="#fff"/></clipPath>
+  <g clip-path="url(#r)">
+    <rect width="40" height="20" fill="#14171c"/>
+    <rect x="40" width="59" height="20" fill="#a5690f"/>
+    <rect width="99" height="20" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono',DejaVu Sans Mono,Consolas,monospace" font-size="11">
+    <text x="20" y="14">Zed</text>
+    <text x="69.5" y="14">$10/mo</text>
+  </g>
+</svg>

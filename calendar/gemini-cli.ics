@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Gemini CLI / Code Assist
+X-WR-CALDESC:Pricing & usage-limit changes for Gemini CLI / Code Assist\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-gemini-cli-2026-05-19-google-ai-ultra-price-cut-no-longer-gran@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:• Gemini CLI / Code Assist: Google AI Ultra price cut (no longer grants CLI quota)
+DESCRIPTION:Google cut the Google AI Ultra subscription price from $249.99/mo to $99.99/mo (5× Pro usage)\, adding a $199.99/mo tier (20× Pro usage) — though after June 18 this subscription no longer grants any Gemini CLI quota at all.
+URL:https://skymined.github.io/ratelog/tools/gemini-cli.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-gemini-cli-2026-06-18-free-individual-access-ended-entirely@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260618
+DTEND;VALUE=DATE:20260619
+SUMMARY:↓ Gemini CLI / Code Assist: Free individual access ended entirely
+DESCRIPTION:Gemini CLI and the Code Assist IDE extensions stopped serving requests for the free individual tier and for Google AI Pro/Ultra subscribers — ending free access entirely for individuals\, who must now use the successor "Antigravity CLI" or their own paid API key.
+URL:https://skymined.github.io/ratelog/tools/gemini-cli.html
+END:VEVENT
+END:VCALENDAR

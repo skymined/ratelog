@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="177" height="20" role="img" aria-label="ChatGPT / Codex: $20/mo">
+  <title>ChatGPT / Codex: $20/mo</title>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="r"><rect width="177" height="20" rx="3" fill="#fff"/></clipPath>
+  <g clip-path="url(#r)">
+    <rect width="118" height="20" fill="#14171c"/>
+    <rect x="118" width="59" height="20" fill="#a5690f"/>
+    <rect width="177" height="20" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono',DejaVu Sans Mono,Consolas,monospace" font-size="11">
+    <text x="59" y="14">ChatGPT / Codex</text>
+    <text x="147.5" y="14">$20/mo</text>
+  </g>
+</svg>

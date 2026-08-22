@@ -83,6 +83,7 @@ function head({ title, description, canonicalPath, jsonLd, ogImage }) {
   <link rel="canonical" href="${url}" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="${esc(SITE.name)} changelog" href="/rss.xml" />
   <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
   <!-- Google Search Console: paste the verification content from search.google.com/search-console (Add property → HTML tag), then uncomment. -->
@@ -112,6 +113,7 @@ function themeToggleSvg() {
 function header(active) {
   const nav = [
     ['/', 'Compare'],
+    ['/finder.html', 'Plan Finder'],
     ['/leaderboard.html', 'Leaderboard'],
     ['/changelog.html', 'Changelog'],
     ['/about.html', 'About'],
@@ -150,8 +152,12 @@ function footer() {
           <div>
             <h5>Site</h5>
             <ul>
+              <li><a href="/finder.html">Plan Finder</a></li>
               <li><a href="/leaderboard.html">Leaderboard</a></li>
               <li><a href="/changelog.html">Changelog</a></li>
+              <li><a href="/rss.xml">RSS feed</a></li>
+              <li><a href="/badges.html">Badges</a></li>
+              <li><a href="/api.html">API</a></li>
               <li><a href="/about.html">About &amp; methodology</a></li>
               <li><a href="/privacy.html">Privacy policy</a></li>
               <li><a href="/sitemap.xml">Sitemap</a></li>
@@ -319,6 +325,7 @@ function homepage() {
       <div class="hero-meta">
         <span class="pulse-badge"><span class="pulse-dot"></span>${recentCount} change${recentCount === 1 ? '' : 's'} in the last 30 days</span>
         <a href="/changelog.html" class="text-link">See the full changelog →</a>
+        <a href="/rss.xml" class="text-link">RSS →</a>
       </div>
     </div>
   </section>
@@ -333,7 +340,7 @@ function homepage() {
   <section class="section" id="table">
     <div class="wrap">
       <div class="section-head">
-        <div><span class="eyebrow">the ledger</span><h2>Headline plan, by tool</h2><p>Each row is the most representative paid tier. Open a tool for the full breakdown across every plan.</p></div>
+        <div><span class="eyebrow">the ledger</span><h2>Headline plan, by tool</h2><p>Each row is the most representative paid tier. Open a tool for the full breakdown across every plan, or use the <a href="/finder.html" class="text-link">Plan Finder</a> to filter every plan from every tool by your own budget.</p></div>
       </div>
       <div class="controls">
         <div class="chip-row" id="filter-chips">
@@ -457,7 +464,12 @@ function toolPage(tool) {
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head"><div><span class="eyebrow">history</span><h2>What’s changed</h2></div></div>
+      <div class="section-head"><div><span class="eyebrow">history</span><h2>What’s changed</h2></div>
+        <div style="display:flex;gap:8px">
+          <a href="/rss.xml" class="pill-link">RSS</a>
+          <a href="webcal://${SITE.url.replace(/^https?:\/\//, '')}/calendar/${tool.slug}.ics" class="pill-link">Add to Calendar</a>
+        </div>
+      </div>
       ${toolChanges.length ? `<div class="diff-log">
         ${toolChanges.map((c) => `<div class="diff-entry ${c.type}">
           <div class="diff-date">${c.date}${diffBadge(c.type, c.type === 'up' ? 'improved' : c.type === 'down' ? 'reduced' : 'changed')}</div>
@@ -475,6 +487,7 @@ function toolPage(tool) {
       <div class="callout">
         Verified against ${tool.sources.map((s) => `<a href="${esc(s.url)}">${esc(s.title)}</a>`).join(', ')}. Last checked ${SITE.lastVerified}. See something stale? <a href="/about.html">Here’s how we keep this current.</a>
       </div>
+      <p style="margin-top:14px;font-size:13px;color:var(--ink-faint)">Writing about ${esc(tool.name)}? <a href="/badges.html" class="text-link">Grab a badge →</a></p>
     </div>
   </section>
 
@@ -556,6 +569,17 @@ function changelogPage() {
       <span class="eyebrow">changelog</span>
       <h1 style="font-size:clamp(1.9rem,3.4vw,2.8rem)">Every pricing &amp; limit change we’ve caught.</h1>
       <p class="lede">Newest first. Green means you got more for your money; rust means less.</p>
+      <div class="hero-meta">
+        <a href="/rss.xml" class="pulse-badge" style="text-decoration:none">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><circle cx="5.5" cy="18.5" r="1.5" fill="var(--accent)" stroke="none"/><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/></svg>
+          Subscribe via RSS
+        </a>
+        <a href="webcal://${SITE.url.replace(/^https?:\/\//, '')}/calendar/all.ics" class="pulse-badge" style="text-decoration:none">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Add to Calendar
+        </a>
+        <span style="font-size:13.5px;color:var(--ink-faint)">No account or email needed — either way, changes just show up where you already look.</span>
+      </div>
     </div>
   </section>
   <section class="section" style="border-top:1px solid var(--line)">
@@ -771,13 +795,374 @@ function write(relPath, content) {
 }
 
 function buildSitemap() {
-  const urls = ['/', '/leaderboard.html', '/changelog.html', '/about.html', '/privacy.html', ...tools.map((t) => `/tools/${t.slug}.html`), ...comparisons.map(([a, b]) => `/compare/${[a, b].sort().join('-vs-')}.html`)];
+  const urls = ['/', '/finder.html', '/leaderboard.html', '/changelog.html', '/about.html', '/privacy.html', '/badges.html', '/api.html', ...tools.map((t) => `/tools/${t.slug}.html`), ...comparisons.map(([a, b]) => `/compare/${[a, b].sort().join('-vs-')}.html`)];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE.url}${u}</loc></url>`).join('\n')}\n</urlset>\n`;
   write('sitemap.xml', body);
 }
 
+// shields.io-style embeddable badge — fully self-contained SVG (opaque fills),
+// so it renders consistently regardless of the embedding page's own theme.
+// Static/build-time only: no backend to regenerate these on request, so a
+// badge reflects data as of the last deploy, same as the rest of the site.
+function badgeSvg(label, message, color) {
+  const charW = 6.5;
+  const pad = 10;
+  const labelW = Math.round(label.length * charW) + pad * 2;
+  const msgW = Math.round(message.length * charW) + pad * 2;
+  const total = labelW + msgW;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${total}" height="20" role="img" aria-label="${esc(label)}: ${esc(message)}">
+  <title>${esc(label)}: ${esc(message)}</title>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="r"><rect width="${total}" height="20" rx="3" fill="#fff"/></clipPath>
+  <g clip-path="url(#r)">
+    <rect width="${labelW}" height="20" fill="#14171c"/>
+    <rect x="${labelW}" width="${msgW}" height="20" fill="${color}"/>
+    <rect width="${total}" height="20" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono',DejaVu Sans Mono,Consolas,monospace" font-size="11">
+    <text x="${labelW / 2}" y="14">${esc(label)}</text>
+    <text x="${labelW + msgW / 2}" y="14">${esc(message)}</text>
+  </g>
+</svg>
+`;
+}
+
+function buildBadges() {
+  const BADGE_ACCENT = '#a5690f';
+  const BADGE_UP = '#1b7a4d';
+  const BADGE_DOWN = '#b0392c';
+  const BADGE_NEUTRAL = '#5b616b';
+  for (const t of tools) {
+    const plan = headlinePlan(t);
+    const priceMsg = plan.priceMonthly === 0 ? 'free' : plan.priceMonthly === null ? 'custom' : `${money(plan.priceMonthly)}/mo`;
+    write(`badge/${t.slug}.svg`, badgeSvg(t.name.length > 20 ? t.mark : t.name, priceMsg, BADGE_ACCENT));
+
+    const change = latestChange(t);
+    const freshMsg = change ? relTime(change.date) : 'no data';
+    const freshColor = !change ? BADGE_NEUTRAL : change.type === 'up' ? BADGE_UP : change.type === 'down' ? BADGE_DOWN : BADGE_NEUTRAL;
+    write(`badge/${t.slug}-changed.svg`, badgeSvg('last changed', freshMsg, freshColor));
+  }
+}
+
+function badgesPage() {
+  const rows = tools.map((t) => {
+    const priceUrl = `${SITE.url}/badge/${t.slug}.svg`;
+    const changedUrl = `${SITE.url}/badge/${t.slug}-changed.svg`;
+    const linkUrl = `${SITE.url}/tools/${t.slug}.html`;
+    const priceMd = `[![${t.name} pricing](${priceUrl})](${linkUrl})`;
+    const changedMd = `[![${t.name} last changed](${changedUrl})](${linkUrl})`;
+    return `<div class="info-card" style="text-align:left">
+        <h3 style="margin-bottom:12px">${esc(t.name)}</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+          <img src="/badge/${t.slug}.svg" alt="${esc(t.name)} pricing" width="1" height="1" style="width:auto;height:20px" />
+          <img src="/badge/${t.slug}-changed.svg" alt="${esc(t.name)} last changed" width="1" height="1" style="width:auto;height:20px" />
+        </div>
+        <label style="display:block;font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Markdown</label>
+        <textarea readonly onclick="this.select()" style="width:100%;font-family:var(--font-mono);font-size:12px;padding:8px;border:1px solid var(--line);border-radius:4px;background:var(--paper-sunken);color:var(--ink-soft);resize:vertical;margin-bottom:8px" rows="2">${esc(priceMd)}
+${esc(changedMd)}</textarea>
+      </div>`;
+  }).join('\n      ');
+
+  const body = `<section class="hero" style="border-bottom:none;padding-bottom:8px">
+    <div class="wrap">
+      <span class="eyebrow">embeddable</span>
+      <h1 style="font-size:clamp(1.9rem,3.4vw,2.8rem)">Badges for your README or blog post.</h1>
+      <p class="lede">Writing about a tool? Drop its live-ish price or “last changed” badge in — click a badge to copy its Markdown. Badges are static images baked at our last build, same freshness as the rest of the site (see <a href="/about.html" class="text-link">About</a>).</p>
+    </div>
+  </section>
+  <section class="section" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="card-grid" style="grid-template-columns:repeat(2,1fr)">
+        ${rows}
+      </div>
+    </div>
+  </section>`;
+
+  return page({
+    title: `Badges — embed live tool pricing — ${SITE.name}`,
+    description: 'Free embeddable SVG badges showing each AI coding tool\'s current price and when it last changed — for READMEs, blog posts, and comparison content.',
+    canonicalPath: '/badges.html',
+    active: '/badges.html',
+    body,
+  });
+}
+
+// iCalendar (.ics) feeds — subscribe once in Google/Apple/Outlook Calendar and
+// future changes appear automatically (the calendar app re-polls the URL on
+// its own schedule), no site visit or feed reader required. Distinctive vs.
+// competitors per research — nothing else in this niche offers it.
+function slugify(str) {
+  return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40);
+}
+function icsEscape(str) {
+  return String(str ?? '').replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+}
+function icsDate(dateStr) {
+  return dateStr.replace(/-/g, '');
+}
+function icsEvent({ uid, date, summary, description, url }) {
+  const start = icsDate(date);
+  const end = icsDate(new Date(new Date(date + 'T00:00:00Z').getTime() + 86400000).toISOString().slice(0, 10));
+  return [
+    'BEGIN:VEVENT',
+    `UID:${uid}@ratelog.dev`,
+    `DTSTAMP:${SITE.lastVerified.replace(/-/g, '')}T000000Z`,
+    `DTSTART;VALUE=DATE:${start}`,
+    `DTEND;VALUE=DATE:${end}`,
+    `SUMMARY:${icsEscape(summary)}`,
+    `DESCRIPTION:${icsEscape(description)}`,
+    `URL:${url}`,
+    'END:VEVENT',
+  ].join('\r\n');
+}
+function icsCalendar(name, description, events) {
+  return [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//RateLog//Pricing Changelog//EN',
+    'CALSCALE:GREGORIAN',
+    `X-WR-CALNAME:${icsEscape(name)}`,
+    `X-WR-CALDESC:${icsEscape(description)}`,
+    ...events,
+    'END:VCALENDAR',
+  ].join('\r\n') + '\r\n';
+}
+function buildCalendars() {
+  for (const t of tools) {
+    const events = [...(t.changes || [])].sort((a, b) => new Date(a.date) - new Date(b.date)).map((c) => icsEvent({
+      uid: `ratelog-${t.slug}-${c.date}-${slugify(c.title)}`,
+      date: c.date,
+      summary: `${c.type === 'up' ? '↑' : c.type === 'down' ? '↓' : '•'} ${t.name}: ${c.title}`,
+      description: c.description,
+      url: `${SITE.url}/tools/${t.slug}.html`,
+    }));
+    write(`calendar/${t.slug}.ics`, icsCalendar(`${SITE.name} — ${t.name}`, `Pricing & usage-limit changes for ${t.name}, tracked by RateLog.`, events));
+  }
+  const allEvents = allChangesSorted().slice().reverse().map((c) => icsEvent({
+    uid: `ratelog-${c.toolSlug}-${c.date}-${slugify(c.title)}`,
+    date: c.date,
+    summary: `${c.type === 'up' ? '↑' : c.type === 'down' ? '↓' : '•'} ${c.toolName}: ${c.title}`,
+    description: c.description,
+    url: `${SITE.url}/tools/${c.toolSlug}.html`,
+  }));
+  write('calendar/all.ics', icsCalendar(`${SITE.name} — all tools`, 'Every AI coding tool pricing & usage-limit change RateLog has caught.', allEvents));
+}
+
+function finderPage() {
+  const flatPlans = tools.flatMap((t) =>
+    t.plans.map((p) => ({ tool: t, plan: p }))
+  );
+  const rows = flatPlans.map(({ tool: t, plan: p }) => {
+    const priceStr = p.priceMonthly === 0 ? 'Free' : p.priceMonthly === null ? 'Custom' : `${money(p.priceMonthly)}<span class="mono" style="color:var(--ink-faint)">/mo</span>`;
+    return `<tr data-price="${p.priceMonthly ?? 999999}" data-category="${esc(t.category)}" data-free="${t.hasFreeTier ? '1' : '0'}" data-ctx="${t.contextWindow?.tokens ?? 0}">
+          <td data-label="Tool">
+            <div class="tool-cell">
+              <span class="tool-mark">${esc(t.mark)}</span>
+              <span><a href="/tools/${t.slug}.html" class="tool-name" style="text-decoration:none;color:inherit">${esc(t.name)}</a><span class="tool-vendor">${esc(t.vendor)}</span></span>
+            </div>
+          </td>
+          <td data-label="Plan"><span class="plan-name">${esc(p.name)}</span></td>
+          <td class="num" data-label="Price">${priceStr}</td>
+          <td data-label="Fits">${esc(p.target)}</td>
+          <td class="num mono" data-label="Context window">${t.contextWindow ? esc(t.contextWindow.display) : '—'}</td>
+        </tr>`;
+  }).join('\n          ');
+
+  const body = `<section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">plan finder</span>
+      <h1>Every plan, filtered to what you'd actually pay <em>and get.</em></h1>
+      <p class="lede">Set a budget and a minimum context window — we filter across ${flatPlans.length} plans from all ${tools.length} tools by the numbers we're actually sure of. No fake "your exact monthly cost" estimate — we don't have reliable enough usage-to-request data to back that, so we won't pretend to.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="calc finder-calc" style="margin-bottom:28px">
+        <div class="field">
+          <label>Max budget/mo <span class="val" id="budget-val">$250+</span></label>
+          <input type="range" id="budget-slider" min="0" max="250" value="50" step="5" aria-label="Max monthly budget">
+          <div class="marks"><span>$0</span><span>$50</span><span>$150</span><span>$250+</span></div>
+        </div>
+        <div class="field">
+          <label>Min context window <span class="val" id="ctx-val">Any</span></label>
+          <input type="range" id="ctx-slider" min="0" max="3" value="0" step="1" aria-label="Minimum context window">
+          <div class="marks"><span>Any</span><span>200K</span><span>400K</span><span>1M</span></div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="chip-row" id="finder-chips">
+          <button class="chip" data-filter="all" aria-pressed="true">All categories</button>
+          <button class="chip" data-filter="Terminal agent" aria-pressed="false">Terminal agent</button>
+          <button class="chip" data-filter="IDE plugin" aria-pressed="false">IDE plugin</button>
+          <button class="chip" data-filter="Editor" aria-pressed="false">Editor</button>
+          <button class="chip" data-filter="Cloud agent" aria-pressed="false">Cloud agent</button>
+          <span class="chip-sep" aria-hidden="true"></span>
+          <button class="chip" id="finder-free-toggle" aria-pressed="false">+ Has free tier</button>
+        </div>
+      </div>
+      <p id="finder-count" class="mono" style="font-size:13px;color:var(--ink-soft);margin-bottom:10px"></p>
+      <div class="ledger-wrap">
+        <table class="ledger" id="finder-table">
+          <thead><tr><th>Tool</th><th>Plan</th><th class="num">Price</th><th>Fits</th><th class="num">Context window</th></tr></thead>
+          <tbody id="finder-body">
+            ${rows}
+          </tbody>
+        </table>
+      </div>
+      <p id="finder-empty" style="display:none;color:var(--ink-faint);padding:24px 0;font-size:14px">No plans match — try a higher budget or a lower context-window minimum.</p>
+    </div>
+  </section>
+  <script>
+  (function () {
+    var tbody = document.getElementById('finder-body');
+    var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+    var emptyMsg = document.getElementById('finder-empty');
+    var countEl = document.getElementById('finder-count');
+    var budgetSlider = document.getElementById('budget-slider');
+    var budgetVal = document.getElementById('budget-val');
+    var ctxSlider = document.getElementById('ctx-slider');
+    var ctxVal = document.getElementById('ctx-val');
+    var chips = Array.prototype.slice.call(document.querySelectorAll('#finder-chips .chip[data-filter]'));
+    var freeToggle = document.getElementById('finder-free-toggle');
+    var activeCategory = 'all';
+    var freeOnly = false;
+    var CTX_STEPS = [0, 200000, 400000, 1000000];
+    var CTX_LABELS = ['Any', '200K+', '400K+', '1M+'];
+
+    function apply() {
+      var budget = +budgetSlider.value;
+      budgetVal.textContent = budget >= 250 ? '$250+' : '$' + budget;
+      var ctxMin = CTX_STEPS[+ctxSlider.value];
+      ctxVal.textContent = CTX_LABELS[+ctxSlider.value];
+
+      var visible = rows.filter(function (row) {
+        var price = +row.getAttribute('data-price');
+        if (budget < 250 && price > budget) return false;
+        if (+row.getAttribute('data-ctx') < ctxMin) return false;
+        if (freeOnly && row.getAttribute('data-free') !== '1') return false;
+        if (activeCategory !== 'all' && row.getAttribute('data-category') !== activeCategory) return false;
+        return true;
+      });
+      rows.forEach(function (r) { r.style.display = 'none'; });
+      visible.sort(function (a, b) { return (+a.getAttribute('data-price')) - (+b.getAttribute('data-price')); });
+      visible.forEach(function (r) { tbody.appendChild(r); r.style.display = ''; });
+      emptyMsg.style.display = visible.length ? 'none' : 'block';
+      countEl.textContent = visible.length + ' of ' + rows.length + ' plans match';
+    }
+
+    budgetSlider.addEventListener('input', apply);
+    ctxSlider.addEventListener('input', apply);
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+        chip.setAttribute('aria-pressed', 'true');
+        activeCategory = chip.getAttribute('data-filter');
+        apply();
+      });
+    });
+    freeToggle.addEventListener('click', function () {
+      freeOnly = !freeOnly;
+      freeToggle.setAttribute('aria-pressed', String(freeOnly));
+      apply();
+    });
+    apply();
+  })();
+  </script>`;
+
+  return page({
+    title: `Plan Finder — filter by budget & context window — ${SITE.name}`,
+    description: `Filter every plan across ${tools.length} AI coding tools by monthly budget, minimum context window, category, and free-tier availability.`,
+    canonicalPath: '/finder.html',
+    active: '/finder.html',
+    body,
+  });
+}
+
+function apiPage() {
+  const sampleTool = tools[0];
+  const sample = JSON.stringify({ lastVerified: SITE.lastVerified, tools: [{ slug: sampleTool.slug, name: sampleTool.name, vendor: sampleTool.vendor, plans: sampleTool.plans.slice(0, 1), contextWindow: sampleTool.contextWindow, changes: sampleTool.changes.slice(0, 1) }] }, null, 2);
+
+  const body = `<section class="hero" style="border-bottom:none;padding-bottom:8px">
+    <div class="wrap">
+      <span class="eyebrow">for developers</span>
+      <h1 style="font-size:clamp(1.9rem,3.4vw,2.8rem)">A free JSON endpoint. No key, no limit, no login.</h1>
+      <p class="lede">Every figure on this site — as one file. Point a script, a dashboard, or your own tool at it instead of copying numbers by hand. We don't version this yet, so build defensively (see caveats below), but we'll keep the shape stable where we can.</p>
+    </div>
+  </section>
+  <section class="section" style="border-top:1px solid var(--line)">
+    <div class="wrap" style="max-width:72ch">
+      <div class="section-head"><div><span class="eyebrow">endpoint</span><h2>GET /data/tools.json</h2></div></div>
+      <div class="callout" style="margin-bottom:24px"><code style="font-family:var(--font-mono)">${SITE.url}/data/tools.json</code></div>
+
+      <div class="section-head"><div><h2 style="font-size:1.2rem">Shape</h2></div></div>
+      <p style="color:var(--ink-soft);margin-bottom:16px">One JSON object: <code class="mono">lastVerified</code> (the batch verification date for the whole file) and <code class="mono">tools</code> (an array — every field visible on each tool's own page: <code class="mono">slug</code>, <code class="mono">name</code>, <code class="mono">vendor</code>, <code class="mono">category</code>, <code class="mono">plans[]</code>, <code class="mono">contextWindow</code>, <code class="mono">changes[]</code>, <code class="mono">sources[]</code>).</p>
+      <div class="ledger-wrap" style="margin-bottom:24px">
+        <pre style="margin:0;padding:16px;font-family:var(--font-mono);font-size:12.5px;overflow-x:auto;line-height:1.6">${esc(sample)}</pre>
+      </div>
+
+      <div class="section-head"><div><h2 style="font-size:1.2rem">Caveats — read before you build on this</h2></div></div>
+      <ul style="color:var(--ink-soft);line-height:1.9;padding-left:20px;margin-bottom:24px">
+        <li>Static file, rebuilt whenever we update the site — not real-time. Same “batch verified” cadence as everything else here (see <a href="/about.html" class="text-link">About</a>).</li>
+        <li>No schema version field yet. If we need a breaking change we'll add one rather than break silently — but until then, treat field additions as safe and field removals as possible.</li>
+        <li>No auth, no rate limit, served straight off GitHub Pages — please cache client-side rather than polling it every request.</li>
+        <li>Not legal/financial advice — same disclaimer as the rest of the site.</li>
+      </ul>
+
+      <div class="section-head"><div><h2 style="font-size:1.2rem">Built something with it?</h2></div></div>
+      <p style="color:var(--ink-soft)">Tell us at <a href="mailto:mylittletaste@gmail.com" class="text-link">mylittletaste@gmail.com</a> and we'll link it here.</p>
+    </div>
+  </section>`;
+
+  return page({
+    title: `API — free JSON pricing data — ${SITE.name}`,
+    description: 'A free, keyless JSON endpoint with every AI coding tool price, usage limit, and changelog entry RateLog tracks.',
+    canonicalPath: '/api.html',
+    active: '/api.html',
+    body,
+  });
+}
+
 function buildDataJson() {
   write('data/tools.json', JSON.stringify({ lastVerified: SITE.lastVerified, tools }, null, 0));
+}
+
+function rfc822(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00Z'); // noon UTC avoids off-by-one-day on date-only strings
+  return d.toUTCString();
+}
+
+function buildRssFeed() {
+  const changes = allChangesSorted().slice(0, 60); // keep the feed a reasonable size
+  const items = changes.map((c) => {
+    const url = `${SITE.url}/tools/${c.toolSlug}.html`;
+    const title = `${c.toolName} — ${c.title}`;
+    const sign = c.type === 'up' ? '↑ improved' : c.type === 'down' ? '↓ reduced' : 'changed';
+    return `    <item>
+      <title>${esc(title)}</title>
+      <link>${esc(url)}</link>
+      <guid isPermaLink="false">ratelog-${esc(c.toolSlug)}-${esc(c.date)}-${esc(c.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40))}</guid>
+      <pubDate>${rfc822(c.date)}</pubDate>
+      <description>${esc(`[${sign}] ${c.description}`)}</description>
+    </item>`;
+  }).join('\n');
+
+  const body = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${esc(SITE.name)} changelog</title>
+    <link>${SITE.url}/changelog.html</link>
+    <atom:link href="${SITE.url}/rss.xml" rel="self" type="application/rss+xml" />
+    <description>${esc('Every AI coding tool pricing and usage-limit change RateLog has caught, dated and sourced.')}</description>
+    <language>en-us</language>
+    <lastBuildDate>${changes.length ? rfc822(changes[0].date) : new Date(0).toUTCString()}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`;
+  write('rss.xml', body);
 }
 
 function run() {
@@ -786,6 +1171,11 @@ function run() {
   write('about.html', aboutPage());
   write('privacy.html', privacyPage());
   write('leaderboard.html', leaderboardPage());
+  write('badges.html', badgesPage());
+  buildBadges();
+  buildCalendars();
+  write('api.html', apiPage());
+  write('finder.html', finderPage());
   for (const t of tools) write(`tools/${t.slug}.html`, toolPage(t));
   for (const [a, b] of comparisons) {
     const [x, y] = [a, b].sort();
@@ -793,6 +1183,7 @@ function run() {
   }
   buildSitemap();
   buildDataJson();
+  buildRssFeed();
   console.log(`\nBuilt ${tools.length} tool pages, ${comparisons.length} comparisons.`);
 }
 

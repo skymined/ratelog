@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Zed
+X-WR-CALDESC:Pricing & usage-limit changes for Zed\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-zed-2025-09-24-moved-from-flat-prompt-limits-to-metered@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20250924
+DTEND;VALUE=DATE:20250925
+SUMMARY:• Zed: Moved from flat prompt limits to metered billing
+DESCRIPTION:Overhauled pricing from flat prompt-count limits to token-based billing. Pro dropped from $20/mo (500 prompts/month) to $10/mo\, but the flat allowance was replaced with only $5/mo of included credit plus usage-based overage at API list price + 10%.
+URL:https://skymined.github.io/ratelog/tools/zed.html
+END:VEVENT
+END:VCALENDAR

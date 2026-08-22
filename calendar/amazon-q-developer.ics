@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RateLog//Pricing Changelog//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:RateLog — Amazon Q Developer
+X-WR-CALDESC:Pricing & usage-limit changes for Amazon Q Developer\, tracked by RateLog.
+BEGIN:VEVENT
+UID:ratelog-amazon-q-developer-2026-04-30-product-sunset-announced@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260430
+DTEND;VALUE=DATE:20260501
+SUMMARY:↓ Amazon Q Developer: Product sunset announced
+DESCRIPTION:AWS announced Amazon Q Developer’s IDE plugins and paid Pro subscription are being sunset in favor of a new agentic IDE\, "Kiro" — new Free Tier and Pro signups blocked from May 15\, 2026\, full end of support April 30\, 2027.
+URL:https://skymined.github.io/ratelog/tools/amazon-q-developer.html
+END:VEVENT
+END:VCALENDAR
