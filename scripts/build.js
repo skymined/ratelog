@@ -114,7 +114,7 @@ function header(active) {
   const nav = [
     ['/', 'Compare'],
     ['/finder.html', 'Plan Finder'],
-    ['/leaderboard.html', 'Leaderboard'],
+    ['/leaderboard.html', 'Model Leaderboard'],
     ['/changelog.html', 'Changelog'],
     ['/about.html', 'About'],
   ];
@@ -337,10 +337,22 @@ function homepage() {
     </div>
   </div>
 
+  <section class="section" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="finder-cta">
+        <div class="finder-cta-text">
+          <h3>Already know your budget or must-haves?</h3>
+          <p>Skip the table below — filter every plan from every tool by price, usage, or feature in one step.</p>
+        </div>
+        <a href="/finder.html" class="btn-solid">Open Plan Finder →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="table">
     <div class="wrap">
       <div class="section-head">
-        <div><span class="eyebrow">the ledger</span><h2>Headline plan, by tool</h2><p>Each row is the most representative paid tier. Open a tool for the full breakdown across every plan, or use the <a href="/finder.html" class="text-link">Plan Finder</a> to filter every plan from every tool by your own budget.</p></div>
+        <div><span class="eyebrow">the ledger</span><h2>Headline plan, by tool</h2><p>Each row is the most representative paid tier — open a tool for the full breakdown across every plan it offers.</p></div>
       </div>
       <div class="controls">
         <div class="chip-row" id="filter-chips">

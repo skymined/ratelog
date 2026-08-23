@@ -28,7 +28,7 @@
       if (saved) document.documentElement.setAttribute('data-theme', saved);
     })();
   </script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cline","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://cline.bot","offers":[{"@type":"Offer","name":"Cline ClinePass","price":9.99,"priceCurrency":"USD","description":"Flat $9.99/mo for curated, discounted access to 11–14 open-weight coding models (GLM, Kimi, DeepSeek, MiniMax, Qwen) without separate provider accounts. Usage tracked against undisclosed 5-hour/weekly/monthly rolling caps, described as “2–5× standard API rate limits.”"},{"@type":"Offer","name":"Cline Teams","price":20,"priceCurrency":"USD","description":"Free for the first 10 users, then $20/user/month — the last officially published figure; the current pricing page no longer shows a standalone Teams card, so this may have folded into Enterprise."}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cline","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://cline.bot","offers":[{"@type":"Offer","name":"Cline ClinePass","price":9.99,"priceCurrency":"USD","description":"Flat $9.99/mo for curated, discounted access to 11–14 open-weight coding models (GLM, Kimi, DeepSeek, MiniMax, Qwen) without separate provider accounts. Usage tracked against undisclosed 5-hour/weekly/monthly rolling caps, described as “2–5× standard API rate limits.”"}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -37,7 +37,7 @@
       <nav class="main-nav" aria-label="Primary">
         <a href="../" aria-current="page">Compare</a>
         <a href="../finder.html">Plan Finder</a>
-        <a href="../leaderboard.html">Leaderboard</a>
+        <a href="../leaderboard.html">Model Leaderboard</a>
         <a href="../changelog.html">Changelog</a>
         <a href="../about.html">About</a>
       </nav>
@@ -59,7 +59,7 @@
       <p class="vendor-line">by Cline Bot Inc. · <a href="https://cline.bot" class="text-link">official site →</a></p>
       <p class="dek">A free, open-source (Apache-2.0) VS Code/CLI agent that&#39;s bring-your-own-API-key by default — added its first direct paid product, a discounted open-weight-model subscription, in June 2026.</p>
       <div class="tool-quicklinks">
-        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Last change: <span class="badge-diff neutral">• Launched ClinePass</span> · 2 months ago</span>
+        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Last change: <span class="badge-diff down">↓ Teams tier removed from pricing page</span> · today</span>
         <span class="mono" style="font-size:13px;color:var(--ink-soft)">Context window: <strong style="color:var(--ink)">1M tokens</strong> (Claude Sonnet 4.6 (BYOK))</span>
       </div>
     </div>
@@ -74,12 +74,6 @@
           <div class="plan-price">$9.99<span>/mo</span></div>
           <div class="plan-limit">Flat $9.99/mo for curated, discounted access to 11–14 open-weight coding models (GLM, Kimi, DeepSeek, MiniMax, Qwen) without separate provider accounts. Usage tracked against undisclosed 5-hour/weekly/monthly rolling caps, described as “2–5× standard API rate limits.”</div>
           <div class="plan-target">Users wanting cheap curated model access without juggling API keys</div>
-        </div>
-        <div class="plan-card">
-          <div class="plan-name">Teams</div>
-          <div class="plan-price">$20<span>/mo</span></div>
-          <div class="plan-limit">Free for the first 10 users, then $20/user/month — the last officially published figure; the current pricing page no longer shows a standalone Teams card, so this may have folded into Enterprise.</div>
-          <div class="plan-target">Small-to-mid teams wanting centralized billing</div>
         </div>
         <div class="plan-card">
           <div class="plan-name">Enterprise</div>
@@ -100,6 +94,12 @@
         </div>
       </div>
       <div class="diff-log">
+        <div class="diff-entry down">
+          <div class="diff-date">2026-08-23<span class="badge-diff down">↓ reduced</span></div>
+          <h4>Teams tier removed from pricing page</h4>
+          <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">The self-serve Teams tier (&quot;free for 10 users, then $20/user/month,&quot; introduced Oct 2025) no longer appears on the live pricing page, which now shows only Open Source and Enterprise. No official removal announcement found — noting the date we confirmed it gone, not necessarily when it happened.</p>
+          <a href="https://cline.bot/pricing" class="text-link" style="font-size:13px">source →</a>
+        </div>
         <div class="diff-entry neutral">
           <div class="diff-date">2026-06-29<span class="badge-diff neutral">• changed</span></div>
           <h4>Launched ClinePass</h4>

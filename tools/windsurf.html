@@ -28,7 +28,7 @@
       if (saved) document.documentElement.setAttribute('data-theme', saved);
     })();
   </script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Devin Desktop (formerly Windsurf)","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://devin.ai","offers":[{"@type":"Offer","name":"Devin Desktop (formerly Windsurf) Pro","price":20,"priceCurrency":"USD","description":"Token-based quota refreshing daily and weekly. Cognition's own free SWE-series models don't count against it; frontier model access (Claude/GPT/Gemini) is included."},{"@type":"Offer","name":"Devin Desktop (formerly Windsurf) Max","price":200,"priceCurrency":"USD","description":"Same daily+weekly mechanism as Pro but substantially higher — Cognition's own published ranges put it roughly 5–6× Pro's message allowance per period."},{"@type":"Offer","name":"Devin Desktop (formerly Windsurf) Teams","price":80,"priceCurrency":"USD","description":"Each full seat gets its own Pro-equivalent daily+weekly quota (not pooled across the team)."}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Devin Desktop (formerly Windsurf)","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://devin.ai","offers":[{"@type":"Offer","name":"Devin Desktop (formerly Windsurf) Pro","price":20,"priceCurrency":"USD","description":"Token-based quota refreshing daily and weekly. Cognition's own free SWE-series models don't count against it; frontier model access (Claude/GPT/Gemini) is included."},{"@type":"Offer","name":"Devin Desktop (formerly Windsurf) Max","price":200,"priceCurrency":"USD","description":"Same daily+weekly mechanism as Pro but substantially higher — Cognition's own published ranges put it roughly 5–6× Pro's message allowance per period."},{"@type":"Offer","name":"Devin Desktop (formerly Windsurf) Teams","price":80,"priceCurrency":"USD","description":"Hybrid seat model: $80/mo is a minimum team spend, not a flat fee. \"Full\" seats are $40/mo each and get their own Pro-equivalent daily+weekly quota plus Desktop app access; \"flex\" seats are free and unlimited, sharing an on-demand credit pool but without Desktop access."}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -37,7 +37,7 @@
       <nav class="main-nav" aria-label="Primary">
         <a href="../" aria-current="page">Compare</a>
         <a href="../finder.html">Plan Finder</a>
-        <a href="../leaderboard.html">Leaderboard</a>
+        <a href="../leaderboard.html">Model Leaderboard</a>
         <a href="../changelog.html">Changelog</a>
         <a href="../about.html">About</a>
       </nav>
@@ -59,7 +59,7 @@
       <p class="vendor-line">by Cognition · <a href="https://devin.ai" class="text-link">official site →</a></p>
       <p class="dek">Cognition&#39;s AI-native IDE — formerly independent Windsurf, acquired by Cognition in 2025 and rebranded “Devin Desktop” in June 2026, unifying it with Cognition&#39;s cloud agent Devin under one billing surface. windsurf.com now permanently redirects to devin.ai.</p>
       <div class="tool-quicklinks">
-        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Last change: <span class="badge-diff neutral">• Rebranded to &quot;Devin Desktop&quot;</span> · 3 months ago</span>
+        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Last change: <span class="badge-diff neutral">• Teams pricing structure clarified</span> · today</span>
         <span class="mono" style="font-size:13px;color:var(--ink-soft)">Context window: <strong style="color:var(--ink)">Not published</strong> (SWE-1.7)</span>
       </div>
     </div>
@@ -84,7 +84,7 @@
         <div class="plan-card">
           <div class="plan-name">Teams</div>
           <div class="plan-price">$80<span>/mo</span></div>
-          <div class="plan-limit">Each full seat gets its own Pro-equivalent daily+weekly quota (not pooled across the team).</div>
+          <div class="plan-limit">Hybrid seat model: $80/mo is a minimum team spend, not a flat fee. &quot;Full&quot; seats are $40/mo each and get their own Pro-equivalent daily+weekly quota plus Desktop app access; &quot;flex&quot; seats are free and unlimited, sharing an on-demand credit pool but without Desktop access.</div>
           <div class="plan-target">Small-to-mid engineering teams</div>
         </div>
         <div class="plan-card">
@@ -107,6 +107,12 @@
       </div>
       <div class="diff-log">
         <div class="diff-entry neutral">
+          <div class="diff-date">2026-08-23<span class="badge-diff neutral">• changed</span></div>
+          <h4>Teams pricing structure clarified</h4>
+          <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">Resolved earlier conflicting reports about Teams pricing: it’s a hybrid model, not a flat per-seat rate — $80/mo minimum team spend, $40/mo per full seat (Pro-equivalent quota + Desktop access), and unlimited free flex seats (shared credits, no Desktop access).</p>
+          <a href="https://docs.devin.ai/admin/billing/self-serve" class="text-link" style="font-size:13px">source →</a>
+        </div>
+        <div class="diff-entry neutral">
           <div class="diff-date">2026-06-02<span class="badge-diff neutral">• changed</span></div>
           <h4>Rebranded to &quot;Devin Desktop&quot;</h4>
           <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">Cognition rebranded the Windsurf IDE as “Devin Desktop,” unifying it with the cloud agent Devin under one product and opening it to third-party agents via the open Agent Client Protocol.</p>
@@ -126,7 +132,7 @@
     <div class="wrap">
       <div class="section-head"><div><span class="eyebrow">sources</span><h2>Where this comes from</h2></div></div>
       <div class="callout">
-        Verified against <a href="https://docs.devin.ai/desktop/accounts/quota">Quota-Based Usage — Devin/Windsurf docs</a>, <a href="https://docs.devin.ai/desktop/accounts/usage">Plans and Usage — Devin/Windsurf docs</a>, <a href="https://devin.ai/pricing">devin.ai/pricing</a>. Last checked 2026-08-20. See something stale? <a href="../about.html">Here’s how we keep this current.</a>
+        Verified against <a href="https://docs.devin.ai/desktop/accounts/quota">Quota-Based Usage — Devin/Windsurf docs</a>, <a href="https://docs.devin.ai/desktop/accounts/usage">Plans and Usage — Devin/Windsurf docs</a>, <a href="https://docs.devin.ai/admin/billing/self-serve">Self-serve billing — Devin/Windsurf docs</a>, <a href="https://devin.ai/pricing">devin.ai/pricing</a>. Last checked 2026-08-20. See something stale? <a href="../about.html">Here’s how we keep this current.</a>
       </div>
       <p style="margin-top:14px;font-size:13px;color:var(--ink-faint)">Writing about Devin Desktop (formerly Windsurf)? <a href="../badges.html" class="text-link">Grab a badge →</a></p>
     </div>

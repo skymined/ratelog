@@ -126,16 +126,18 @@ const tools = [
     plans: [
       { name: 'Pro', priceMonthly: 20, priceYearly: null, limit: "Token-based quota refreshing daily and weekly. Cognition's own free SWE-series models don't count against it; frontier model access (Claude/GPT/Gemini) is included.", target: 'Individual devs using agents daily', notes: 'Was $15/mo before March 2026; pre-existing subscribers reported grandfathered at that price.' },
       { name: 'Max', priceMonthly: 200, priceYearly: null, limit: "Same daily+weekly mechanism as Pro but substantially higher — Cognition's own published ranges put it roughly 5–6× Pro's message allowance per period.", target: 'Power users with heavy daily/weekly usage', notes: 'Introduced March 2026 alongside the credits→quota switch.' },
-      { name: 'Teams', priceMonthly: 80, priceYearly: null, limit: 'Each full seat gets its own Pro-equivalent daily+weekly quota (not pooled across the team).', target: 'Small-to-mid engineering teams', notes: "$80/mo confirmed on devin.ai/pricing as of a later check — earlier passes saw conflicting reports (a flat $40/seat vs. an $80 base + $40/seat) while the page was intermittently unreachable. The page doesn't spell out whether $80 is itself per-seat or a team base fee; check live before quoting a per-seat total." },
+      { name: 'Teams', priceMonthly: 80, priceYearly: null, limit: 'Hybrid seat model: $80/mo is a minimum team spend, not a flat fee. "Full" seats are $40/mo each and get their own Pro-equivalent daily+weekly quota plus Desktop app access; "flex" seats are free and unlimited, sharing an on-demand credit pool but without Desktop access.', target: 'Small-to-mid engineering teams', notes: 'Resolved per docs.devin.ai/admin/billing/self-serve — $80/mo minimum is reached at 2 full seats ($40 each); teams under that add a base-fee makeup, and can add unlimited free flex seats beyond that.' },
       { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'Custom, contact sales. Some sources describe billing in "Agent Compute Units" for newer contracts.', target: 'Large orgs needing SSO / compliance', notes: 'Pricing is contested across sources (see openQuestions in our research notes) — treat any specific figure you see elsewhere as unconfirmed.' },
     ],
     changes: [
+      { date: '2026-08-23', type: 'neutral', title: 'Teams pricing structure clarified', description: 'Resolved earlier conflicting reports about Teams pricing: it’s a hybrid model, not a flat per-seat rate — $80/mo minimum team spend, $40/mo per full seat (Pro-equivalent quota + Desktop access), and unlimited free flex seats (shared credits, no Desktop access).', sourceUrl: 'https://docs.devin.ai/admin/billing/self-serve' },
       { date: '2026-06-02', type: 'neutral', title: 'Rebranded to "Devin Desktop"', description: "Cognition rebranded the Windsurf IDE as “Devin Desktop,” unifying it with the cloud agent Devin under one product and opening it to third-party agents via the open Agent Client Protocol.", sourceUrl: 'https://devin.ai/blog/windsurf-is-now-devin-desktop' },
       { date: '2026-03-19', type: 'down', title: 'Flat credits replaced with daily/weekly quotas; Pro price up', description: 'Cognition replaced flat monthly credit-pool billing with a token-based system giving daily + weekly usage allowances, raised Pro from $15→$20/mo and Teams from $30→$40/seat/mo (both reportedly grandfathered for existing subscribers), and launched a new $200/mo Max tier.', sourceUrl: 'https://docs.devin.ai/desktop/accounts/quota' },
     ],
     sources: [
       { title: 'Quota-Based Usage — Devin/Windsurf docs', url: 'https://docs.devin.ai/desktop/accounts/quota' },
       { title: 'Plans and Usage — Devin/Windsurf docs', url: 'https://docs.devin.ai/desktop/accounts/usage' },
+      { title: 'Self-serve billing — Devin/Windsurf docs', url: 'https://docs.devin.ai/admin/billing/self-serve' },
       { title: 'devin.ai/pricing', url: 'https://devin.ai/pricing' },
     ],
   },
@@ -334,11 +336,11 @@ const tools = [
     hasFreeTier: true,
     freeTier: 'Open Source — free forever, no usage cap from Cline itself. Bring your own API key (Anthropic/OpenAI/OpenRouter/Bedrock/Vertex/Azure) and pay that provider directly at cost, no Cline markup.',
     plans: [
-      { name: 'ClinePass', priceMonthly: 9.99, priceYearly: null, limit: 'Flat $9.99/mo for curated, discounted access to 11–14 open-weight coding models (GLM, Kimi, DeepSeek, MiniMax, Qwen) without separate provider accounts. Usage tracked against undisclosed 5-hour/weekly/monthly rolling caps, described as “2–5× standard API rate limits.”', target: 'Users wanting cheap curated model access without juggling API keys', notes: "Cline's first-ever direct paid product, launched June 2026." },
-      { name: 'Teams', priceMonthly: 20, priceYearly: null, limit: 'Free for the first 10 users, then $20/user/month — the last officially published figure; the current pricing page no longer shows a standalone Teams card, so this may have folded into Enterprise.', target: 'Small-to-mid teams wanting centralized billing', notes: '' },
+      { name: 'ClinePass', priceMonthly: 9.99, priceYearly: null, limit: 'Flat $9.99/mo for curated, discounted access to 11–14 open-weight coding models (GLM, Kimi, DeepSeek, MiniMax, Qwen) without separate provider accounts. Usage tracked against undisclosed 5-hour/weekly/monthly rolling caps, described as “2–5× standard API rate limits.”', target: 'Users wanting cheap curated model access without juggling API keys', notes: 'Moved off the main pricing page onto its own landing page (cline.bot/cline-pass) with introductory pricing sometimes shown ($4.99 first month, occasionally $1.99 on campaign links) — $9.99/mo is the standing rate.' },
       { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'Custom, contact sales. Adds SSO/SCIM, RBAC, audit logs, VPC/on-prem/air-gapped deployment.', target: 'Orgs needing compliance features', notes: '' },
     ],
     changes: [
+      { date: '2026-08-23', type: 'down', title: 'Teams tier removed from pricing page', description: 'The self-serve Teams tier ("free for 10 users, then $20/user/month," introduced Oct 2025) no longer appears on the live pricing page, which now shows only Open Source and Enterprise. No official removal announcement found — noting the date we confirmed it gone, not necessarily when it happened.', sourceUrl: 'https://cline.bot/pricing' },
       { date: '2026-06-29', type: 'neutral', title: 'Launched ClinePass', description: "Cline's first-ever direct paid subscription ($9.99/mo) for curated, discounted open-weight-model access — layered on top of the still-free, still-BYOK core product.", sourceUrl: 'https://cline.ghost.io/clinepass-best-of-value-for-open-weight-models/' },
       { date: '2025-10-20', type: 'neutral', title: 'First paid organizational tiers', description: 'Introduced Teams and Enterprise tiers after previously having no paid tier of any kind beyond BYOK inference costs.', sourceUrl: 'https://cline.ghost.io/introducing-cline-for-enterprise/' },
     ],
@@ -386,15 +388,16 @@ const tools = [
     contextWindow: { model: 'Claude Sonnet 5', tokens: 1000000, display: '1M tokens', note: 'Reached via Warp’s default “Auto (Responsive)” routing mode, which dynamically selects among Claude/GPT/Gemini/Grok/open-weight models.' },
     headlinePlanIndex: 0,
     hasFreeTier: true,
-    freeTier: 'Free — no bundled ongoing AI credits, but new users get 150 AI credits/month for the first two months, then 75/month after (rolling ~30-day cycle). BYOK available since May 2026.',
+    freeTier: 'Free — pay-as-you-go/BYOK only. Warp’s own pricing FAQ states the Free plan "doesn’t include bundled AI usage for the Warp Agent"; you bring your own API key or pay per-request at provider rates. No onboarding credit grant found on the live pricing page.',
     plans: [
       { name: 'Build', priceMonthly: 20, priceYearly: 18, limit: '1,500 AI credits/month (~$20 of usage at API rates), refilling every 30 days; unused monthly credits don’t roll over, but purchased “Reload” credits roll over up to 12 months.', target: 'Individual professional developers', notes: 'Consolidated three legacy tiers (Pro/Turbo/Lightspeed) into this one plan in late 2025.' },
       { name: 'Business', priceMonthly: 50, priceYearly: 45, limit: '1,500 AI credits per seat/month, same refill cadence as Build, plus a shared rollover pool of purchased reload credits.', target: 'Teams up to 25 seats', notes: 'Per user/month; adds SAML SSO, admin data controls, BYOK.' },
       { name: 'Max', priceMonthly: 200, priceYearly: 180, limit: '18,000 AI credits/month — 12× Build’s allotment, same refill cycle.', target: 'Power users / heavy individual AI usage', notes: '' },
     ],
     changes: [
+      { date: '2026-08-23', type: 'down', title: 'Free tier’s onboarding credit grant no longer listed', description: 'The live pricing page and pricing FAQ no longer mention a 150-then-75 monthly credit allowance for Free users; Free is now described as BYOK/pay-as-you-go only. No dated changelog entry found for when this changed — noting the date we confirmed it.', sourceUrl: 'https://www.warp.dev/pricing' },
       { date: '2025-10-30', type: 'down', title: 'Legacy tiers collapsed into one $20/mo plan', description: 'Collapsed three legacy paid tiers (Pro, Turbo, Lightspeed) into a single $20/mo Build plan; independent analysis characterized this as a net price increase for many existing $10–15/mo subscribers, even though per-unit overage pricing improved and BYOK access was added.', sourceUrl: 'https://blog.kilo.ai/p/warps-new-pricing-still-doesnt-add' },
-      { date: '2026-05-20', type: 'up', title: 'BYOK extended to Free tier', description: 'Bring-your-own-API-key support was extended to all plans including Free, letting Free users route requests through their own keys instead of being limited to the onboarding credit grant.', sourceUrl: 'https://www.warp.dev/blog/bring-your-own-inference-to-warp' },
+      { date: '2026-05-20', type: 'up', title: 'BYOK extended to Free tier', description: 'Bring-your-own-API-key support was extended to all plans including Free.', sourceUrl: 'https://www.warp.dev/blog/bring-your-own-inference-to-warp' },
     ],
     sources: [
       { title: 'Warp Pricing', url: 'https://www.warp.dev/pricing' },

@@ -37,7 +37,7 @@
       <nav class="main-nav" aria-label="Primary">
         <a href="../" aria-current="page">Compare</a>
         <a href="../finder.html">Plan Finder</a>
-        <a href="../leaderboard.html">Leaderboard</a>
+        <a href="../leaderboard.html">Model Leaderboard</a>
         <a href="../changelog.html">Changelog</a>
         <a href="../about.html">About</a>
       </nav>
@@ -59,7 +59,7 @@
       <p class="vendor-line">by Warp Terminal Inc. · <a href="https://www.warp.dev" class="text-link">official site →</a></p>
       <p class="dek">An AI-native terminal that open-sourced its client (AGPL-3.0 / MIT) in April 2026 while keeping its Oz cloud-agent orchestration platform proprietary, priced on a credit-metered model.</p>
       <div class="tool-quicklinks">
-        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Last change: <span class="badge-diff up">↑ BYOK extended to Free tier</span> · 3 months ago</span>
+        <span class="mono" style="font-size:13px;color:var(--ink-soft)">Last change: <span class="badge-diff down">↓ Free tier’s onboarding credit grant no longer listed</span> · today</span>
         <span class="mono" style="font-size:13px;color:var(--ink-soft)">Context window: <strong style="color:var(--ink)">1M tokens</strong> (Claude Sonnet 5)</span>
       </div>
     </div>
@@ -67,7 +67,7 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head"><div><span class="eyebrow">plans</span><h2>Every tier</h2><p>Free tier: Free — no bundled ongoing AI credits, but new users get 150 AI credits/month for the first two months, then 75/month after (rolling ~30-day cycle). BYOK available since May 2026.</p></div></div>
+      <div class="section-head"><div><span class="eyebrow">plans</span><h2>Every tier</h2><p>Free tier: Free — pay-as-you-go/BYOK only. Warp’s own pricing FAQ states the Free plan &quot;doesn’t include bundled AI usage for the Warp Agent&quot;; you bring your own API key or pay per-request at provider rates. No onboarding credit grant found on the live pricing page.</p></div></div>
       <div class="plan-grid">
         <div class="plan-card">
           <div class="plan-name">Build</div>
@@ -100,10 +100,16 @@
         </div>
       </div>
       <div class="diff-log">
+        <div class="diff-entry down">
+          <div class="diff-date">2026-08-23<span class="badge-diff down">↓ reduced</span></div>
+          <h4>Free tier’s onboarding credit grant no longer listed</h4>
+          <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">The live pricing page and pricing FAQ no longer mention a 150-then-75 monthly credit allowance for Free users; Free is now described as BYOK/pay-as-you-go only. No dated changelog entry found for when this changed — noting the date we confirmed it.</p>
+          <a href="https://www.warp.dev/pricing" class="text-link" style="font-size:13px">source →</a>
+        </div>
         <div class="diff-entry up">
           <div class="diff-date">2026-05-20<span class="badge-diff up">↑ improved</span></div>
           <h4>BYOK extended to Free tier</h4>
-          <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">Bring-your-own-API-key support was extended to all plans including Free, letting Free users route requests through their own keys instead of being limited to the onboarding credit grant.</p>
+          <p style="color:var(--ink-soft);font-size:14px;margin-bottom:8px">Bring-your-own-API-key support was extended to all plans including Free.</p>
           <a href="https://www.warp.dev/blog/bring-your-own-inference-to-warp" class="text-link" style="font-size:13px">source →</a>
         </div>
         <div class="diff-entry down">

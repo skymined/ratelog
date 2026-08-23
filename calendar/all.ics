@@ -163,7 +163,7 @@ DTSTAMP:20260820T000000Z
 DTSTART;VALUE=DATE:20260520
 DTEND;VALUE=DATE:20260521
 SUMMARY:↑ Warp: BYOK extended to Free tier
-DESCRIPTION:Bring-your-own-API-key support was extended to all plans including Free\, letting Free users route requests through their own keys instead of being limited to the onboarding credit grant.
+DESCRIPTION:Bring-your-own-API-key support was extended to all plans including Free.
 URL:https://skymined.github.io/ratelog/tools/warp.html
 END:VEVENT
 BEGIN:VEVENT
@@ -246,5 +246,32 @@ DTEND;VALUE=DATE:20260811
 SUMMARY:↑ Claude Code: Sonnet 5 API pricing made permanent
 DESCRIPTION:Anthropic made Claude Sonnet 5's introductory API price ($2/$10 per million input/output tokens) permanent\, canceling a scheduled increase to $3/$15 that was set for 2026-09-01.
 URL:https://skymined.github.io/ratelog/tools/claude-code.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-warp-2026-08-23-free-tier-s-onboarding-credit-grant-no-l@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:↓ Warp: Free tier’s onboarding credit grant no longer listed
+DESCRIPTION:The live pricing page and pricing FAQ no longer mention a 150-then-75 monthly credit allowance for Free users\; Free is now described as BYOK/pay-as-you-go only. No dated changelog entry found for when this changed — noting the date we confirmed it.
+URL:https://skymined.github.io/ratelog/tools/warp.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-cline-2026-08-23-teams-tier-removed-from-pricing-page@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:↓ Cline: Teams tier removed from pricing page
+DESCRIPTION:The self-serve Teams tier ("free for 10 users\, then $20/user/month\," introduced Oct 2025) no longer appears on the live pricing page\, which now shows only Open Source and Enterprise. No official removal announcement found — noting the date we confirmed it gone\, not necessarily when it happened.
+URL:https://skymined.github.io/ratelog/tools/cline.html
+END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-windsurf-2026-08-23-teams-pricing-structure-clarified@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:• Devin Desktop (formerly Windsurf): Teams pricing structure clarified
+DESCRIPTION:Resolved earlier conflicting reports about Teams pricing: it’s a hybrid model\, not a flat per-seat rate — $80/mo minimum team spend\, $40/mo per full seat (Pro-equivalent quota + Desktop access)\, and unlimited free flex seats (shared credits\, no Desktop access).
+URL:https://skymined.github.io/ratelog/tools/windsurf.html
 END:VEVENT
 END:VCALENDAR

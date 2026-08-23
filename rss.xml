@@ -6,7 +6,28 @@
     <atom:link href="https://skymined.github.io/ratelog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Every AI coding tool pricing and usage-limit change RateLog has caught, dated and sourced.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Devin Desktop (formerly Windsurf) — Teams pricing structure clarified</title>
+      <link>https://skymined.github.io/ratelog/tools/windsurf.html</link>
+      <guid isPermaLink="false">ratelog-windsurf-2026-08-23-teams-pricing-structure-clarified</guid>
+      <pubDate>Sun, 23 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[changed] Resolved earlier conflicting reports about Teams pricing: it’s a hybrid model, not a flat per-seat rate — $80/mo minimum team spend, $40/mo per full seat (Pro-equivalent quota + Desktop access), and unlimited free flex seats (shared credits, no Desktop access).</description>
+    </item>
+    <item>
+      <title>Cline — Teams tier removed from pricing page</title>
+      <link>https://skymined.github.io/ratelog/tools/cline.html</link>
+      <guid isPermaLink="false">ratelog-cline-2026-08-23-teams-tier-removed-from-pricing-page</guid>
+      <pubDate>Sun, 23 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] The self-serve Teams tier (&quot;free for 10 users, then $20/user/month,&quot; introduced Oct 2025) no longer appears on the live pricing page, which now shows only Open Source and Enterprise. No official removal announcement found — noting the date we confirmed it gone, not necessarily when it happened.</description>
+    </item>
+    <item>
+      <title>Warp — Free tier’s onboarding credit grant no longer listed</title>
+      <link>https://skymined.github.io/ratelog/tools/warp.html</link>
+      <guid isPermaLink="false">ratelog-warp-2026-08-23-free-tier-s-onboarding-credit-grant-no-l</guid>
+      <pubDate>Sun, 23 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] The live pricing page and pricing FAQ no longer mention a 150-then-75 monthly credit allowance for Free users; Free is now described as BYOK/pay-as-you-go only. No dated changelog entry found for when this changed — noting the date we confirmed it.</description>
+    </item>
     <item>
       <title>Claude Code — Sonnet 5 API pricing made permanent</title>
       <link>https://skymined.github.io/ratelog/tools/claude-code.html</link>
@@ -75,7 +96,7 @@
       <link>https://skymined.github.io/ratelog/tools/warp.html</link>
       <guid isPermaLink="false">ratelog-warp-2026-05-20-byok-extended-to-free-tier</guid>
       <pubDate>Wed, 20 May 2026 12:00:00 GMT</pubDate>
-      <description>[↑ improved] Bring-your-own-API-key support was extended to all plans including Free, letting Free users route requests through their own keys instead of being limited to the onboarding credit grant.</description>
+      <description>[↑ improved] Bring-your-own-API-key support was extended to all plans including Free.</description>
     </item>
     <item>
       <title>Gemini CLI / Code Assist — Google AI Ultra price cut (no longer grants CLI quota)</title>

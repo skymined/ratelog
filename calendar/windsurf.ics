@@ -22,4 +22,13 @@ SUMMARY:• Devin Desktop (formerly Windsurf): Rebranded to "Devin Desktop"
 DESCRIPTION:Cognition rebranded the Windsurf IDE as “Devin Desktop\,” unifying it with the cloud agent Devin under one product and opening it to third-party agents via the open Agent Client Protocol.
 URL:https://skymined.github.io/ratelog/tools/windsurf.html
 END:VEVENT
+BEGIN:VEVENT
+UID:ratelog-windsurf-2026-08-23-teams-pricing-structure-clarified@ratelog.dev
+DTSTAMP:20260820T000000Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:• Devin Desktop (formerly Windsurf): Teams pricing structure clarified
+DESCRIPTION:Resolved earlier conflicting reports about Teams pricing: it’s a hybrid model\, not a flat per-seat rate — $80/mo minimum team spend\, $40/mo per full seat (Pro-equivalent quota + Desktop access)\, and unlimited free flex seats (shared credits\, no Desktop access).
+URL:https://skymined.github.io/ratelog/tools/windsurf.html
+END:VEVENT
 END:VCALENDAR
