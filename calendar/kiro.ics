@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Kiro
 X-WR-CALDESC:Pricing & usage-limit changes for Kiro\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-kiro-2025-07-21-emergency-usage-caps-and-a-signup-waitli@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20250721
 DTEND;VALUE=DATE:20250722
 SUMMARY:↓ Kiro: Emergency usage caps and a signup waitlist
@@ -14,10 +14,10 @@ DESCRIPTION:Days after Kiro's public preview launched\, AWS imposed temporary da
 URL:https://skymined.github.io/ratelog/tools/kiro.html
 END:VEVENT
 BEGIN:VEVENT
-UID:ratelog-kiro-2026-06-10-added-pro-max-tier@ratelog.dev
-DTSTAMP:20260820T000000Z
-DTSTART;VALUE=DATE:20260610
-DTEND;VALUE=DATE:20260611
+UID:ratelog-kiro-2026-06-11-added-pro-max-tier@ratelog.dev
+DTSTAMP:20260823T000000Z
+DTSTART;VALUE=DATE:20260611
+DTEND;VALUE=DATE:20260612
 SUMMARY:↑ Kiro: Added Pro Max tier
 DESCRIPTION:AWS introduced a $100/mo Pro Max tier (5\,000 credits) to bridge the gap between Pro+ ($40) and Power ($200)\, giving mid-heavy users a predictable flat rate instead of unpredictable overage charges.
 URL:https://skymined.github.io/ratelog/tools/kiro.html

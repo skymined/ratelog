@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Warp
 X-WR-CALDESC:Pricing & usage-limit changes for Warp\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-warp-2025-10-30-legacy-tiers-collapsed-into-one-20-mo-pl@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20251030
 DTEND;VALUE=DATE:20251031
 SUMMARY:↓ Warp: Legacy tiers collapsed into one $20/mo plan
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/warp.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-warp-2026-05-20-byok-extended-to-free-tier@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260520
 DTEND;VALUE=DATE:20260521
 SUMMARY:↑ Warp: BYOK extended to Free tier
@@ -24,7 +24,7 @@ URL:https://skymined.github.io/ratelog/tools/warp.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-warp-2026-08-23-free-tier-s-onboarding-credit-grant-no-l@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260823
 DTEND;VALUE=DATE:20260824
 SUMMARY:↓ Warp: Free tier’s onboarding credit grant no longer listed

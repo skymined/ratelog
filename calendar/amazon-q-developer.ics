@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Amazon Q Developer
 X-WR-CALDESC:Pricing & usage-limit changes for Amazon Q Developer\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-amazon-q-developer-2026-04-30-product-sunset-announced@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260430
 DTEND;VALUE=DATE:20260501
 SUMMARY:↓ Amazon Q Developer: Product sunset announced

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Amazon Q Developer changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/amazon-q-developer.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/amazon-q-developer.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Amazon Q Developer, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Amazon Q Developer — Product sunset announced</title>
+      <link>https://skymined.github.io/ratelog/tools/amazon-q-developer.html</link>
+      <guid isPermaLink="false">ratelog-amazon-q-developer-2026-04-30-product-sunset-announced</guid>
+      <pubDate>Thu, 30 Apr 2026 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] AWS announced Amazon Q Developer’s IDE plugins and paid Pro subscription are being sunset in favor of a new agentic IDE, &quot;Kiro&quot; — new Free Tier and Pro signups blocked from May 15, 2026, full end of support April 30, 2027.</description>
+    </item>
+  </channel>
+</rss>

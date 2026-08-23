@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Devin Desktop (formerly Windsurf) changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/windsurf.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/windsurf.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Devin Desktop (formerly Windsurf), dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Devin Desktop (formerly Windsurf) — Teams pricing structure clarified</title>
+      <link>https://skymined.github.io/ratelog/tools/windsurf.html</link>
+      <guid isPermaLink="false">ratelog-windsurf-2026-08-23-teams-pricing-structure-clarified</guid>
+      <pubDate>Sun, 23 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[changed] Resolved earlier conflicting reports about Teams pricing: it’s a hybrid model, not a flat per-seat rate — $80/mo minimum team spend, $40/mo per full seat (Pro-equivalent quota + Desktop access), and unlimited free flex seats (shared credits, no Desktop access).</description>
+    </item>
+    <item>
+      <title>Devin Desktop (formerly Windsurf) — Rebranded to &quot;Devin Desktop&quot;</title>
+      <link>https://skymined.github.io/ratelog/tools/windsurf.html</link>
+      <guid isPermaLink="false">ratelog-windsurf-2026-06-02-rebranded-to-devin-desktop-</guid>
+      <pubDate>Tue, 02 Jun 2026 12:00:00 GMT</pubDate>
+      <description>[changed] Cognition rebranded the Windsurf IDE as “Devin Desktop,” unifying it with the cloud agent Devin under one product and opening it to third-party agents via the open Agent Client Protocol.</description>
+    </item>
+    <item>
+      <title>Devin Desktop (formerly Windsurf) — Flat credits replaced with daily/weekly quotas; Pro price up</title>
+      <link>https://skymined.github.io/ratelog/tools/windsurf.html</link>
+      <guid isPermaLink="false">ratelog-windsurf-2026-03-19-flat-credits-replaced-with-daily-weekly-</guid>
+      <pubDate>Thu, 19 Mar 2026 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] Cognition replaced flat monthly credit-pool billing with a token-based system giving daily + weekly usage allowances, raised Pro from $15→$20/mo and Teams from $30→$40/seat/mo (both reportedly grandfathered for existing subscribers), and launched a new $200/mo Max tier.</description>
+    </item>
+  </channel>
+</rss>

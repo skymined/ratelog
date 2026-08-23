@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — GitHub Copilot changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/github-copilot.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/github-copilot.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for GitHub Copilot, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jun 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>GitHub Copilot — Flat premium-request quotas replaced with AI Credits</title>
+      <link>https://skymined.github.io/ratelog/tools/github-copilot.html</link>
+      <guid isPermaLink="false">ratelog-github-copilot-2026-06-01-flat-premium-request-quotas-replaced-wit</guid>
+      <pubDate>Mon, 01 Jun 2026 12:00:00 GMT</pubDate>
+      <description>[changed] GitHub replaced its flat monthly Premium Request quotas (e.g. 300/month for Pro) with a token-consumption-based &quot;AI Credits&quot; system (1 credit = $0.01) across all plans, and introduced a new top individual tier, Copilot Max, at $100/month. Total credit allowances ended up higher than sticker price once bonus credits are included, but billing is now metered rather than a flat predictable count.</description>
+    </item>
+  </channel>
+</rss>

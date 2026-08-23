@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Cursor changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/cursor.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/cursor.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Cursor, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jun 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Cursor — Teams split into two seat tiers</title>
+      <link>https://skymined.github.io/ratelog/tools/cursor.html</link>
+      <guid isPermaLink="false">ratelog-cursor-2026-06-01-teams-split-into-two-seat-tiers</guid>
+      <pubDate>Mon, 01 Jun 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] Standard keeps its $40/seat price but gains materially more included usage, split into first-party and third-party model pools. A new $120/seat Premium tier (5× Standard’s usage) was added for heavy daily users.</description>
+    </item>
+    <item>
+      <title>Cursor — Teams moved to usage-based billing</title>
+      <link>https://skymined.github.io/ratelog/tools/cursor.html</link>
+      <guid isPermaLink="false">ratelog-cursor-2025-08-12-teams-moved-to-usage-based-billing</guid>
+      <pubDate>Tue, 12 Aug 2025 12:00:00 GMT</pubDate>
+      <description>[changed] Teams moved from a fixed per-request cost (250 included requests/month/seat, $0.08 per extra request) to variable, API-rate usage billing.</description>
+    </item>
+    <item>
+      <title>Cursor — Pro moved off flat &quot;500 fast requests&quot;</title>
+      <link>https://skymined.github.io/ratelog/tools/cursor.html</link>
+      <guid isPermaLink="false">ratelog-cursor-2025-06-16-pro-moved-off-flat-500-fast-requests-</guid>
+      <pubDate>Mon, 16 Jun 2025 12:00:00 GMT</pubDate>
+      <description>[changed] Cursor dropped the old flat ‘500 fast requests/month’ Pro model for usage-based pricing: Pro now includes at least $20/month of inference at API prices and unlimited use of the &#39;Auto&#39; model. Also launched the $200/month Ultra tier.</description>
+    </item>
+  </channel>
+</rss>

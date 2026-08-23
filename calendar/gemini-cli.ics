@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Gemini CLI / Code Assist
 X-WR-CALDESC:Pricing & usage-limit changes for Gemini CLI / Code Assist\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-gemini-cli-2026-05-19-google-ai-ultra-price-cut-no-longer-gran@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260519
 DTEND;VALUE=DATE:20260520
 SUMMARY:• Gemini CLI / Code Assist: Google AI Ultra price cut (no longer grants CLI quota)
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/gemini-cli.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-gemini-cli-2026-06-18-free-individual-access-ended-entirely@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260618
 DTEND;VALUE=DATE:20260619
 SUMMARY:↓ Gemini CLI / Code Assist: Free individual access ended entirely

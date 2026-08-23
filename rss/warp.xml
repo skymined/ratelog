@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Warp changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/warp.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/warp.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Warp, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Warp — Free tier’s onboarding credit grant no longer listed</title>
+      <link>https://skymined.github.io/ratelog/tools/warp.html</link>
+      <guid isPermaLink="false">ratelog-warp-2026-08-23-free-tier-s-onboarding-credit-grant-no-l</guid>
+      <pubDate>Sun, 23 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] The live pricing page and pricing FAQ no longer mention a 150-then-75 monthly credit allowance for Free users; Free is now described as BYOK/pay-as-you-go only. No dated changelog entry found for when this changed — noting the date we confirmed it.</description>
+    </item>
+    <item>
+      <title>Warp — BYOK extended to Free tier</title>
+      <link>https://skymined.github.io/ratelog/tools/warp.html</link>
+      <guid isPermaLink="false">ratelog-warp-2026-05-20-byok-extended-to-free-tier</guid>
+      <pubDate>Wed, 20 May 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] Bring-your-own-API-key support was extended to all plans including Free.</description>
+    </item>
+    <item>
+      <title>Warp — Legacy tiers collapsed into one $20/mo plan</title>
+      <link>https://skymined.github.io/ratelog/tools/warp.html</link>
+      <guid isPermaLink="false">ratelog-warp-2025-10-30-legacy-tiers-collapsed-into-one-20-mo-pl</guid>
+      <pubDate>Thu, 30 Oct 2025 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] Collapsed three legacy paid tiers (Pro, Turbo, Lightspeed) into a single $20/mo Build plan; independent analysis characterized this as a net price increase for many existing $10–15/mo subscribers, even though per-unit overage pricing improved and BYOK access was added.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Replit Agent changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/replit-agent.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/replit-agent.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Replit Agent, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Feb 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Replit Agent — New Pro plan replaces Teams</title>
+      <link>https://skymined.github.io/ratelog/tools/replit-agent.html</link>
+      <guid isPermaLink="false">ratelog-replit-agent-2026-02-24-new-pro-plan-replaces-teams</guid>
+      <pubDate>Tue, 24 Feb 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] Discontinued the separate Teams plan for a new $100/mo Pro plan with 1-month credit rollover and up to 15 collaborators; Core&#39;s annual price dropped to $20/mo with 5 collaborators built in.</description>
+    </item>
+    <item>
+      <title>Replit Agent — Switched to effort-based billing</title>
+      <link>https://skymined.github.io/ratelog/tools/replit-agent.html</link>
+      <guid isPermaLink="false">ratelog-replit-agent-2025-06-18-switched-to-effort-based-billing</guid>
+      <pubDate>Wed, 18 Jun 2025 12:00:00 GMT</pubDate>
+      <description>[changed] Replaced flat $0.25-per-checkpoint billing with effort-based pricing, where each checkpoint&#39;s cost scales with the actual compute the Agent used.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Kiro changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/kiro.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/kiro.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Kiro, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Jun 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Kiro — Added Pro Max tier</title>
+      <link>https://skymined.github.io/ratelog/tools/kiro.html</link>
+      <guid isPermaLink="false">ratelog-kiro-2026-06-11-added-pro-max-tier</guid>
+      <pubDate>Thu, 11 Jun 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] AWS introduced a $100/mo Pro Max tier (5,000 credits) to bridge the gap between Pro+ ($40) and Power ($200), giving mid-heavy users a predictable flat rate instead of unpredictable overage charges.</description>
+    </item>
+    <item>
+      <title>Kiro — Emergency usage caps and a signup waitlist</title>
+      <link>https://skymined.github.io/ratelog/tools/kiro.html</link>
+      <guid isPermaLink="false">ratelog-kiro-2025-07-21-emergency-usage-caps-and-a-signup-waitli</guid>
+      <pubDate>Mon, 21 Jul 2025 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] Days after Kiro&#39;s public preview launched, AWS imposed temporary daily usage caps and a signup waitlist due to overwhelming demand — lifted in October 2025 when the current credit-tier system replaced it.</description>
+    </item>
+  </channel>
+</rss>

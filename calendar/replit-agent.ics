@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Replit Agent
 X-WR-CALDESC:Pricing & usage-limit changes for Replit Agent\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-replit-agent-2025-06-18-switched-to-effort-based-billing@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20250618
 DTEND;VALUE=DATE:20250619
 SUMMARY:• Replit Agent: Switched to effort-based billing
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/replit-agent.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-replit-agent-2026-02-24-new-pro-plan-replaces-teams@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260224
 DTEND;VALUE=DATE:20260225
 SUMMARY:↑ Replit Agent: New Pro plan replaces Teams

@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Zed
 X-WR-CALDESC:Pricing & usage-limit changes for Zed\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-zed-2025-09-24-moved-from-flat-prompt-limits-to-metered@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20250924
 DTEND;VALUE=DATE:20250925
 SUMMARY:• Zed: Moved from flat prompt limits to metered billing

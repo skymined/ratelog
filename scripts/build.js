@@ -153,7 +153,7 @@ function footer() {
             <h5>Site</h5>
             <ul>
               <li><a href="/finder.html">Plan Finder</a></li>
-              <li><a href="/leaderboard.html">Leaderboard</a></li>
+              <li><a href="/leaderboard.html">Model Leaderboard</a></li>
               <li><a href="/changelog.html">Changelog</a></li>
               <li><a href="/rss.xml">RSS feed</a></li>
               <li><a href="/badges.html">Badges</a></li>
@@ -478,8 +478,9 @@ function toolPage(tool) {
     <div class="wrap">
       <div class="section-head"><div><span class="eyebrow">history</span><h2>What’s changed</h2></div>
         <div style="display:flex;gap:8px">
-          <a href="/rss.xml" class="pill-link">RSS</a>
-          <a href="webcal://${SITE.url.replace(/^https?:\/\//, '')}/calendar/${tool.slug}.ics" class="pill-link">Add to Calendar</a>
+          <a href="/rss/${tool.slug}.xml" class="pill-link">RSS (${esc(tool.name)} only)</a>
+          <a href="/rss.xml" class="pill-link">RSS (all tools)</a>
+          <a href="webcal://${SITE.url.replace(/^https?:\/\//, '')}/calendar/${tool.slug}.ics" class="pill-link">Add to Calendar (${esc(tool.name)} only)</a>
         </div>
       </div>
       ${toolChanges.length ? `<div class="diff-log">
@@ -516,7 +517,6 @@ function toolPage(tool) {
     title: `${tool.shortName || tool.name} pricing & usage limits (${SITE.lastVerified}) — ${SITE.name}`,
     description: `${tool.name} by ${tool.vendor}: current plan prices, exact usage limits, and a dated history of every pricing change, sourced from official docs.`,
     canonicalPath: `/tools/${tool.slug}.html`,
-    active: '/',
     jsonLd,
     body,
   });
@@ -569,7 +569,6 @@ function comparePage(slugA, slugB) {
     title: `${a.shortName || a.name} vs ${b.shortName || b.name}: pricing & usage limits compared — ${SITE.name}`,
     description: `${a.name} vs ${b.name} head-to-head: current plan prices and exact usage limits, sourced from official docs and updated as either tool changes.`,
     canonicalPath: `/compare/${a.slug}-vs-${b.slug}.html`,
-    active: '/',
     body,
   });
 }
@@ -609,7 +608,7 @@ function changelogPage() {
 
   return page({
     title: `Changelog — every AI coding tool pricing change — ${SITE.name}`,
-    description: 'A dated, sourced log of every pricing and usage-limit change across Claude Code, GitHub Copilot, Cursor, Windsurf, Codex, Gemini CLI, Amazon Q Developer and JetBrains AI Assistant.',
+    description: `A dated, sourced log of every pricing and usage-limit change across ${tools.length} AI coding tools — Claude Code, GitHub Copilot, Cursor, Windsurf, Codex, and more.`,
     canonicalPath: '/changelog.html',
     active: '/changelog.html',
     body,
@@ -738,7 +737,7 @@ function aboutPage() {
     <div class="wrap" style="max-width:72ch">
       <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7">RateLog exists because AI coding tool pricing pages tell you today’s number and nothing else. They don’t tell you the Pro tier’s quota got cut 30% two months ago, or that a competitor just matched your plan’s price at double the limit. We track that.</p>
       <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7">Every figure on this site is checked against the vendor’s own pricing or documentation page, then independently re-checked in a second pass before publishing. Each tool page links its sources and the date they were last verified. Where a vendor’s own docs are vague, we say so rather than inventing precision that isn’t there.</p>
-      <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7">Tools are verified in scheduled batches rather than continuously — every page currently shows the same “last verified” date because all eight were re-checked together in one pass, not because it’s a placeholder that silently updates itself. Between batches, prices can drift; if you spot one that has, <a href="mailto:mylittletaste@gmail.com" class="text-link">tell us</a>.</p>
+      <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7">Tools are verified in scheduled batches rather than continuously — every page currently shows the same “last verified” date because all ${tools.length} were re-checked together in one pass, not because it’s a placeholder that silently updates itself. Between batches, prices can drift; if you spot one that has, <a href="mailto:mylittletaste@gmail.com" class="text-link">tell us</a>.</p>
       <p style="margin-bottom:20px;color:var(--ink-soft);font-size:1.05rem;line-height:1.7">RateLog isn’t affiliated with any vendor listed here. The comparison table sorts however you choose — price, category, recency — never by a paid relationship. If that changes, it will be disclosed on this page and inline wherever it applies.</p>
       <p style="color:var(--ink-soft);font-size:1.05rem;line-height:1.7">Found something stale or wrong? <a href="mailto:mylittletaste@gmail.com" class="text-link">Tell us</a> and we’ll re-verify it.</p>
     </div>
@@ -878,11 +877,28 @@ ${esc(changedMd)}</textarea>
       </div>`;
   }).join('\n      ');
 
+  const dataUrl = `${SITE.url}/data/tools.json`;
+  const claudeCodeIndex = tools.findIndex((t) => t.slug === 'claude-code');
+  const exampleQuery = `$.tools[${claudeCodeIndex}].plans[0].priceMonthly`;
+  const shieldsUrl = `https://img.shields.io/badge/dynamic/json?url=${encodeURIComponent(dataUrl)}&query=${encodeURIComponent(exampleQuery)}&label=${encodeURIComponent('Claude Code Pro')}&prefix=%24&suffix=%2Fmo&color=a5690f`;
+  const shieldsMd = `[![Claude Code Pro price](${shieldsUrl})](${SITE.url}/tools/claude-code.html)`;
+
   const body = `<section class="hero" style="border-bottom:none;padding-bottom:8px">
     <div class="wrap">
       <span class="eyebrow">embeddable</span>
       <h1 style="font-size:clamp(1.9rem,3.4vw,2.8rem)">Badges for your README or blog post.</h1>
       <p class="lede">Writing about a tool? Drop its live-ish price or “last changed” badge in — click a badge to copy its Markdown. Badges are static images baked at our last build, same freshness as the rest of the site (see <a href="/about.html" class="text-link">About</a>).</p>
+    </div>
+  </section>
+  <section class="section" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">always current</span><h2>Or pull it live via shields.io</h2><p>The badges above are rebuilt with the rest of the site, so they lag between builds. Our full dataset is also open at <code style="font-family:var(--font-mono)">/data/tools.json</code> — point shields.io's dynamic JSON badge at it directly and it re-fetches on every view, no rebuild needed.</p></div></div>
+      <div class="info-card" style="text-align:left">
+        <div style="margin-bottom:14px"><img src="${shieldsUrl}" alt="Claude Code Pro price (live via shields.io)" width="1" height="1" style="width:auto;height:20px" /></div>
+        <label style="display:block;font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Markdown (this example — swap the slug/path for any tool or plan field)</label>
+        <textarea readonly onclick="this.select()" style="width:100%;font-family:var(--font-mono);font-size:12px;padding:8px;border:1px solid var(--line);border-radius:4px;background:var(--paper-sunken);color:var(--ink-soft);resize:vertical;margin-bottom:8px" rows="2">${esc(shieldsMd)}</textarea>
+        <p style="color:var(--ink-faint);font-size:12.5px">Note: shields.io's JSONPath engine doesn't support <code style="font-family:var(--font-mono)">?(@.slug=='...')</code>-style filters — you have to address a tool by its numeric position in the <code style="font-family:var(--font-mono)">tools</code> array (Claude Code is index ${claudeCodeIndex} today; open <a href="/data/tools.json" class="text-link">/data/tools.json</a> and count to find another tool's index, and re-check it if the list order ever changes). See <a href="/api.html" class="text-link">the API page</a> for the full schema.</p>
+      </div>
     </div>
   </section>
   <section class="section" style="border-top:1px solid var(--line)">
@@ -1146,20 +1162,22 @@ function rfc822(dateStr) {
   return d.toUTCString();
 }
 
-function buildRssFeed() {
-  const changes = allChangesSorted().slice(0, 60); // keep the feed a reasonable size
-  const items = changes.map((c) => {
-    const url = `${SITE.url}/tools/${c.toolSlug}.html`;
-    const title = `${c.toolName} — ${c.title}`;
-    const sign = c.type === 'up' ? '↑ improved' : c.type === 'down' ? '↓ reduced' : 'changed';
-    return `    <item>
+function rssItem(c) {
+  const url = `${SITE.url}/tools/${c.toolSlug}.html`;
+  const title = `${c.toolName} — ${c.title}`;
+  const sign = c.type === 'up' ? '↑ improved' : c.type === 'down' ? '↓ reduced' : 'changed';
+  return `    <item>
       <title>${esc(title)}</title>
       <link>${esc(url)}</link>
       <guid isPermaLink="false">ratelog-${esc(c.toolSlug)}-${esc(c.date)}-${esc(c.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40))}</guid>
       <pubDate>${rfc822(c.date)}</pubDate>
       <description>${esc(`[${sign}] ${c.description}`)}</description>
     </item>`;
-  }).join('\n');
+}
+
+function buildRssFeed() {
+  const changes = allChangesSorted().slice(0, 60); // keep the feed a reasonable size
+  const items = changes.map(rssItem).join('\n');
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -1175,6 +1193,29 @@ ${items}
 </rss>
 `;
   write('rss.xml', body);
+}
+
+function buildPerToolRssFeeds() {
+  for (const t of tools) {
+    const changes = [...(t.changes || [])]
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .map((c) => ({ ...c, toolSlug: t.slug, toolName: t.name }));
+    const items = changes.map(rssItem).join('\n');
+    const body = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${esc(SITE.name)} — ${esc(t.name)} changelog</title>
+    <link>${SITE.url}/tools/${t.slug}.html</link>
+    <atom:link href="${SITE.url}/rss/${t.slug}.xml" rel="self" type="application/rss+xml" />
+    <description>${esc(`Every pricing and usage-limit change RateLog has caught for ${t.name}, dated and sourced — no other tools mixed in.`)}</description>
+    <language>en-us</language>
+    <lastBuildDate>${changes.length ? rfc822(changes[0].date) : new Date(0).toUTCString()}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`;
+    write(`rss/${t.slug}.xml`, body);
+  }
 }
 
 function run() {
@@ -1196,6 +1237,7 @@ function run() {
   buildSitemap();
   buildDataJson();
   buildRssFeed();
+  buildPerToolRssFeeds();
   console.log(`\nBuilt ${tools.length} tool pages, ${comparisons.length} comparisons.`);
 }
 

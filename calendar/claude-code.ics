@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Claude Code
 X-WR-CALDESC:Pricing & usage-limit changes for Claude Code\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-claude-code-2025-08-28-weekly-limits-introduced-for-the-first-t@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20250828
 DTEND;VALUE=DATE:20250829
 SUMMARY:↓ Claude Code: Weekly limits introduced for the first time
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/claude-code.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-claude-code-2026-05-06-5-hour-limits-doubled@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260506
 DTEND;VALUE=DATE:20260507
 SUMMARY:↑ Claude Code: 5-hour limits doubled
@@ -24,7 +24,7 @@ URL:https://skymined.github.io/ratelog/tools/claude-code.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-claude-code-2026-05-13-weekly-limits-raised-50@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260513
 DTEND;VALUE=DATE:20260514
 SUMMARY:↑ Claude Code: Weekly limits raised 50%
@@ -33,7 +33,7 @@ URL:https://skymined.github.io/ratelog/tools/claude-code.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-claude-code-2026-08-10-sonnet-5-api-pricing-made-permanent@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260810
 DTEND;VALUE=DATE:20260811
 SUMMARY:↑ Claude Code: Sonnet 5 API pricing made permanent

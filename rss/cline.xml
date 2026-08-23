@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Cline changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/cline.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/cline.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Cline, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Cline — Teams tier removed from pricing page</title>
+      <link>https://skymined.github.io/ratelog/tools/cline.html</link>
+      <guid isPermaLink="false">ratelog-cline-2026-08-23-teams-tier-removed-from-pricing-page</guid>
+      <pubDate>Sun, 23 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] The self-serve Teams tier (&quot;free for 10 users, then $20/user/month,&quot; introduced Oct 2025) no longer appears on the live pricing page, which now shows only Open Source and Enterprise. No official removal announcement found — noting the date we confirmed it gone, not necessarily when it happened.</description>
+    </item>
+    <item>
+      <title>Cline — Launched ClinePass</title>
+      <link>https://skymined.github.io/ratelog/tools/cline.html</link>
+      <guid isPermaLink="false">ratelog-cline-2026-06-29-launched-clinepass</guid>
+      <pubDate>Mon, 29 Jun 2026 12:00:00 GMT</pubDate>
+      <description>[changed] Cline&#39;s first-ever direct paid subscription ($9.99/mo) for curated, discounted open-weight-model access — layered on top of the still-free, still-BYOK core product.</description>
+    </item>
+    <item>
+      <title>Cline — First paid organizational tiers</title>
+      <link>https://skymined.github.io/ratelog/tools/cline.html</link>
+      <guid isPermaLink="false">ratelog-cline-2025-10-20-first-paid-organizational-tiers</guid>
+      <pubDate>Mon, 20 Oct 2025 12:00:00 GMT</pubDate>
+      <description>[changed] Introduced Teams and Enterprise tiers after previously having no paid tier of any kind beyond BYOK inference costs.</description>
+    </item>
+  </channel>
+</rss>

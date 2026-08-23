@@ -58,6 +58,17 @@
   </section>
   <section class="section" style="border-top:1px solid var(--line)">
     <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">always current</span><h2>Or pull it live via shields.io</h2><p>The badges above are rebuilt with the rest of the site, so they lag between builds. Our full dataset is also open at <code style="font-family:var(--font-mono)">/data/tools.json</code> — point shields.io's dynamic JSON badge at it directly and it re-fetches on every view, no rebuild needed.</p></div></div>
+      <div class="info-card" style="text-align:left">
+        <div style="margin-bottom:14px"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fskymined.github.io%2Fratelog%2Fdata%2Ftools.json&query=%24.tools%5B0%5D.plans%5B0%5D.priceMonthly&label=Claude%20Code%20Pro&prefix=%24&suffix=%2Fmo&color=a5690f" alt="Claude Code Pro price (live via shields.io)" width="1" height="1" style="width:auto;height:20px" /></div>
+        <label style="display:block;font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Markdown (this example — swap the slug/path for any tool or plan field)</label>
+        <textarea readonly onclick="this.select()" style="width:100%;font-family:var(--font-mono);font-size:12px;padding:8px;border:1px solid var(--line);border-radius:4px;background:var(--paper-sunken);color:var(--ink-soft);resize:vertical;margin-bottom:8px" rows="2">[![Claude Code Pro price](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fskymined.github.io%2Fratelog%2Fdata%2Ftools.json&amp;query=%24.tools%5B0%5D.plans%5B0%5D.priceMonthly&amp;label=Claude%20Code%20Pro&amp;prefix=%24&amp;suffix=%2Fmo&amp;color=a5690f)](https://skymined.github.io/ratelog/tools/claude-code.html)</textarea>
+        <p style="color:var(--ink-faint);font-size:12.5px">Note: shields.io's JSONPath engine doesn't support <code style="font-family:var(--font-mono)">?(@.slug=='...')</code>-style filters — you have to address a tool by its numeric position in the <code style="font-family:var(--font-mono)">tools</code> array (Claude Code is index 0 today; open <a href="./data/tools.json" class="text-link">/data/tools.json</a> and count to find another tool's index, and re-check it if the list order ever changes). See <a href="./api.html" class="text-link">the API page</a> for the full schema.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="border-top:1px solid var(--line)">
+    <div class="wrap">
       <div class="card-grid" style="grid-template-columns:repeat(2,1fr)">
         <div class="info-card" style="text-align:left">
         <h3 style="margin-bottom:12px">Claude Code</h3>
@@ -222,7 +233,7 @@
             <h5>Site</h5>
             <ul>
               <li><a href="./finder.html">Plan Finder</a></li>
-              <li><a href="./leaderboard.html">Leaderboard</a></li>
+              <li><a href="./leaderboard.html">Model Leaderboard</a></li>
               <li><a href="./changelog.html">Changelog</a></li>
               <li><a href="./rss.xml">RSS feed</a></li>
               <li><a href="./badges.html">Badges</a></li>
@@ -235,7 +246,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>Data last verified 2026-08-20</span>
+        <span>Data last verified 2026-08-23</span>
         <span>&copy; 2026 RateLog</span>
       </div>
     </div>

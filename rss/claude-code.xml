@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Claude Code changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/claude-code.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/claude-code.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Claude Code, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Claude Code — Sonnet 5 API pricing made permanent</title>
+      <link>https://skymined.github.io/ratelog/tools/claude-code.html</link>
+      <guid isPermaLink="false">ratelog-claude-code-2026-08-10-sonnet-5-api-pricing-made-permanent</guid>
+      <pubDate>Mon, 10 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] Anthropic made Claude Sonnet 5&#39;s introductory API price ($2/$10 per million input/output tokens) permanent, canceling a scheduled increase to $3/$15 that was set for 2026-09-01.</description>
+    </item>
+    <item>
+      <title>Claude Code — Weekly limits raised 50%</title>
+      <link>https://skymined.github.io/ratelog/tools/claude-code.html</link>
+      <guid isPermaLink="false">ratelog-claude-code-2026-05-13-weekly-limits-raised-50-</guid>
+      <pubDate>Wed, 13 May 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] One week after the 5-hour doubling, Anthropic raised weekly Claude Code usage limits by 50% for Pro, Max, and Team plans. Framed as promotional, it has been extended repeatedly and is confirmed live through August 31, 2026.</description>
+    </item>
+    <item>
+      <title>Claude Code — 5-hour limits doubled</title>
+      <link>https://skymined.github.io/ratelog/tools/claude-code.html</link>
+      <guid isPermaLink="false">ratelog-claude-code-2026-05-06-5-hour-limits-doubled</guid>
+      <pubDate>Wed, 06 May 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] Anthropic doubled Claude Code&#39;s 5-hour rate limits for Pro, Max, and Team plans (permanent) and removed a peak-hour usage reduction, enabled by new compute capacity from a deal giving Anthropic access to SpaceX&#39;s Colossus 1 data center.</description>
+    </item>
+    <item>
+      <title>Claude Code — Weekly limits introduced for the first time</title>
+      <link>https://skymined.github.io/ratelog/tools/claude-code.html</link>
+      <guid isPermaLink="false">ratelog-claude-code-2025-08-28-weekly-limits-introduced-for-the-first-t</guid>
+      <pubDate>Thu, 28 Aug 2025 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] Anthropic stacked a new 7-day usage cap on top of the existing 5-hour window, citing 24/7 automated usage and account sharing/reselling by under 5% of subscribers. This was the structural change that created the current two-window system.</description>
+    </item>
+  </channel>
+</rss>

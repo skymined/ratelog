@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — Zed changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/zed.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/zed.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for Zed, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Sep 2025 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Zed — Moved from flat prompt limits to metered billing</title>
+      <link>https://skymined.github.io/ratelog/tools/zed.html</link>
+      <guid isPermaLink="false">ratelog-zed-2025-09-24-moved-from-flat-prompt-limits-to-metered</guid>
+      <pubDate>Wed, 24 Sep 2025 12:00:00 GMT</pubDate>
+      <description>[changed] Overhauled pricing from flat prompt-count limits to token-based billing. Pro dropped from $20/mo (500 prompts/month) to $10/mo, but the flat allowance was replaced with only $5/mo of included credit plus usage-based overage at API list price + 10%.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — JetBrains AI Assistant changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/jetbrains-ai.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/jetbrains-ai.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for JetBrains AI Assistant, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>JetBrains AI Assistant — Org credits extended to 12-month validity</title>
+      <link>https://skymined.github.io/ratelog/tools/jetbrains-ai.html</link>
+      <guid isPermaLink="false">ratelog-jetbrains-ai-2026-07-07-org-credits-extended-to-12-month-validit</guid>
+      <pubDate>Tue, 07 Jul 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] Announced transitioning org/business AI licensing from fixed seat quotas toward on-demand credits with validity extended from 30 days to 12 months, rolling out through July–August 2026.</description>
+    </item>
+    <item>
+      <title>JetBrains AI Assistant — Quotas tied to plan price, shrinking for heavy users</title>
+      <link>https://skymined.github.io/ratelog/tools/jetbrains-ai.html</link>
+      <guid isPermaLink="false">ratelog-jetbrains-ai-2025-08-25-quotas-tied-to-plan-price-shrinking-for-</guid>
+      <pubDate>Mon, 25 Aug 2025 12:00:00 GMT</pubDate>
+      <description>[↓ reduced] Replaced its opaque per-plan quota with a rule that each plan&#39;s AI-Credit allowance equals its USD price (plus a small bonus on Ultimate). JetBrains acknowledged quotas were shrinking for a meaningful share of users, especially heavy Junie agent users, since old quotas had been set unsustainably high as a promotional measure.</description>
+    </item>
+  </channel>
+</rss>

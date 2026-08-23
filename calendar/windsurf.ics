@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Devin Desktop (formerly Windsurf)
 X-WR-CALDESC:Pricing & usage-limit changes for Devin Desktop (formerly Windsurf)\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-windsurf-2026-03-19-flat-credits-replaced-with-daily-weekly-@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260319
 DTEND;VALUE=DATE:20260320
 SUMMARY:↓ Devin Desktop (formerly Windsurf): Flat credits replaced with daily/weekly quotas\; Pro price up
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/windsurf.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-windsurf-2026-06-02-rebranded-to-devin-desktop@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260602
 DTEND;VALUE=DATE:20260603
 SUMMARY:• Devin Desktop (formerly Windsurf): Rebranded to "Devin Desktop"
@@ -24,7 +24,7 @@ URL:https://skymined.github.io/ratelog/tools/windsurf.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-windsurf-2026-08-23-teams-pricing-structure-clarified@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260823
 DTEND;VALUE=DATE:20260824
 SUMMARY:• Devin Desktop (formerly Windsurf): Teams pricing structure clarified

@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — GitHub Copilot
 X-WR-CALDESC:Pricing & usage-limit changes for GitHub Copilot\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-github-copilot-2026-06-01-flat-premium-request-quotas-replaced-wit@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260602
 SUMMARY:• GitHub Copilot: Flat premium-request quotas replaced with AI Credits

@@ -7,7 +7,7 @@ const SITE = {
   name: 'RateLog',
   tagline: 'AI coding tool pricing & limits, tracked like a changelog.',
   url: 'https://skymined.github.io/ratelog',
-  lastVerified: '2026-08-20',
+  lastVerified: '2026-08-23',
 };
 
 const tools = [
@@ -30,7 +30,7 @@ const tools = [
       { name: 'Max 20x', priceMonthly: 200, priceYearly: null, limit: "20× the Pro pool, same window structure. Last published figures: ~240–480 Sonnet-hours/week plus ~24–40 Opus-hours/week — since increased but not re-published exactly.", target: 'Power users, very heavy use', notes: 'Monthly billing only.' },
       { name: 'Team Standard', priceMonthly: 25, priceYearly: 20, limit: 'Per-seat allowance roughly comparable to Pro, same 5-hour + weekly structure, shared with claude.ai chat for that seat.', target: 'Small-to-mid teams', notes: '$25/seat/mo, or $20/seat/mo billed annually.' },
       { name: 'Team Premium', priceMonthly: 125, priceYearly: 100, limit: 'Per-seat allowance comparable to Max, same window structure.', target: 'Teams needing Max-level capacity', notes: '$125/seat/mo, or $100/seat/mo billed annually.' },
-      { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: "Seat-based allowance by default (Standard or Premium tier); admins can enable pay-as-you-go 'usage credits' beyond the seat allowance at API rates. Custom limits available on request.", target: 'Large orgs needing compliance controls', notes: 'Contact sales. Adds SSO, SCIM, audit logs, spend controls.' },
+      { name: 'Enterprise', priceMonthly: 20, priceYearly: null, limit: "No bundled usage allowance — unlike Team's seat-based allowance, Enterprise seats include zero included usage; every request is metered at API rates on top of the seat fee. Admins set spend limits per user/org. Custom limits available on request.", target: 'Large orgs needing compliance controls', notes: '$20/seat/mo starting price (per claude.com/pricing) plus usage billed at API rates — contact sales for a full quote. Adds SSO, SCIM, audit logs, spend controls.' },
     ],
     changes: [
       { date: '2026-08-10', type: 'up', title: 'Sonnet 5 API pricing made permanent', description: "Anthropic made Claude Sonnet 5's introductory API price ($2/$10 per million input/output tokens) permanent, canceling a scheduled increase to $3/$15 that was set for 2026-09-01.", sourceUrl: 'https://platform.claude.com/docs/en/about-claude/pricing' },
@@ -55,7 +55,7 @@ const tools = [
     officialUrl: 'https://github.com/features/copilot',
     pricingUrl: 'https://github.com/features/copilot/plans',
     summary: "Microsoft's IDE-embedded assistant, billed through a token-based 'AI Credits' system since June 2026 instead of flat monthly request quotas.",
-    contextWindow: { model: "GPT-5.3-Codex (Copilot's default 'base model')", tokens: 400000, display: '400K tokens', note: 'Most current models (including Claude Sonnet 5) can opt into a 1M extended window in VS Code/Copilot CLI specifically, at higher AI-credit cost.' },
+    contextWindow: { model: "GPT-5.3-Codex (default 'base model' — Business/Enterprise only)", tokens: 400000, display: '400K tokens', note: "This 'base model' status applies only to Copilot Business and Enterprise (used when an org hasn't approved other models); it does not apply to Copilot Pro, Pro+, or Free. Most current models (including Claude Sonnet 5) can opt into a 1M extended window in VS Code/Copilot CLI specifically, at higher AI-credit cost." },
     headlinePlanIndex: 0,
     hasFreeTier: true,
     freeTier: 'Copilot Free — 2,000 code completions and 50 chat requests per month, limited agent mode, restricted model set (Claude Haiku 4.5, GPT-5 mini). Resets monthly.',
@@ -63,7 +63,7 @@ const tools = [
       { name: 'Copilot Pro', priceMonthly: 10, priceYearly: null, limit: 'Unlimited code completions. $15 in total monthly AI Credits (1,000 base + 500 bonus) for chat, agent mode, CLI, and code review — token-metered, no rollover. Extra usage beyond that is $0.01/credit.', target: 'Individual devs stepping up from Free', notes: 'Legacy annual subscribers from before June 2026 stay on the old flat 300 requests/month model until renewal.' },
       { name: 'Copilot Pro+', priceMonthly: 39, priceYearly: null, limit: '$70 in total monthly AI Credits (3,900 base + 3,100 bonus) — about 4.7× Pro’s allowance. Broader model access, including Claude Opus.', target: 'Power users with heavy chat/agent use', notes: '' },
       { name: 'Copilot Max', priceMonthly: 100, priceYearly: null, limit: '$200 in total monthly AI Credits (10,000 base + 10,000 bonus) — about 2.9× Pro+’s allowance. Priority access to new models.', target: 'Heavy, sustained agentic workflows', notes: 'Newest individual tier, introduced with the June 2026 billing overhaul.' },
-      { name: 'Copilot Business', priceMonthly: 19, priceYearly: null, limit: '1,900 AI Credits per user/month, pooled at the org level so unused credits can be used by teammates. No rollover.', target: 'Small/medium organizations', notes: 'Per user/month, billed to the org. Promotional bump to 3,000 credits/user/month for existing customers through Sept 1, 2026.' },
+      { name: 'Copilot Business', priceMonthly: 19, priceYearly: null, limit: '1,900 AI Credits per user/month, pooled at the org level so unused credits can be used by teammates. No rollover.', target: 'Small/medium organizations', notes: 'Per user/month, billed to the org. Promotional bump to 3,000 credits/user/month for existing customers; exact end date is unconfirmed (reported anywhere from late Aug to Sept 1, 2026 — GitHub’s own plans page doesn’t state it directly).' },
       { name: 'Copilot Enterprise', priceMonthly: 39, priceYearly: null, limit: '3,900 AI Credits per user/month, pooled at the enterprise level, same reset rules as Business.', target: 'Large enterprises needing deep GitHub.com integration', notes: 'Includes everything in Business plus GitHub.com-specific integrations.' },
     ],
     changes: [
@@ -283,7 +283,7 @@ const tools = [
       { name: 'Power', priceMonthly: 200, priceYearly: null, limit: '10,000 credits/month.', target: 'Heaviest individual users', notes: 'Team plans reuse these per-seat prices plus consolidated billing and SSO via AWS IAM Identity Center.' },
     ],
     changes: [
-      { date: '2026-06-10', type: 'up', title: 'Added Pro Max tier', description: 'AWS introduced a $100/mo Pro Max tier (5,000 credits) to bridge the gap between Pro+ ($40) and Power ($200), giving mid-heavy users a predictable flat rate instead of unpredictable overage charges.', sourceUrl: 'https://kiro.dev/blog/kiro-pro-max/' },
+      { date: '2026-06-11', type: 'up', title: 'Added Pro Max tier', description: 'AWS introduced a $100/mo Pro Max tier (5,000 credits) to bridge the gap between Pro+ ($40) and Power ($200), giving mid-heavy users a predictable flat rate instead of unpredictable overage charges.', sourceUrl: 'https://kiro.dev/blog/kiro-pro-max/' },
       { date: '2025-07-21', type: 'down', title: 'Emergency usage caps and a signup waitlist', description: "Days after Kiro's public preview launched, AWS imposed temporary daily usage caps and a signup waitlist due to overwhelming demand — lifted in October 2025 when the current credit-tier system replaced it.", sourceUrl: 'https://www.theregister.com/2025/07/21/aws_kiro_usage_cap/' },
     ],
     sources: [
@@ -307,7 +307,7 @@ const tools = [
     hasFreeTier: true,
     freeTier: 'Starter — free daily Agent credits (exact amount undisclosed) resetting every 24 hours, 1 published app (expires after 30 days), “Lite” build mode only.',
     plans: [
-      { name: 'Core', priceMonthly: 25, priceYearly: 20, limit: '$20–25/mo in credits (matches plan price), consumed per-checkpoint under effort-based pricing. 2 parallel agents. Replit’s Feb 2026 launch post for this plan cited “up to 5 collaborators,” but the live pricing page no longer states a collaborator count for Core — treat that figure as unconfirmed.', target: 'Solo builders, small teams', notes: '' },
+      { name: 'Core', priceMonthly: 25, priceYearly: 20, limit: '$20–25/mo in credits (matches plan price), consumed per-checkpoint under effort-based pricing. 2 parallel agents, up to 5 collaboration seats (the pricing page itself omits this, but Replit’s own Core plan docs confirm it explicitly).', target: 'Solo builders, small teams', notes: '' },
       { name: 'Pro', priceMonthly: 100, priceYearly: 95, limit: '$100/mo in credits. Up to 15 collaborators, 10 parallel agents, Premium Support, up to 50 invited viewers, 28-day database rollback. Replit’s launch post also described a 1-month credit rollover and a “Turbo Mode” feature; neither term appears on the live pricing page anymore, so we can’t confirm either is still current.', target: 'Teams and power users', notes: "Replaced the old 'Teams' plan in Feb 2026." },
       { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'Custom negotiated credit allotment.', target: 'Large orgs needing governance/SSO', notes: '' },
     ],
@@ -336,7 +336,7 @@ const tools = [
     hasFreeTier: true,
     freeTier: 'Open Source — free forever, no usage cap from Cline itself. Bring your own API key (Anthropic/OpenAI/OpenRouter/Bedrock/Vertex/Azure) and pay that provider directly at cost, no Cline markup.',
     plans: [
-      { name: 'ClinePass', priceMonthly: 9.99, priceYearly: null, limit: 'Flat $9.99/mo for curated, discounted access to 11–14 open-weight coding models (GLM, Kimi, DeepSeek, MiniMax, Qwen) without separate provider accounts. Usage tracked against undisclosed 5-hour/weekly/monthly rolling caps, described as “2–5× standard API rate limits.”', target: 'Users wanting cheap curated model access without juggling API keys', notes: 'Moved off the main pricing page onto its own landing page (cline.bot/cline-pass) with introductory pricing sometimes shown ($4.99 first month, occasionally $1.99 on campaign links) — $9.99/mo is the standing rate.' },
+      { name: 'ClinePass', priceMonthly: 9.99, priceYearly: null, limit: 'Flat $9.99/mo for curated, discounted access to 11–14 open-weight coding models (GLM, Kimi, DeepSeek, MiniMax, MiMo, Qwen) without separate provider accounts. Usage tracked against undisclosed 5-hour/weekly/monthly rolling caps, described as “2–5× standard API rate limits.”', target: 'Users wanting cheap curated model access without juggling API keys', notes: 'Moved off the main pricing page onto its own landing page (cline.bot/cline-pass) with introductory pricing sometimes shown ($4.99 first month, occasionally $1.99 on campaign links) — $9.99/mo is the standing rate.' },
       { name: 'Enterprise', priceMonthly: null, priceYearly: null, limit: 'Custom, contact sales. Adds SSO/SCIM, RBAC, audit logs, VPC/on-prem/air-gapped deployment.', target: 'Orgs needing compliance features', notes: '' },
     ],
     changes: [
@@ -385,7 +385,7 @@ const tools = [
     officialUrl: 'https://www.warp.dev',
     pricingUrl: 'https://www.warp.dev/pricing',
     summary: "An AI-native terminal that open-sourced its client (AGPL-3.0 / MIT) in April 2026 while keeping its Oz cloud-agent orchestration platform proprietary, priced on a credit-metered model.",
-    contextWindow: { model: 'Claude Sonnet 5', tokens: 1000000, display: '1M tokens', note: 'Reached via Warp’s default “Auto (Responsive)” routing mode, which dynamically selects among Claude/GPT/Gemini/Grok/open-weight models.' },
+    contextWindow: { model: 'Claude Sonnet 5', tokens: 1000000, display: '1M tokens', note: 'Reachable by manually selecting Claude Sonnet 5, or via Warp’s default “Auto (Responsive)” mode, which picks among Claude/GPT/Gemini for the fastest high-quality response. Open-weight models are routed separately via a distinct “Auto (Open-weights)” mode, and Grok is only available on Enterprise via a separate BYOLLM/SuperGrok connection — neither is part of standard Auto (Responsive) routing.' },
     headlinePlanIndex: 0,
     hasFreeTier: true,
     freeTier: 'Free — pay-as-you-go/BYOK only. Warp’s own pricing FAQ states the Free plan "doesn’t include bundled AI usage for the Warp Agent"; you bring your own API key or pay per-request at provider rates. No onboarding credit grant found on the live pricing page.',
@@ -452,14 +452,14 @@ const arenaSource = {
 
 const models = [
   { name: 'Claude Opus 5', vendor: 'Anthropic', arenaElo: 1690.9, arenaRank: 1, vendorClaimedSWEBench: '~96–97% (Anthropic’s own figure, not independently verified)', contextWindowTokens: 1000000, openRouter: { inputPerM: 5.0, outputPerM: 25.0 } },
-  { name: 'Kimi K3', vendor: 'Moonshot AI', arenaElo: 1674.0, arenaRank: 2, vendorClaimedSWEBench: 'Disputed — sources range 76.8%–93.4%, no figure we’d call reliable', contextWindowTokens: null, openRouter: null },
-  { name: 'Claude Fable 5', vendor: 'Anthropic', arenaElo: 1625.9, arenaRank: 6, vendorClaimedSWEBench: null, contextWindowTokens: 1000000, openRouter: null },
-  { name: 'GPT-5.6 Sol', vendor: 'OpenAI', arenaElo: 1619.1, arenaRank: 7, vendorClaimedSWEBench: '~96.2% (secondary source, low confidence)', contextWindowTokens: 1050000, openRouter: { inputPerM: 2.5, outputPerM: 15.0 } },
+  { name: 'Kimi K3', vendor: 'Moonshot AI', arenaElo: 1674.0, arenaRank: 2, vendorClaimedSWEBench: 'Disputed — sources range 76.8%–93.4%, no figure we’d call reliable', contextWindowTokens: 1048576, openRouter: { inputPerM: 2.6, outputPerM: 13.0 } },
+  { name: 'Claude Fable 5', vendor: 'Anthropic', arenaElo: 1625.9, arenaRank: 6, vendorClaimedSWEBench: null, contextWindowTokens: 1000000, openRouter: { inputPerM: 10.0, outputPerM: 50.0 } },
+  { name: 'GPT-5.6 Sol', vendor: 'OpenAI', arenaElo: 1619.1, arenaRank: 7, vendorClaimedSWEBench: '~96.2% (secondary source, low confidence)', contextWindowTokens: 1050000, openRouter: { inputPerM: 2.0, outputPerM: 10.0 } },
   { name: 'Claude Sonnet 5', vendor: 'Anthropic', arenaElo: 1539.6, arenaRank: 18, vendorClaimedSWEBench: '~82.1% (press-reported, low confidence)', contextWindowTokens: 1000000, openRouter: { inputPerM: 2.0, outputPerM: 10.0 } },
   { name: 'GPT-5.6 Terra', vendor: 'OpenAI', arenaElo: 1519.9, arenaRank: 26, vendorClaimedSWEBench: null, contextWindowTokens: 1050000, openRouter: { inputPerM: 2.0, outputPerM: 12.0 } },
   { name: 'GPT-5.6 Luna', vendor: 'OpenAI', arenaElo: 1516.6, arenaRank: 29, vendorClaimedSWEBench: null, contextWindowTokens: 1050000, openRouter: { inputPerM: 0.2, outputPerM: 1.2 } },
   { name: 'Gemini 3.1 Pro', vendor: 'Google', arenaElo: 1446.5, arenaRank: 47, vendorClaimedSWEBench: null, contextWindowTokens: 1048576, openRouter: { inputPerM: 2.0, outputPerM: 12.0 } },
-  { name: 'GPT-5.3-Codex', vendor: 'OpenAI', arenaElo: 1408.5, arenaRank: 60, vendorClaimedSWEBench: null, contextWindowTokens: 400000, openRouter: null },
+  { name: 'GPT-5.3-Codex', vendor: 'OpenAI', arenaElo: 1408.5, arenaRank: 60, vendorClaimedSWEBench: null, contextWindowTokens: 400000, openRouter: { inputPerM: 1.75, outputPerM: 14.0 } },
 ];
 
 // Real usage/popularity data — reported per-source rather than blended into

@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Cline
 X-WR-CALDESC:Pricing & usage-limit changes for Cline\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-cline-2025-10-20-first-paid-organizational-tiers@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20251020
 DTEND;VALUE=DATE:20251021
 SUMMARY:• Cline: First paid organizational tiers
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/cline.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-cline-2026-06-29-launched-clinepass@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260629
 DTEND;VALUE=DATE:20260630
 SUMMARY:• Cline: Launched ClinePass
@@ -24,7 +24,7 @@ URL:https://skymined.github.io/ratelog/tools/cline.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-cline-2026-08-23-teams-tier-removed-from-pricing-page@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260823
 DTEND;VALUE=DATE:20260824
 SUMMARY:↓ Cline: Teams tier removed from pricing page

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="190" height="20" role="img" aria-label="last changed: 14 days ago">
-  <title>last changed: 14 days ago</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="20" role="img" aria-label="last changed: 17 days ago">
+  <title>last changed: 17 days ago</title>
   <linearGradient id="s" x2="0" y2="100%">
     <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -12,6 +12,6 @@
   </g>
   <g fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono',DejaVu Sans Mono,Consolas,monospace" font-size="11">
     <text x="49" y="14">last changed</text>
-    <text x="144" y="14">14 days ago</text>
+    <text x="144" y="14">17 days ago</text>
   </g>
 </svg>

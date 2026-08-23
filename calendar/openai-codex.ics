@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — ChatGPT / Codex
 X-WR-CALDESC:Pricing & usage-limit changes for ChatGPT / Codex\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-openai-codex-2026-04-02-business-seat-price-cut@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260402
 DTEND;VALUE=DATE:20260403
 SUMMARY:↑ ChatGPT / Codex: Business seat price cut
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/openai-codex.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-openai-codex-2026-04-02-codex-switched-to-token-based-credits@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260402
 DTEND;VALUE=DATE:20260403
 SUMMARY:• ChatGPT / Codex: Codex switched to token-based credits
@@ -24,7 +24,7 @@ URL:https://skymined.github.io/ratelog/tools/openai-codex.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-openai-codex-2026-08-06-free-tier-chat-cap-removed@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260806
 DTEND;VALUE=DATE:20260807
 SUMMARY:↑ ChatGPT / Codex: Free-tier chat cap removed

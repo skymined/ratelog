@@ -6,7 +6,7 @@ X-WR-CALNAME:RateLog — Cursor
 X-WR-CALDESC:Pricing & usage-limit changes for Cursor\, tracked by RateLog.
 BEGIN:VEVENT
 UID:ratelog-cursor-2025-06-16-pro-moved-off-flat-500-fast-requests@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20250616
 DTEND;VALUE=DATE:20250617
 SUMMARY:• Cursor: Pro moved off flat "500 fast requests"
@@ -15,7 +15,7 @@ URL:https://skymined.github.io/ratelog/tools/cursor.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-cursor-2025-08-12-teams-moved-to-usage-based-billing@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20250812
 DTEND;VALUE=DATE:20250813
 SUMMARY:• Cursor: Teams moved to usage-based billing
@@ -24,7 +24,7 @@ URL:https://skymined.github.io/ratelog/tools/cursor.html
 END:VEVENT
 BEGIN:VEVENT
 UID:ratelog-cursor-2026-06-01-teams-split-into-two-seat-tiers@ratelog.dev
-DTSTAMP:20260820T000000Z
+DTSTAMP:20260823T000000Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260602
 SUMMARY:↑ Cursor: Teams split into two seat tiers

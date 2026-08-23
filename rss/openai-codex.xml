@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RateLog — ChatGPT / Codex changelog</title>
+    <link>https://skymined.github.io/ratelog/tools/openai-codex.html</link>
+    <atom:link href="https://skymined.github.io/ratelog/rss/openai-codex.xml" rel="self" type="application/rss+xml" />
+    <description>Every pricing and usage-limit change RateLog has caught for ChatGPT / Codex, dated and sourced — no other tools mixed in.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>ChatGPT / Codex — Free-tier chat cap removed</title>
+      <link>https://skymined.github.io/ratelog/tools/openai-codex.html</link>
+      <guid isPermaLink="false">ratelog-openai-codex-2026-08-06-free-tier-chat-cap-removed</guid>
+      <pubDate>Thu, 06 Aug 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] GPT-5.6 Luna became the default Free-tier model, and OpenAI began removing the numeric cap on Free-tier text chats entirely, moving toward &quot;unlimited&quot; (subject to abuse guardrails).</description>
+    </item>
+    <item>
+      <title>ChatGPT / Codex — Business seat price cut</title>
+      <link>https://skymined.github.io/ratelog/tools/openai-codex.html</link>
+      <guid isPermaLink="false">ratelog-openai-codex-2026-04-02-business-seat-price-cut</guid>
+      <pubDate>Thu, 02 Apr 2026 12:00:00 GMT</pubDate>
+      <description>[↑ improved] Cut ChatGPT Business per-seat price about $5: from $30/mo ($25 annual) down to $25/mo ($20 annual).</description>
+    </item>
+    <item>
+      <title>ChatGPT / Codex — Codex switched to token-based credits</title>
+      <link>https://skymined.github.io/ratelog/tools/openai-codex.html</link>
+      <guid isPermaLink="false">ratelog-openai-codex-2026-04-02-codex-switched-to-token-based-credits</guid>
+      <pubDate>Thu, 02 Apr 2026 12:00:00 GMT</pubDate>
+      <description>[changed] Switched Codex from flat per-message billing to token-based credits at API rates for Plus, Pro, and Business — cost now scales with tokens used instead of one flat unit per task.</description>
+    </item>
+  </channel>
+</rss>
