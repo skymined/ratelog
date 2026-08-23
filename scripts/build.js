@@ -9,6 +9,28 @@ const { SITE, tools, comparisons, arenaSource, models, popularitySources } = req
 
 const ROOT = path.join(__dirname, '..');
 
+// Pricing Watch (see .github/workflows/pricing-watch.yml) runs daily and
+// commits its report alongside its snapshot. This makes the site itself
+// honest about a detected-but-not-yet-human-verified change, instead of that
+// signal living only in a GitHub Issue nobody visiting the site ever sees.
+// Self-clearing: once a real re-verification pass bumps SITE.lastVerified
+// past the report's checkedAt date, the flag disappears on its own — no
+// manual "resolve" step to forget.
+function loadPendingWatchReport() {
+  try {
+    const raw = fs.readFileSync(path.join(__dirname, 'pricing-watch-report.json'), 'utf8');
+    const report = JSON.parse(raw);
+    const checkedDate = String(report.checkedAt || '').slice(0, 10);
+    if (!checkedDate || checkedDate <= SITE.lastVerified) return null;
+    const changed = (report.changed || []).filter((c) => tools.some((t) => t.slug === c.slug));
+    if (!changed.length) return null;
+    return { changed, checkedDate };
+  } catch {
+    return null; // missing/unparseable report — not run locally yet, or first run
+  }
+}
+const pendingWatch = loadPendingWatchReport();
+
 // ---------------------------------------------------------------------------
 // helpers
 // ---------------------------------------------------------------------------
@@ -337,6 +359,12 @@ function homepage() {
     </div>
   </div>
 
+  ${pendingWatch ? `<section class="section" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="callout">Our automated watcher flagged a possible pricing-page change on ${pendingWatch.checkedDate} for ${pendingWatch.changed.map((c) => `<a href="/tools/${c.slug}.html">${esc(c.name)}</a>`).join(', ')} — not yet independently re-verified, so the figures below may be behind. <a href="/about.html">How we verify data.</a></div>
+    </div>
+  </section>` : ''}
+
   <section class="section" style="padding-bottom:0">
     <div class="wrap">
       <div class="finder-cta">
@@ -497,6 +525,7 @@ function toolPage(tool) {
   <section class="section">
     <div class="wrap">
       <div class="section-head"><div><span class="eyebrow">sources</span><h2>Where this comes from</h2></div></div>
+      ${pendingWatch && pendingWatch.changed.some((c) => c.slug === tool.slug) ? `<div class="callout" style="margin-bottom:14px">Our automated watcher flagged ${esc(tool.pricingUrl)} as possibly changed on ${pendingWatch.checkedDate} — not yet independently re-verified, so figures below may already be behind.</div>` : ''}
       <div class="callout">
         Verified against ${tool.sources.map((s) => `<a href="${esc(s.url)}">${esc(s.title)}</a>`).join(', ')}. Last checked ${SITE.lastVerified}. See something stale? <a href="/about.html">Here’s how we keep this current.</a>
       </div>

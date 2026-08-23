@@ -7,6 +7,14 @@ name: Pricing Watch
 # does NOT touch src/data/tools-data.js itself. Someone (or Claude, asked in
 # a future session) still has to look at the flagged tool and re-verify the
 # real numbers before updating the published data.
+#
+# It also rebuilds and republishes the static site every run (not just on a
+# detected change). build.js reads the freshly-written pricing-watch-report.json
+# and renders an on-site "possible change, not yet re-verified" banner for any
+# flagged tool — so that signal is visible to actual visitors, not just
+# something that sits in a GitHub Issue only the maintainer sees. The banner
+# is self-clearing: once a real re-verification bumps SITE.lastVerified past
+# the report's date, build.js stops rendering it, with no manual cleanup step.
 
 on:
   schedule:
@@ -30,11 +38,14 @@ jobs:
       - id: check
         run: node scripts/check-changes.js
 
-      - name: Commit updated snapshot
+      - name: Rebuild static site
+        run: node scripts/build.js
+
+      - name: Commit updated snapshot, report, and rebuilt site
         run: |
           git config user.name "ratelog-bot"
           git config user.email "actions@github.com"
-          git add scripts/pricing-snapshots.json
+          git add -A
           git diff --cached --quiet || git commit -m "chore: update pricing-watch snapshot [skip ci]"
           git push
 

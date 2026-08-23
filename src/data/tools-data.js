@@ -447,7 +447,7 @@ const arenaSource = {
   url: 'https://arena.ai/leaderboard/code/webdev',
   asOf: '2026-08-19',
   votes: '596,892',
-  note: 'Human-preference votes on generated web apps — not a correctness benchmark. The only source in this pass that is both live and covers every model below.',
+  note: 'Human-preference votes on generated web apps — not a correctness benchmark. The only source in this pass that is both live and covers every model below. Ranks on an actively-voted leaderboard like this shift by a position or two within days even with no real change — re-checked 2026-08-23 and several ranks had already drifted by 1 from the figures below; treat rank as directional, and check the live source for the current number.',
 };
 
 const models = [
