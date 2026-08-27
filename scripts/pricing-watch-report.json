@@ -1,46 +1,25 @@
 {
   "changed": [
     {
-      "slug": "claude-code",
-      "name": "Claude Code",
-      "url": "https://claude.com/pricing",
-      "prevTextLength": 31600,
-      "newTextLength": 24257
-    },
-    {
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 71932,
-      "newTextLength": 70491
+      "prevTextLength": 70491,
+      "newTextLength": 71932
     },
     {
       "slug": "cursor",
       "name": "Cursor",
       "url": "https://cursor.com/pricing",
-      "prevTextLength": 9280,
-      "newTextLength": 9312
+      "prevTextLength": 9312,
+      "newTextLength": 9460
     },
     {
-      "slug": "gemini-cli",
-      "name": "Gemini CLI / Code Assist",
-      "url": "https://codeassist.google/products/business",
-      "prevTextLength": 16969,
-      "newTextLength": 16971
-    },
-    {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 11596,
-      "newTextLength": 11604
-    },
-    {
-      "slug": "replit-agent",
-      "name": "Replit Agent",
-      "url": "https://replit.com/pricing",
-      "prevTextLength": 3143,
-      "newTextLength": 3151
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 11599,
+      "newTextLength": 11599
     }
   ],
   "errored": [
@@ -51,5 +30,5 @@
       "error": "bot-challenge interstitial returned instead of real content (not a content change)"
     }
   ],
-  "checkedAt": "2026-08-26T09:38:12.553Z"
+  "checkedAt": "2026-08-27T19:25:25.252Z"
 }
