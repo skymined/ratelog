@@ -1,5 +1,20 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 70479,
+      "newTextLength": 70625
+    },
+    {
+      "slug": "zed",
+      "name": "Zed",
+      "url": "https://zed.dev/pricing",
+      "prevTextLength": 5441,
+      "newTextLength": 5658
+    }
+  ],
   "errored": [
     {
       "slug": "windsurf",
@@ -8,5 +23,5 @@
       "error": "bot-challenge interstitial returned instead of real content (not a content change)"
     }
   ],
-  "checkedAt": "2026-08-31T16:42:26.013Z"
+  "checkedAt": "2026-09-01T13:55:28.064Z"
 }
