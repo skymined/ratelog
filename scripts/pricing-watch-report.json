@@ -4,15 +4,29 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 24350,
-      "newTextLength": 24384
+      "prevTextLength": 24384,
+      "newTextLength": 20913
     },
     {
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 72066,
-      "newTextLength": 71638
+      "prevTextLength": 71638,
+      "newTextLength": 71734
+    },
+    {
+      "slug": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/pricing",
+      "prevTextLength": 9460,
+      "newTextLength": 9592
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 11604,
+      "newTextLength": 11642
     }
   ],
   "errored": [
@@ -23,5 +37,5 @@
       "error": "bot-challenge interstitial returned instead of real content (not a content change)"
     }
   ],
-  "checkedAt": "2026-09-03T13:15:00.193Z"
+  "checkedAt": "2026-09-04T13:08:57.200Z"
 }
