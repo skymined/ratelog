@@ -4,59 +4,17 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 20919,
-      "newTextLength": 20790
-    },
-    {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 71810,
-      "newTextLength": 71801
+      "prevTextLength": 20790,
+      "newTextLength": 20822
     },
     {
       "slug": "cursor",
       "name": "Cursor",
       "url": "https://cursor.com/pricing",
-      "prevTextLength": 8244,
-      "newTextLength": 8122
-    },
-    {
-      "slug": "windsurf",
-      "name": "Devin Desktop (formerly Windsurf)",
-      "url": "https://devin.ai/pricing",
-      "prevTextLength": 276,
-      "newTextLength": 3654
-    },
-    {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 11642,
-      "newTextLength": 12364
-    },
-    {
-      "slug": "replit-agent",
-      "name": "Replit Agent",
-      "url": "https://replit.com/pricing",
-      "prevTextLength": 2852,
-      "newTextLength": 2848
-    },
-    {
-      "slug": "cline",
-      "name": "Cline",
-      "url": "https://cline.bot/pricing",
-      "prevTextLength": 2862,
-      "newTextLength": 2862
-    },
-    {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11633,
-      "newTextLength": 11749
+      "prevTextLength": 8122,
+      "newTextLength": 7522
     }
   ],
   "errored": [],
-  "checkedAt": "2026-09-17T14:05:51.320Z"
+  "checkedAt": "2026-09-18T13:23:12.505Z"
 }
