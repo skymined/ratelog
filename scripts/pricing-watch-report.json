@@ -1,20 +1,5 @@
 {
-  "changed": [
-    {
-      "slug": "claude-code",
-      "name": "Claude Code",
-      "url": "https://claude.com/pricing",
-      "prevTextLength": 20790,
-      "newTextLength": 20822
-    },
-    {
-      "slug": "cursor",
-      "name": "Cursor",
-      "url": "https://cursor.com/pricing",
-      "prevTextLength": 8122,
-      "newTextLength": 7522
-    }
-  ],
+  "changed": [],
   "errored": [],
-  "checkedAt": "2026-09-18T13:23:12.505Z"
+  "checkedAt": "2026-09-19T12:52:18.335Z"
 }
