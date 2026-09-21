@@ -1,5 +1,13 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/pricing",
+      "prevTextLength": 7522,
+      "newTextLength": 8122
+    }
+  ],
   "errored": [],
-  "checkedAt": "2026-09-20T13:26:57.305Z"
+  "checkedAt": "2026-09-21T15:39:39.927Z"
 }
