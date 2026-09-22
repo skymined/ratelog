@@ -1,13 +1,13 @@
 {
   "changed": [
     {
-      "slug": "cursor",
-      "name": "Cursor",
-      "url": "https://cursor.com/pricing",
-      "prevTextLength": 7522,
-      "newTextLength": 8122
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 71801,
+      "newTextLength": 71853
     }
   ],
   "errored": [],
-  "checkedAt": "2026-09-21T15:39:39.927Z"
+  "checkedAt": "2026-09-22T13:53:56.674Z"
 }
