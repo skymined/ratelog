@@ -4,24 +4,38 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 20822,
-      "newTextLength": 20998
+      "prevTextLength": 20998,
+      "newTextLength": 21024
     },
     {
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 71853,
-      "newTextLength": 72097
+      "prevTextLength": 72097,
+      "newTextLength": 70656
     },
     {
       "slug": "cursor",
       "name": "Cursor",
       "url": "https://cursor.com/pricing",
-      "prevTextLength": 8122,
-      "newTextLength": 7522
+      "prevTextLength": 7522,
+      "newTextLength": 8122
+    },
+    {
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "url": "https://devin.ai/pricing",
+      "prevTextLength": 3654,
+      "newTextLength": 3641
+    },
+    {
+      "slug": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "url": "https://aws.amazon.com/q/developer/pricing/",
+      "prevTextLength": 19369,
+      "newTextLength": 19386
     }
   ],
   "errored": [],
-  "checkedAt": "2026-09-23T14:04:28.250Z"
+  "checkedAt": "2026-09-24T14:01:00.962Z"
 }
