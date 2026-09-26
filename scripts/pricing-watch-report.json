@@ -1,20 +1,20 @@
 {
   "changed": [
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 70656,
-      "newTextLength": 70586
+      "slug": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/pricing",
+      "prevTextLength": 8122,
+      "newTextLength": 8150
     },
     {
-      "slug": "windsurf",
-      "name": "Devin Desktop (formerly Windsurf)",
-      "url": "https://devin.ai/pricing",
-      "prevTextLength": 3641,
-      "newTextLength": 3811
+      "slug": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "url": "https://aws.amazon.com/q/developer/pricing/",
+      "prevTextLength": 19386,
+      "newTextLength": 17832
     }
   ],
   "errored": [],
-  "checkedAt": "2026-09-25T14:25:06.414Z"
+  "checkedAt": "2026-09-26T13:36:58.328Z"
 }
