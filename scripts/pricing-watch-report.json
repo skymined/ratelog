@@ -1,5 +1,13 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 11749,
+      "newTextLength": 11749
+    }
+  ],
   "errored": [],
-  "checkedAt": "2026-09-27T14:33:21.795Z"
+  "checkedAt": "2026-09-28T17:20:43.809Z"
 }
