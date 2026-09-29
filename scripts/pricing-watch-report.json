@@ -1,13 +1,27 @@
 {
   "changed": [
     {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11749,
-      "newTextLength": 11749
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 21024,
+      "newTextLength": 21166
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 70586,
+      "newTextLength": 70698
+    },
+    {
+      "slug": "cline",
+      "name": "Cline",
+      "url": "https://cline.bot/pricing",
+      "prevTextLength": 2862,
+      "newTextLength": 2862
     }
   ],
   "errored": [],
-  "checkedAt": "2026-09-28T17:20:43.809Z"
+  "checkedAt": "2026-09-29T15:21:27.362Z"
 }
