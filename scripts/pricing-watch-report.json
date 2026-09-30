@@ -1,27 +1,41 @@
 {
   "changed": [
     {
-      "slug": "claude-code",
-      "name": "Claude Code",
-      "url": "https://claude.com/pricing",
-      "prevTextLength": 21024,
-      "newTextLength": 21166
-    },
-    {
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 70586,
-      "newTextLength": 70698
+      "prevTextLength": 70698,
+      "newTextLength": 70774
     },
     {
-      "slug": "cline",
-      "name": "Cline",
-      "url": "https://cline.bot/pricing",
-      "prevTextLength": 2862,
-      "newTextLength": 2862
+      "slug": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/pricing",
+      "prevTextLength": 8150,
+      "newTextLength": 8116
+    },
+    {
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "url": "https://devin.ai/pricing",
+      "prevTextLength": 3811,
+      "newTextLength": 3811
+    },
+    {
+      "slug": "replit-agent",
+      "name": "Replit Agent",
+      "url": "https://replit.com/pricing",
+      "prevTextLength": 2848,
+      "newTextLength": 3167
+    },
+    {
+      "slug": "zed",
+      "name": "Zed",
+      "url": "https://zed.dev/pricing",
+      "prevTextLength": 5632,
+      "newTextLength": 5628
     }
   ],
   "errored": [],
-  "checkedAt": "2026-09-29T15:21:27.362Z"
+  "checkedAt": "2026-09-30T15:37:19.180Z"
 }
