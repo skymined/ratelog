@@ -1,20 +1,5 @@
 {
-  "changed": [
-    {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 12364,
-      "newTextLength": 12798
-    },
-    {
-      "slug": "replit-agent",
-      "name": "Replit Agent",
-      "url": "https://replit.com/pricing",
-      "prevTextLength": 3167,
-      "newTextLength": 3195
-    }
-  ],
+  "changed": [],
   "errored": [],
-  "checkedAt": "2026-10-01T15:59:37.069Z"
+  "checkedAt": "2026-10-02T15:23:11.300Z"
 }
