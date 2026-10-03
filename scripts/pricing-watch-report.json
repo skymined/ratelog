@@ -1,5 +1,27 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 21166,
+      "newTextLength": 21200
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 12798,
+      "newTextLength": 12811
+    },
+    {
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 11749,
+      "newTextLength": 11727
+    }
+  ],
   "errored": [],
-  "checkedAt": "2026-10-02T15:23:11.300Z"
+  "checkedAt": "2026-10-03T14:08:23.131Z"
 }
