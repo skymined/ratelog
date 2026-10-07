@@ -4,10 +4,24 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 21200,
+      "prevTextLength": 21281,
       "newTextLength": 21281
+    },
+    {
+      "slug": "replit-agent",
+      "name": "Replit Agent",
+      "url": "https://replit.com/pricing",
+      "prevTextLength": 3195,
+      "newTextLength": 3195
+    },
+    {
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 11727,
+      "newTextLength": 11301
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-06T15:41:16.753Z"
+  "checkedAt": "2026-10-07T16:05:12.887Z"
 }
