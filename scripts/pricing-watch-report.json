@@ -5,23 +5,30 @@
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
       "prevTextLength": 21281,
-      "newTextLength": 21281
+      "newTextLength": 21490
     },
     {
-      "slug": "replit-agent",
-      "name": "Replit Agent",
-      "url": "https://replit.com/pricing",
-      "prevTextLength": 3195,
-      "newTextLength": 3195
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 70774,
+      "newTextLength": 70882
     },
     {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11727,
-      "newTextLength": 11301
+      "slug": "cline",
+      "name": "Cline",
+      "url": "https://cline.bot/pricing",
+      "prevTextLength": 2862,
+      "newTextLength": 2880
+    },
+    {
+      "slug": "zed",
+      "name": "Zed",
+      "url": "https://zed.dev/pricing",
+      "prevTextLength": 5628,
+      "newTextLength": 5628
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-07T16:05:12.887Z"
+  "checkedAt": "2026-10-08T16:07:44.646Z"
 }
