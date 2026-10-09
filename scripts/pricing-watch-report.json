@@ -4,31 +4,17 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 21281,
-      "newTextLength": 21490
+      "prevTextLength": 21490,
+      "newTextLength": 21810
     },
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 70774,
-      "newTextLength": 70882
-    },
-    {
-      "slug": "cline",
-      "name": "Cline",
-      "url": "https://cline.bot/pricing",
-      "prevTextLength": 2862,
-      "newTextLength": 2880
-    },
-    {
-      "slug": "zed",
-      "name": "Zed",
-      "url": "https://zed.dev/pricing",
-      "prevTextLength": 5628,
-      "newTextLength": 5628
+      "slug": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "url": "https://aws.amazon.com/q/developer/pricing/",
+      "prevTextLength": 17832,
+      "newTextLength": 17867
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-08T16:07:44.646Z"
+  "checkedAt": "2026-10-09T15:49:21.601Z"
 }
