@@ -4,17 +4,17 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 21490,
-      "newTextLength": 21810
+      "prevTextLength": 21810,
+      "newTextLength": 22083
     },
     {
-      "slug": "amazon-q-developer",
-      "name": "Amazon Q Developer",
-      "url": "https://aws.amazon.com/q/developer/pricing/",
-      "prevTextLength": 17832,
-      "newTextLength": 17867
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 11301,
+      "newTextLength": 11208
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-09T15:49:21.601Z"
+  "checkedAt": "2026-10-10T15:02:29.840Z"
 }
