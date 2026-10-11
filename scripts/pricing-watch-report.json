@@ -1,20 +1,5 @@
 {
-  "changed": [
-    {
-      "slug": "claude-code",
-      "name": "Claude Code",
-      "url": "https://claude.com/pricing",
-      "prevTextLength": 21810,
-      "newTextLength": 22083
-    },
-    {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11301,
-      "newTextLength": 11208
-    }
-  ],
+  "changed": [],
   "errored": [],
-  "checkedAt": "2026-10-10T15:02:29.840Z"
+  "checkedAt": "2026-10-11T15:19:51.341Z"
 }
