@@ -1,20 +1,27 @@
 {
   "changed": [
     {
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 22083,
+      "newTextLength": 22108
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 70887,
+      "newTextLength": 70975
+    },
+    {
       "slug": "cursor",
       "name": "Cursor",
       "url": "https://cursor.com/pricing",
-      "prevTextLength": 8176,
-      "newTextLength": 14490
-    },
-    {
-      "slug": "zed",
-      "name": "Zed",
-      "url": "https://zed.dev/pricing",
-      "prevTextLength": 5628,
-      "newTextLength": 5596
+      "prevTextLength": 14490,
+      "newTextLength": 15246
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-13T16:43:08.906Z"
+  "checkedAt": "2026-10-14T14:19:59.751Z"
 }
