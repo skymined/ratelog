@@ -4,24 +4,24 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 22083,
-      "newTextLength": 22108
+      "prevTextLength": 22108,
+      "newTextLength": 22125
     },
     {
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 70887,
-      "newTextLength": 70975
+      "prevTextLength": 70975,
+      "newTextLength": 70829
     },
     {
-      "slug": "cursor",
-      "name": "Cursor",
-      "url": "https://cursor.com/pricing",
-      "prevTextLength": 14490,
-      "newTextLength": 15246
+      "slug": "gemini-cli",
+      "name": "Gemini CLI / Code Assist",
+      "url": "https://codeassist.google/products/business",
+      "prevTextLength": 16971,
+      "newTextLength": 16976
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-14T14:19:59.751Z"
+  "checkedAt": "2026-10-15T13:56:39.431Z"
 }
