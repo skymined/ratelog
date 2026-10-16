@@ -1,27 +1,34 @@
 {
   "changed": [
     {
-      "slug": "claude-code",
-      "name": "Claude Code",
-      "url": "https://claude.com/pricing",
-      "prevTextLength": 22108,
-      "newTextLength": 22125
+      "slug": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "url": "https://aws.amazon.com/q/developer/pricing/",
+      "prevTextLength": 17867,
+      "newTextLength": 17867
     },
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 70975,
-      "newTextLength": 70829
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 12811,
+      "newTextLength": 12818
     },
     {
-      "slug": "gemini-cli",
-      "name": "Gemini CLI / Code Assist",
-      "url": "https://codeassist.google/products/business",
-      "prevTextLength": 16971,
-      "newTextLength": 16976
+      "slug": "replit-agent",
+      "name": "Replit Agent",
+      "url": "https://replit.com/pricing",
+      "prevTextLength": 3195,
+      "newTextLength": 3252
+    },
+    {
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 11208,
+      "newTextLength": 11208
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-15T13:56:39.431Z"
+  "checkedAt": "2026-10-16T13:44:26.656Z"
 }
