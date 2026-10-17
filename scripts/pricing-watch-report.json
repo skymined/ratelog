@@ -1,34 +1,13 @@
 {
   "changed": [
     {
-      "slug": "amazon-q-developer",
-      "name": "Amazon Q Developer",
-      "url": "https://aws.amazon.com/q/developer/pricing/",
-      "prevTextLength": 17867,
-      "newTextLength": 17867
-    },
-    {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 12811,
-      "newTextLength": 12818
-    },
-    {
-      "slug": "replit-agent",
-      "name": "Replit Agent",
-      "url": "https://replit.com/pricing",
-      "prevTextLength": 3195,
-      "newTextLength": 3252
-    },
-    {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11208,
-      "newTextLength": 11208
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 22125,
+      "newTextLength": 22181
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-16T13:44:26.656Z"
+  "checkedAt": "2026-10-17T12:41:18.776Z"
 }
