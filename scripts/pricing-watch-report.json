@@ -1,5 +1,27 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "url": "https://devin.ai/pricing",
+      "prevTextLength": 3811,
+      "newTextLength": 3701
+    },
+    {
+      "slug": "cline",
+      "name": "Cline",
+      "url": "https://cline.bot/pricing",
+      "prevTextLength": 2880,
+      "newTextLength": 2880
+    },
+    {
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 11208,
+      "newTextLength": 11208
+    }
+  ],
   "errored": [],
-  "checkedAt": "2026-10-18T12:58:22.467Z"
+  "checkedAt": "2026-10-19T16:11:16.459Z"
 }
