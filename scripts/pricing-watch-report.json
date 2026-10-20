@@ -1,27 +1,41 @@
 {
   "changed": [
     {
-      "slug": "windsurf",
-      "name": "Devin Desktop (formerly Windsurf)",
-      "url": "https://devin.ai/pricing",
-      "prevTextLength": 3811,
-      "newTextLength": 3701
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 22181,
+      "newTextLength": 22209
     },
     {
-      "slug": "cline",
-      "name": "Cline",
-      "url": "https://cline.bot/pricing",
-      "prevTextLength": 2880,
-      "newTextLength": 2880
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 70829,
+      "newTextLength": 70473
+    },
+    {
+      "slug": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/pricing",
+      "prevTextLength": 15246,
+      "newTextLength": 15246
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 12818,
+      "newTextLength": 12814
     },
     {
       "slug": "warp",
       "name": "Warp",
       "url": "https://www.warp.dev/pricing",
       "prevTextLength": 11208,
-      "newTextLength": 11208
+      "newTextLength": 11210
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-19T16:11:16.459Z"
+  "checkedAt": "2026-10-20T14:06:18.225Z"
 }
