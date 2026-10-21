@@ -4,38 +4,31 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 22181,
-      "newTextLength": 22209
+      "prevTextLength": 22209,
+      "newTextLength": 22312
     },
     {
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 70829,
-      "newTextLength": 70473
+      "prevTextLength": 70473,
+      "newTextLength": 70467
     },
     {
-      "slug": "cursor",
-      "name": "Cursor",
-      "url": "https://cursor.com/pricing",
-      "prevTextLength": 15246,
-      "newTextLength": 15246
-    },
-    {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 12818,
-      "newTextLength": 12814
+      "slug": "cline",
+      "name": "Cline",
+      "url": "https://cline.bot/pricing",
+      "prevTextLength": 2880,
+      "newTextLength": 2898
     },
     {
       "slug": "warp",
       "name": "Warp",
       "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11208,
-      "newTextLength": 11210
+      "prevTextLength": 11210,
+      "newTextLength": 11312
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-20T14:06:18.225Z"
+  "checkedAt": "2026-10-21T14:20:36.213Z"
 }
