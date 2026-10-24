@@ -1,20 +1,13 @@
 {
   "changed": [
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 41351,
-      "newTextLength": 41350
-    },
-    {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11312,
-      "newTextLength": 11312
+      "slug": "replit-agent",
+      "name": "Replit Agent",
+      "url": "https://replit.com/pricing",
+      "prevTextLength": 3252,
+      "newTextLength": 3238
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-23T14:03:33.360Z"
+  "checkedAt": "2026-10-24T13:06:18.424Z"
 }
