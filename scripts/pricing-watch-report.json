@@ -1,5 +1,27 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 22348,
+      "newTextLength": 22350
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 41350,
+      "newTextLength": 41495
+    },
+    {
+      "slug": "replit-agent",
+      "name": "Replit Agent",
+      "url": "https://replit.com/pricing",
+      "prevTextLength": 3238,
+      "newTextLength": 3326
+    }
+  ],
   "errored": [],
-  "checkedAt": "2026-10-26T15:50:40.572Z"
+  "checkedAt": "2026-10-27T15:07:23.380Z"
 }
