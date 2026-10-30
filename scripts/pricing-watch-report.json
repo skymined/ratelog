@@ -1,20 +1,13 @@
 {
   "changed": [
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 41495,
-      "newTextLength": 41235
-    },
-    {
-      "slug": "replit-agent",
-      "name": "Replit Agent",
-      "url": "https://replit.com/pricing",
-      "prevTextLength": 3326,
-      "newTextLength": 3333
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 22350,
+      "newTextLength": 22679
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-29T15:51:13.973Z"
+  "checkedAt": "2026-10-30T15:31:40.845Z"
 }
