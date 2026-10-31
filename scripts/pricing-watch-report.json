@@ -4,10 +4,17 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 22350,
-      "newTextLength": 22679
+      "prevTextLength": 22679,
+      "newTextLength": 23658
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 12814,
+      "newTextLength": 11435
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-30T15:31:40.845Z"
+  "checkedAt": "2026-10-31T15:01:45.676Z"
 }
