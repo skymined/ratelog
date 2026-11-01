@@ -1,20 +1,20 @@
 {
   "changed": [
     {
-      "slug": "claude-code",
-      "name": "Claude Code",
-      "url": "https://claude.com/pricing",
-      "prevTextLength": 22679,
-      "newTextLength": 23658
-    },
-    {
       "slug": "kiro",
       "name": "Kiro",
       "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 12814,
-      "newTextLength": 11435
+      "prevTextLength": 11435,
+      "newTextLength": 12021
+    },
+    {
+      "slug": "replit-agent",
+      "name": "Replit Agent",
+      "url": "https://replit.com/pricing",
+      "prevTextLength": 3333,
+      "newTextLength": 3193
     }
   ],
   "errored": [],
-  "checkedAt": "2026-10-31T15:01:45.676Z"
+  "checkedAt": "2026-11-01T15:44:38.474Z"
 }
