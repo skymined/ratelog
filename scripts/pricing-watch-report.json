@@ -4,17 +4,17 @@
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 41235,
-      "newTextLength": 42685
+      "prevTextLength": 42685,
+      "newTextLength": 42697
     },
     {
       "slug": "warp",
       "name": "Warp",
       "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11312,
-      "newTextLength": 11320
+      "prevTextLength": 11320,
+      "newTextLength": 11427
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-02T19:10:59.852Z"
+  "checkedAt": "2026-11-03T16:49:50.654Z"
 }
