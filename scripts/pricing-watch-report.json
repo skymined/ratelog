@@ -1,20 +1,13 @@
 {
   "changed": [
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 42685,
-      "newTextLength": 42697
-    },
-    {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11320,
-      "newTextLength": 11427
+      "slug": "cline",
+      "name": "Cline",
+      "url": "https://cline.bot/pricing",
+      "prevTextLength": 2898,
+      "newTextLength": 2876
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-03T16:49:50.654Z"
+  "checkedAt": "2026-11-04T16:49:38.754Z"
 }
