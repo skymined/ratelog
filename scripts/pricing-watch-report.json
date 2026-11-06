@@ -1,27 +1,27 @@
 {
   "changed": [
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 42697,
-      "newTextLength": 42698
+      "slug": "gemini-cli",
+      "name": "Gemini CLI / Code Assist",
+      "url": "https://codeassist.google/products/business",
+      "prevTextLength": 16976,
+      "newTextLength": 3115
+    },
+    {
+      "slug": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "url": "https://aws.amazon.com/q/developer/pricing/",
+      "prevTextLength": 17867,
+      "newTextLength": 17800
     },
     {
       "slug": "kiro",
       "name": "Kiro",
       "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 12021,
-      "newTextLength": 16779
-    },
-    {
-      "slug": "warp",
-      "name": "Warp",
-      "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 11427,
-      "newTextLength": 9201
+      "prevTextLength": 16779,
+      "newTextLength": 16787
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-05T17:05:55.992Z"
+  "checkedAt": "2026-11-06T16:35:49.979Z"
 }
