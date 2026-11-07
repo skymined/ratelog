@@ -4,24 +4,17 @@
       "slug": "gemini-cli",
       "name": "Gemini CLI / Code Assist",
       "url": "https://codeassist.google/products/business",
-      "prevTextLength": 16976,
-      "newTextLength": 3115
-    },
-    {
-      "slug": "amazon-q-developer",
-      "name": "Amazon Q Developer",
-      "url": "https://aws.amazon.com/q/developer/pricing/",
-      "prevTextLength": 17867,
-      "newTextLength": 17800
+      "prevTextLength": 3115,
+      "newTextLength": 6434
     },
     {
       "slug": "kiro",
       "name": "Kiro",
       "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 16779,
-      "newTextLength": 16787
+      "prevTextLength": 16787,
+      "newTextLength": 16808
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-06T16:35:49.979Z"
+  "checkedAt": "2026-11-07T15:24:41.169Z"
 }
