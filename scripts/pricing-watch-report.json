@@ -4,17 +4,10 @@
       "slug": "gemini-cli",
       "name": "Gemini CLI / Code Assist",
       "url": "https://codeassist.google/products/business",
-      "prevTextLength": 3115,
-      "newTextLength": 6434
-    },
-    {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 16787,
-      "newTextLength": 16808
+      "prevTextLength": 6434,
+      "newTextLength": 5411
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-07T15:24:41.169Z"
+  "checkedAt": "2026-11-08T15:47:26.143Z"
 }
