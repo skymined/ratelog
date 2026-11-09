@@ -1,13 +1,20 @@
 {
   "changed": [
     {
-      "slug": "gemini-cli",
-      "name": "Gemini CLI / Code Assist",
-      "url": "https://codeassist.google/products/business",
-      "prevTextLength": 6434,
-      "newTextLength": 5411
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 23658,
+      "newTextLength": 23766
+    },
+    {
+      "slug": "jetbrains-ai",
+      "name": "JetBrains AI Assistant",
+      "url": "https://www.jetbrains.com/ai-ides/buy/",
+      "prevTextLength": 39,
+      "newTextLength": 34
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-08T15:47:26.143Z"
+  "checkedAt": "2026-11-09T19:29:13.187Z"
 }
