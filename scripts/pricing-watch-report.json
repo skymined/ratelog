@@ -1,20 +1,55 @@
 {
   "changed": [
     {
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 23766,
+      "newTextLength": 23943
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 42698,
+      "newTextLength": 42898
+    },
+    {
       "slug": "windsurf",
       "name": "Devin Desktop (formerly Windsurf)",
       "url": "https://devin.ai/pricing",
-      "prevTextLength": 3701,
-      "newTextLength": 3703
+      "prevTextLength": 3703,
+      "newTextLength": 3971
     },
     {
       "slug": "gemini-cli",
       "name": "Gemini CLI / Code Assist",
       "url": "https://codeassist.google/products/business",
-      "prevTextLength": 5411,
-      "newTextLength": 5173
+      "prevTextLength": 5173,
+      "newTextLength": 5411
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 16808,
+      "newTextLength": 16810
+    },
+    {
+      "slug": "cline",
+      "name": "Cline",
+      "url": "https://cline.bot/pricing",
+      "prevTextLength": 2876,
+      "newTextLength": 2876
+    },
+    {
+      "slug": "warp",
+      "name": "Warp",
+      "url": "https://www.warp.dev/pricing",
+      "prevTextLength": 9201,
+      "newTextLength": 9094
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-10T16:47:20.227Z"
+  "checkedAt": "2026-11-11T16:52:46.377Z"
 }
