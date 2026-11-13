@@ -1,5 +1,20 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "url": "https://aws.amazon.com/q/developer/pricing/",
+      "prevTextLength": 17800,
+      "newTextLength": 17803
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 16810,
+      "newTextLength": 16743
+    }
+  ],
   "errored": [],
-  "checkedAt": "2026-11-12T17:21:07.421Z"
+  "checkedAt": "2026-11-13T16:56:33.850Z"
 }
