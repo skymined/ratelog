@@ -1,20 +1,13 @@
 {
   "changed": [
     {
-      "slug": "amazon-q-developer",
-      "name": "Amazon Q Developer",
-      "url": "https://aws.amazon.com/q/developer/pricing/",
-      "prevTextLength": 17800,
-      "newTextLength": 17803
-    },
-    {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 16810,
-      "newTextLength": 16743
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 42898,
+      "newTextLength": 43865
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-13T16:56:33.850Z"
+  "checkedAt": "2026-11-14T15:33:20.901Z"
 }
