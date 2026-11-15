@@ -1,13 +1,5 @@
 {
-  "changed": [
-    {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 42898,
-      "newTextLength": 43865
-    }
-  ],
+  "changed": [],
   "errored": [],
-  "checkedAt": "2026-11-14T15:33:20.901Z"
+  "checkedAt": "2026-11-15T16:03:41.794Z"
 }
