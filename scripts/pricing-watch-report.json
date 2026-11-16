@@ -1,5 +1,20 @@
 {
-  "changed": [],
+  "changed": [
+    {
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 23943,
+      "newTextLength": 23979
+    },
+    {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 43865,
+      "newTextLength": 43844
+    }
+  ],
   "errored": [],
-  "checkedAt": "2026-11-15T16:03:41.794Z"
+  "checkedAt": "2026-11-16T19:15:49.492Z"
 }
