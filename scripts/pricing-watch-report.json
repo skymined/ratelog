@@ -4,17 +4,24 @@
       "slug": "claude-code",
       "name": "Claude Code",
       "url": "https://claude.com/pricing",
-      "prevTextLength": 23943,
-      "newTextLength": 23979
+      "prevTextLength": 23979,
+      "newTextLength": 23972
     },
     {
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 43865,
-      "newTextLength": 43844
+      "prevTextLength": 43844,
+      "newTextLength": 43368
+    },
+    {
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "url": "https://devin.ai/pricing",
+      "prevTextLength": 3971,
+      "newTextLength": 3703
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-16T19:15:49.492Z"
+  "checkedAt": "2026-11-17T18:08:22.538Z"
 }
