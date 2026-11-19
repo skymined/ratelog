@@ -1,27 +1,13 @@
 {
   "changed": [
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 43368,
-      "newTextLength": 43720
-    },
-    {
-      "slug": "windsurf",
-      "name": "Devin Desktop (formerly Windsurf)",
-      "url": "https://devin.ai/pricing",
-      "prevTextLength": 3703,
-      "newTextLength": 3899
-    },
-    {
       "slug": "warp",
       "name": "Warp",
       "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 9094,
-      "newTextLength": 43807
+      "prevTextLength": 43807,
+      "newTextLength": 44641
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-18T17:46:34.065Z"
+  "checkedAt": "2026-11-19T17:57:43.955Z"
 }
