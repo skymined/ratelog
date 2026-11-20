@@ -1,13 +1,41 @@
 {
   "changed": [
     {
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 43720,
+      "newTextLength": 43804
+    },
+    {
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "url": "https://devin.ai/pricing",
+      "prevTextLength": 3899,
+      "newTextLength": 4237
+    },
+    {
+      "slug": "gemini-cli",
+      "name": "Gemini CLI / Code Assist",
+      "url": "https://codeassist.google/products/business",
+      "prevTextLength": 5411,
+      "newTextLength": 6019
+    },
+    {
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 16743,
+      "newTextLength": 16744
+    },
+    {
       "slug": "warp",
       "name": "Warp",
       "url": "https://www.warp.dev/pricing",
-      "prevTextLength": 43807,
-      "newTextLength": 44641
+      "prevTextLength": 44641,
+      "newTextLength": 51898
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-19T17:57:43.955Z"
+  "checkedAt": "2026-11-20T17:31:43.367Z"
 }
