@@ -1,27 +1,13 @@
 {
   "changed": [
     {
-      "slug": "windsurf",
-      "name": "Devin Desktop (formerly Windsurf)",
-      "url": "https://devin.ai/pricing",
-      "prevTextLength": 4237,
-      "newTextLength": 3899
-    },
-    {
-      "slug": "openai-codex",
-      "name": "ChatGPT / Codex",
-      "url": "https://openai.com/chatgpt/pricing/",
-      "prevTextLength": 41,
-      "newTextLength": 18582
-    },
-    {
       "slug": "gemini-cli",
       "name": "Gemini CLI / Code Assist",
       "url": "https://codeassist.google/products/business",
-      "prevTextLength": 6019,
-      "newTextLength": 5753
+      "prevTextLength": 5753,
+      "newTextLength": 5173
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-21T16:36:12.841Z"
+  "checkedAt": "2026-11-22T16:53:42.226Z"
 }
