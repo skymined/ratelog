@@ -1,13 +1,34 @@
 {
   "changed": [
     {
+      "slug": "claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/pricing",
+      "prevTextLength": 23972,
+      "newTextLength": 24062
+    },
+    {
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "url": "https://devin.ai/pricing",
+      "prevTextLength": 3899,
+      "newTextLength": 4237
+    },
+    {
+      "slug": "openai-codex",
+      "name": "ChatGPT / Codex",
+      "url": "https://openai.com/chatgpt/pricing/",
+      "prevTextLength": 18582,
+      "newTextLength": 18752
+    },
+    {
       "slug": "gemini-cli",
       "name": "Gemini CLI / Code Assist",
       "url": "https://codeassist.google/products/business",
-      "prevTextLength": 5753,
-      "newTextLength": 5173
+      "prevTextLength": 5173,
+      "newTextLength": 5411
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-22T16:53:42.226Z"
+  "checkedAt": "2026-11-23T20:52:06.322Z"
 }
