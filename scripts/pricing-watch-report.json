@@ -1,34 +1,34 @@
 {
   "changed": [
     {
-      "slug": "claude-code",
-      "name": "Claude Code",
-      "url": "https://claude.com/pricing",
-      "prevTextLength": 23972,
-      "newTextLength": 24062
+      "slug": "github-copilot",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot/plans",
+      "prevTextLength": 43804,
+      "newTextLength": 43802
     },
     {
       "slug": "windsurf",
       "name": "Devin Desktop (formerly Windsurf)",
       "url": "https://devin.ai/pricing",
-      "prevTextLength": 3899,
-      "newTextLength": 4237
+      "prevTextLength": 4237,
+      "newTextLength": 3899
     },
     {
       "slug": "openai-codex",
       "name": "ChatGPT / Codex",
       "url": "https://openai.com/chatgpt/pricing/",
-      "prevTextLength": 18582,
-      "newTextLength": 18752
+      "prevTextLength": 18752,
+      "newTextLength": 18738
     },
     {
-      "slug": "gemini-cli",
-      "name": "Gemini CLI / Code Assist",
-      "url": "https://codeassist.google/products/business",
-      "prevTextLength": 5173,
-      "newTextLength": 5411
+      "slug": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "url": "https://aws.amazon.com/q/developer/pricing/",
+      "prevTextLength": 17803,
+      "newTextLength": 17771
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-23T20:52:06.322Z"
+  "checkedAt": "2026-11-24T19:55:40.202Z"
 }
