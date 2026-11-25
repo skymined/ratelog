@@ -1,34 +1,20 @@
 {
   "changed": [
     {
-      "slug": "github-copilot",
-      "name": "GitHub Copilot",
-      "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 43804,
-      "newTextLength": 43802
-    },
-    {
-      "slug": "windsurf",
-      "name": "Devin Desktop (formerly Windsurf)",
-      "url": "https://devin.ai/pricing",
-      "prevTextLength": 4237,
-      "newTextLength": 3899
-    },
-    {
       "slug": "openai-codex",
       "name": "ChatGPT / Codex",
       "url": "https://openai.com/chatgpt/pricing/",
-      "prevTextLength": 18752,
-      "newTextLength": 18738
+      "prevTextLength": 18738,
+      "newTextLength": 18755
     },
     {
-      "slug": "amazon-q-developer",
-      "name": "Amazon Q Developer",
-      "url": "https://aws.amazon.com/q/developer/pricing/",
-      "prevTextLength": 17803,
-      "newTextLength": 17771
+      "slug": "kiro",
+      "name": "Kiro",
+      "url": "https://kiro.dev/pricing/",
+      "prevTextLength": 16744,
+      "newTextLength": 16777
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-24T19:55:40.202Z"
+  "checkedAt": "2026-11-25T18:58:06.809Z"
 }
