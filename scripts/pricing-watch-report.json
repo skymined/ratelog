@@ -1,20 +1,27 @@
 {
   "changed": [
     {
-      "slug": "openai-codex",
-      "name": "ChatGPT / Codex",
-      "url": "https://openai.com/chatgpt/pricing/",
-      "prevTextLength": 18738,
-      "newTextLength": 18755
+      "slug": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/pricing",
+      "prevTextLength": 15246,
+      "newTextLength": 15116
     },
     {
-      "slug": "kiro",
-      "name": "Kiro",
-      "url": "https://kiro.dev/pricing/",
-      "prevTextLength": 16744,
-      "newTextLength": 16777
+      "slug": "windsurf",
+      "name": "Devin Desktop (formerly Windsurf)",
+      "url": "https://devin.ai/pricing",
+      "prevTextLength": 3899,
+      "newTextLength": 4237
+    },
+    {
+      "slug": "gemini-cli",
+      "name": "Gemini CLI / Code Assist",
+      "url": "https://codeassist.google/products/business",
+      "prevTextLength": 5411,
+      "newTextLength": 3934
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-25T18:58:06.809Z"
+  "checkedAt": "2026-11-26T18:49:35.532Z"
 }
