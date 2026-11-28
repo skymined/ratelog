@@ -4,31 +4,24 @@
       "slug": "github-copilot",
       "name": "GitHub Copilot",
       "url": "https://github.com/features/copilot/plans",
-      "prevTextLength": 43802,
-      "newTextLength": 55
+      "prevTextLength": 55,
+      "newTextLength": 43802
+    },
+    {
+      "slug": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/pricing",
+      "prevTextLength": 15116,
+      "newTextLength": 15246
     },
     {
       "slug": "openai-codex",
       "name": "ChatGPT / Codex",
       "url": "https://openai.com/chatgpt/pricing/",
-      "prevTextLength": 18755,
-      "newTextLength": 18738
-    },
-    {
-      "slug": "gemini-cli",
-      "name": "Gemini CLI / Code Assist",
-      "url": "https://codeassist.google/products/business",
-      "prevTextLength": 3934,
-      "newTextLength": 5411
-    },
-    {
-      "slug": "zed",
-      "name": "Zed",
-      "url": "https://zed.dev/pricing",
-      "prevTextLength": 5596,
-      "newTextLength": 5642
+      "prevTextLength": 18738,
+      "newTextLength": 18755
     }
   ],
   "errored": [],
-  "checkedAt": "2026-11-27T18:41:14.548Z"
+  "checkedAt": "2026-11-28T17:22:00.511Z"
 }
